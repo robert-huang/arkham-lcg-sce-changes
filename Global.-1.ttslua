@@ -20,7 +20,7 @@ CACHE = {
 --[[ The OnLoad function. This is called after everything in the game save finishes loading.
 Most of your script code goes here. --]]
 function onload()
-  Player.White.changeColor('Yellow')
+  Player.White.changeColor('Orange')
   tokenplayerone = {
     damageone = "https://i.imgur.com/XIJHw3J.png",
     damagethree = "https://i.imgur.com/eqRC712.png",
@@ -156,15 +156,15 @@ function isCardOrDeck(x)
   return x.tag == 'Card' or isDeck(x)
 end
 
-function drawEncountercard(params) --[[ Parameter Table Position, Table Rotation]]
+function drawEncountercard(params) --[[ Parameter Table Position, Table Rotation, isRightClick]]
   local position = params[1]
   local rotation = params[2]
-  local isFaceUp = params[3]
+  local isFaceDown = params[3]
   local faceUpRotation
-    if (isFaceUp) then
-      faceUpRotation = 0
+    if (isFaceDown) then
+      faceUpRotation = 180
       else
-        faceUpRotation = 180
+        faceUpRotation = 0
     end
     local items = findInRadiusBy(ENCOUNTER_DECK_POS, 4, isCardOrDeck)
       if #items > 0 then
