@@ -53,12 +53,14 @@ LOCATIONS_DATA_JSON = [[
   "Wilderness": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Unhallowed Land_552a1d": {"type": "perPlayer", "value": 0, "clueSide": "back"},
   "Unhallowed Land": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-  "Flooded": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Flooded Square": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Venetian Garden": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "The Guardian": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Canal-side": {"type": "fixed", "value": 1, "clueSide": "back"},
   "Accademia Bridge": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Bridge of Sighs": {"type": "fixed", "value": 2, "clueSide": "back"},
+  "Streets of Venice": {"type": "fixed", "value": 2, "clueSide": "back"},
+  "Rialto Bridge": {"type": "fixed", "value": 1, "clueSide": "back"},
 
   "Warren Observatory": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Science Building": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -602,6 +604,10 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 4
   },
+  "Strange Solution (4):Acidic Ichor": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
   "Strange Solution (4):Empowering Elixir": {
     "tokenType": "resource",
     "tokenCount": 3
@@ -797,6 +803,10 @@ PLAYER_CARD_DATA_JSON = [[
   "Tony's .38 Long Colt": {
     "tokenType": "resource",
     "tokenCount": 3
+  },
+  "Becky": {
+    "tokenType": "resource",
+    "tokenCount": 2
   },
   "Gregory Gry": {
     "tokenType": "resource",
