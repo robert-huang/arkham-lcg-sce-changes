@@ -1,0 +1,36 @@
+function onLoad()
+
+
+
+
+
+--self.interactable = false
+self.createButton({
+    click_function= "onButtonClick",
+    function_owner= self,
+    position= {0, 1.84, 0},
+    width = 1500,
+    height = 1000,
+    color = {0,0,0,0},
+    tooltip= "click here to load cards first",
+})end
+
+function onButtonClick(obj, playerColor)
+if Player[playerColor].admin and self.getQuantity() > 0 then
+
+
+
+    --AllCard Deck
+    self.takeObject ({
+        position= {-63.36, 5, -65.69},
+        rotation = {180,90,0},
+        smooth= true,})
+
+    --AllCard Deck
+    self.takeObject ({
+        position= {-63.34, 1.43, -77.75},
+        rotation = {180,90,0},
+        smooth= true,})
+
+end
+end
