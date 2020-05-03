@@ -317,6 +317,20 @@ function createSetupButtons(args)
     local data = getDataValue('modeData', args.key)
     if data ~= nil then
         local z = -0.15
+        args.object.createButton({
+            label = 'Reset',
+            click_function = 'cleanContainer',
+            function_owner = Global,
+            position = {0, 0.1, z},
+            rotation = {0, 0, 0},
+            scale = {0.47, 1, 0.47},
+            height = 200,
+            width = 1150,
+            font_size = 100,
+            color = {0.87, 0.8, 0.70},
+            font_color = {0, 0, 0}
+        })
+        z = z + 0.20
         if data.easy ~= nil then
             args.object.createButton({
                 label = 'Easy',
@@ -493,6 +507,7 @@ function getImageUrl(id)
 end
 
 function cleanContainer(container)
+    local container = getObjectCache(containerId)
     for _, item in ipairs(container.getObjects()) do
         destroyObject(container.takeObject({}))
     end
