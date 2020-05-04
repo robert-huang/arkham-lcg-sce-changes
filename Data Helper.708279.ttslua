@@ -804,6 +804,10 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
+  "Bounty Contracts": {
+    "tokenType": "resource",
+    "tokenCount": 6
+  },
   "Becky": {
     "tokenType": "resource",
     "tokenCount": 2
