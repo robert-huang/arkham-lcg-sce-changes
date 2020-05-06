@@ -200,5 +200,5 @@ Global.call("drawEncountercard", {toPosition, self.getRotation(), isRightClick})
 end
 
 function spawnToken(position, tokenType)
-  Global.call('spawnToken', {position, tokenType})
+  Global.call('spawnToken', {position, tokenType, self.getRotation()})
 end

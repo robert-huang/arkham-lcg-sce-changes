@@ -279,10 +279,12 @@ function spawnToken(params)
   if tokenData == nil then
     error("no token data found for '" .. tokenType .. "'")
   end
+  local rotation = params[3]
 
   local token = spawnObject({
     type = 'Custom_Token',
     position = position,
+    rotation = rotation
   })
   token.setCustomObject({
     image = tokenData['image'],
