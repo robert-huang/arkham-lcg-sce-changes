@@ -548,6 +548,10 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 8
   },
+  "Custom Ammunition (3)": {
+    "tokenType": "resource",
+    "tokenCount": 2
+  },
   "Ornate Bow (3)": {
     "tokenType": "resource",
     "tokenCount": 1
@@ -573,6 +577,10 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenCount": 4
   },
   "Springfield M1903 (4)": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Springfield M1903 (4) (Taboo)": {
     "tokenType": "resource",
     "tokenCount": 3
   },
@@ -844,9 +852,33 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
+  "Jessica Hyde (1)": {
+    "tokenType": "damage",
+    "tokenCount": 2
+  },
+  "The Necronomicon": {
+    "tokenType": "horror",
+    "tokenCount": 3
+  },
+  "Rational Thought": {
+    "tokenType": "horror",
+    "tokenCount": 4
+  },
   "xxx": {
     "tokenType": "resource",
     "tokenCount": 3
+  },
+  "ammo": {
+    "tokenType": "ammo",
+    "tokenCount": 1
+  },
+  "charge": {
+    "tokenType": "charge",
+    "tokenCount": 1
+  },
+  "secret": {
+    "tokenType": "secret",
+    "tokenCount": 1
   }
 }
 ]]

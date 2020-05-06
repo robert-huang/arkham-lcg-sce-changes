@@ -29,13 +29,21 @@ function onload()
     resource = "https://i.imgur.com/j5v5E3j.png",
     resourcethree = "https://i.imgur.com/1GZsDTt.png",
     doom = "https://i.imgur.com/EoL7yaZ.png",
-    clue = "https://i.imgur.com/wfCaVU0.png"
+    clue = "https://i.imgur.com/wfCaVU0.png",
+    ammo = "https://i.imgur.com/fVPiBqM.png",
+    charge = "https://i.imgur.com/KK38oJR.png",
+    secret = "https://i.imgur.com/ah433h5.png"
   }
 
   TOKEN_DATA = {
     clue = {image = tokenplayerone.clue, scale = {0.15, 0.15, 0.15}},
     resource = {image = tokenplayerone.resource, scale = {0.17, 0.17, 0.17}},
-    doom = {image = tokenplayerone.doom, scale = {0.17, 0.17, 0.17}}
+    doom = {image = tokenplayerone.doom, scale = {0.17, 0.17, 0.17}},
+    ammo = {image = tokenplayerone.ammo, scale = {0.17, 0.17, 0.17}},
+    charge = {image = tokenplayerone.charge, scale = {0.17, 0.17, 0.17}},
+    secret = {image = tokenplayerone.secret, scale = {0.17, 0.17, 0.17}},
+    damage = {image = tokenplayerone.damageone, scale = {0.17, 0.17, 0.17}},
+    horror = {image = tokenplayerone.horrorone, scale = {0.17, 0.17, 0.17}},
   }
 
 getObjectFromGUID("6161b4").interactable=false
