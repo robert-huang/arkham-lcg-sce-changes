@@ -472,47 +472,19 @@ Player cards with token counts and types
 ]]
 PLAYER_CARD_DATA_JSON = [[
 {
-  "Flashlight": {
-    "tokenType": "resource",
-    "tokenCount": 3
-  },
-  "Shrivelling": {
+  "Roland's .38 Special": {
     "tokenType": "resource",
     "tokenCount": 4
-  },
-  "Shrivelling (3)": {
-    "tokenType": "resource",
-    "tokenCount": 4
-  },
-  "Grotesque Statue (4)": {
-    "tokenType": "resource",
-    "tokenCount": 4
-  },
-  "Forbidden Knowledge": {
-    "tokenType": "resource",
-    "tokenCount": 4
-  },
-  ".45 Automatic": {
-    "tokenType": "resource",
-    "tokenCount": 4
-  },
-  "Shotgun (4)": {
-    "tokenType": "resource",
-    "tokenCount": 2
-  },
-  "Liquid Courage": {
-    "tokenType": "resource",
-    "tokenCount": 4
-  },
-  "Song of the Dead (2)": {
-    "tokenType": "resource",
-    "tokenCount": 5
   },
   "Cover Up": {
     "tokenType": "clue",
     "tokenCount": 3
   },
-  "Roland's .38 Special": {
+  "The Necronomicon": {
+    "tokenType": "horror",
+    "tokenCount": 3
+  },
+  ".45 Automatic": {
     "tokenType": "resource",
     "tokenCount": 4
   },
@@ -520,19 +492,47 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Scrying": {
+  "Extra Ammunition (1)": {
     "tokenType": "resource",
     "tokenCount": 3
+  },
+  "Shotgun (4)": {
+    "tokenType": "resource",
+    "tokenCount": 2
   },
   ".41 Derringer": {
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Painkillers": {
+  "Forbidden Knowledge": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "Shrivelling": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "Scrying": {
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Smoking Pipe": {
+  "Arcane Initiate": {
+    "tokenType": "doom",
+    "tokenCount": 1
+  },
+  "Grotesque Statue (4)": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "Flashlight": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Liquid Courage": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "Rite of Seeking": {
     "tokenType": "resource",
     "tokenCount": 3
   },
@@ -540,39 +540,19 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Rite of Seeking": {
+  "Song of the Dead (2)": {
+    "tokenType": "resource",
+    "tokenCount": 5
+  },
+  "Smoking Pipe": {
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "M1918 BAR (4)": {
-    "tokenType": "resource",
-    "tokenCount": 8
-  },
-  "Custom Ammunition (3)": {
-    "tokenType": "resource",
-    "tokenCount": 2
-  },
-  "Ornate Bow (3)": {
-    "tokenType": "resource",
-    "tokenCount": 1
-  },
-  ".41 Derringer (2)": {
+  "Painkillers": {
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Suggestion (4)": {
-    "tokenType": "resource",
-    "tokenCount": 3
-  },
-  "Chicago Typewriter (4)": {
-    "tokenType": "resource",
-    "tokenCount": 4
-  },
-  "Lupara (3)": {
-    "tokenType": "resource",
-    "tokenCount": 2
-  },
-  "First Aid (3)": {
+  "Shrivelling (3)": {
     "tokenType": "resource",
     "tokenCount": 4
   },
@@ -584,27 +564,7 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
-  ".32 Colt": {
-    "tokenType": "resource",
-    "tokenCount": 6
-  },
-  "Venturer": {
-    "tokenType": "resource",
-    "tokenCount": 3
-  },
-  "Lockpicks (1)": {
-    "tokenType": "resource",
-    "tokenCount": 3
-  },
-  "Finn's Trusty .38": {
-    "tokenType": "resource",
-    "tokenCount": 3
-  },
-  ".45 Automatic (2)": {
-    "tokenType": "resource",
-    "tokenCount": 4
-  },
-  "Lightning Gun (5)": {
+  "Rite of Seeking (4)": {
     "tokenType": "resource",
     "tokenCount": 3
   },
@@ -616,23 +576,39 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
+  "Lightning Gun (5)": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Chicago Typewriter (4)": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "Shrivelling (5)": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
   "Strange Solution (4):Empowering Elixir": {
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Arcane Insight (4)": {
+  "Rite of Seeking (2)": {
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Archaic Glyphs (3)": {
+  "Clarity of Mind (3)": {
     "tokenType": "resource",
-    "tokenCount": 3
+    "tokenCount": 4
+  },
+  ".32 Colt": {
+    "tokenType": "resource",
+    "tokenCount": 6
   },
   "In the Know (1)": {
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Rite of Seeking (4)": {
+  "Lockpicks (1)": {
     "tokenType": "resource",
     "tokenCount": 3
   },
@@ -640,23 +616,103 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
+  ".45 Automatic (2)": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "Archaic Glyphs (3)": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "First Aid (3)": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  ".41 Derringer (2)": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
   "Scrying (3)": {
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Shrivelling (5)": {
+  "Emergency Cache (3)": {
     "tokenType": "resource",
     "tokenCount": 4
+  },
+  "Arcane Insight (4)": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Suggestion (4)": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Arcane Initiate (3)": {
+    "tokenType": "doom",
+    "tokenCount": 1
+  },
+  "Lupara (3)": {
+    "tokenType": "resource",
+    "tokenCount": 2
+  },
+  ".32 Colt (2)": {
+    "tokenType": "resource",
+    "tokenCount": 6
+  },
+  "Suggestion (1)": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Alchemical Transmutation (2)": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "Finn's Trusty .38": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Venturer": {
+    "tokenType": "resource",
+    "tokenCount": 3
   },
   "Mists of R'lyeh": {
     "tokenType": "resource",
     "tokenCount": 4
   },
-  "Mists of R'lyeh (4)": {
+  "Truth from Fiction": {
+    "tokenType": "resource",
+    "tokenCount": 2
+  },
+  "Enraptured": {
+    "tokenType": "resource",
+    "tokenCount": 1
+  },
+  "Try and Try Again (1)": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Custom Ammunition (3)": {
+    "tokenType": "resource",
+    "tokenCount": 2
+  },
+  "Ornate Bow (3)": {
+    "tokenType": "resource",
+    "tokenCount": 1
+  },
+  "M1918 BAR (4)": {
+    "tokenType": "resource",
+    "tokenCount": 8
+  },
+  "Feed the Mind (3)": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Colt Vest Pocket": {
     "tokenType": "resource",
     "tokenCount": 5
   },
-  "Colt Vest Pocket": {
+  "Mists of R'lyeh (4)": {
     "tokenType": "resource",
     "tokenCount": 5
   },
@@ -668,13 +724,9 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Feed the Mind (3)": {
+  "Kerosene (1)": {
     "tokenType": "resource",
     "tokenCount": 3
-  },
-  "Seal of the Seventh Sign (5)": {
-    "tokenType": "resource",
-    "tokenCount": 7
   },
   "Flamethrower (5)": {
     "tokenType": "resource",
@@ -684,39 +736,19 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Kerosene (1)": {
-    "tokenType": "resource",
-    "tokenCount": 3
-  },
   "Shards of the Void (3)": {
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Try and Try Again (1)": {
+  "Seal of the Seventh Sign (5)": {
     "tokenType": "resource",
-    "tokenCount": 3
+    "tokenCount": 7
   },
-  "Arcane Initiate": {
-    "tokenType": "doom",
-    "tokenCount": 1
-  },
-  "Detective's Colt 1911s": {
-    "tokenType": "resource",
+  "Rational Thought": {
+    "tokenType": "horror",
     "tokenCount": 4
   },
-  "Extra Ammunition (1)": {
-    "tokenType": "resource",
-    "tokenCount": 3
-  },
-  "Rite of Seeking (2)": {
-    "tokenType": "resource",
-    "tokenCount": 3
-  },
-  "Arcane Initiate (3)": {
-    "tokenType": "doom",
-    "tokenCount": 1
-  },
-  "Clarity of Mind (3)": {
+  "Detective's Colt 1911s": {
     "tokenType": "resource",
     "tokenCount": 4
   },
@@ -724,11 +756,11 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Truth from Fiction": {
+  ".45 Thompson": {
     "tokenType": "resource",
-    "tokenCount": 2
+    "tokenCount": 5
   },
-  "Enchanted Blade": {
+  "Scroll of Secrets": {
     "tokenType": "resource",
     "tokenCount": 3
   },
@@ -736,39 +768,23 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 2
   },
-  "Scroll of Secrets": {
+  "Enchanted Blade": {
     "tokenType": "resource",
     "tokenCount": 3
-  },
-  ".45 Thompson": {
-    "tokenType": "resource",
-    "tokenCount": 5
   },
   "Mr. \"Rook\"": {
     "tokenType": "resource",
     "tokenCount": 3
+  },
+  ".45 Thompson (3)": {
+    "tokenType": "resource",
+    "tokenCount": 5
   },
   "Scroll of Secrets (3):Seeker": {
     "tokenType": "resource",
     "tokenCount": 3
   },
   "Scroll of Secrets (3):Mystic": {
-    "tokenType": "resource",
-    "tokenCount": 4
-  },
-  "Enchanted Blade (3):Guardian": {
-    "tokenType": "resource",
-    "tokenCount": 3
-  },
-  "Enchanted Blade (3):Mystic": {
-    "tokenType": "resource",
-    "tokenCount": 4
-  },
-  ".45 Thompson (3)": {
-    "tokenType": "resource",
-    "tokenCount": 5
-  },
-  "Esoteric Atlas (1)": {
     "tokenType": "resource",
     "tokenCount": 4
   },
@@ -780,27 +796,39 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
+  "Enchanted Blade (3):Guardian": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Enchanted Blade (3):Mystic": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "The Council's Coffer": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "Esoteric Atlas (1)": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
   "Mk1 Grenades (4)": {
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Dayana Esperence": {
+  "Dayana Esperence (3)": {
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Pendant of the Queen": {
+  "Becky": {
     "tokenType": "resource",
-    "tokenCount": 3
+    "tokenCount": 2
   },
-  ".32 Colt (2)": {
+  "Bounty Contracts": {
     "tokenType": "resource",
     "tokenCount": 6
   },
-  "Alchemical Transmutation (2)": {
-    "tokenType": "resource",
-    "tokenCount": 4
-  },
-  "Suggestion (1)": {
+  "Tony's .38 Long Colt": {
     "tokenType": "resource",
     "tokenCount": 3
   },
@@ -808,31 +836,27 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Tony's .38 Long Colt": {
+  "Pendant of the Queen": {
     "tokenType": "resource",
     "tokenCount": 3
-  },
-  "Bounty Contracts": {
-    "tokenType": "resource",
-    "tokenCount": 6
-  },
-  "Becky": {
-    "tokenType": "resource",
-    "tokenCount": 2
-  },
-  "Gregory Gry": {
-    "tokenType": "resource",
-    "tokenCount": 9
   },
   "Scroll of Prophecies": {
     "tokenType": "resource",
     "tokenCount": 4
   },
-  "Healing Words": {
+  "Jessica Hyde (1)": {
+    "tokenType": "damage",
+    "tokenCount": 2
+  },
+  "Otherworld Codex (2)": {
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Otherworld Codex (2)": {
+  "Gregory Gry": {
+    "tokenType": "resource",
+    "tokenCount": 9
+  },
+  "Healing Words": {
     "tokenType": "resource",
     "tokenCount": 3
   },
@@ -852,17 +876,9 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
-  "Jessica Hyde (1)": {
-    "tokenType": "damage",
-    "tokenCount": 2
-  },
-  "The Necronomicon": {
+  "Foolishness": {
     "tokenType": "horror",
     "tokenCount": 3
-  },
-  "Rational Thought": {
-    "tokenType": "horror",
-    "tokenCount": 4
   },
   "xxx": {
     "tokenType": "resource",
