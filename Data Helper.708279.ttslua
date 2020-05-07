@@ -1091,6 +1091,13 @@ modeData = {
     normal = { token = { 'p1', '0', 'm1', 'm1', 'm2', 'm3', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
     hard = { token = { '0', 'm1', 'm2', 'm3', 'm4', 'm4', 'm5', 'm6', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
   },
+  ['Read or Die'] = {
+    easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+    normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+    hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+    expert = { token = { '0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
+  },
+
   --fan-made
   ['The Nephew Calls'] = {
     easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
