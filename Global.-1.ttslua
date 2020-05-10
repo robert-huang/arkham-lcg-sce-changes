@@ -167,36 +167,49 @@ end
 function drawEncountercard(params) --[[ Parameter Table Position, Table Rotation, isRightClick]]
   local position = params[1]
   local rotation = params[2]
-  local isFaceDown = params[3]
+  local privateDraw = params[3]
+  local playerColour = params[4]
   local faceUpRotation
-    if (isFaceDown) then
-      faceUpRotation = 180
-      else
-        faceUpRotation = 0
-    end
-    local items = findInRadiusBy(ENCOUNTER_DECK_POS, 4, isCardOrDeck)
-      if #items > 0 then
-        for i, v in ipairs(items) do
-          if v.tag == 'Deck' then
-            v.takeObject({index = 0, position = position, rotation = {0,rotation.y,faceUpRotation}})
-          return
+    -- if isFaceDown then
+    --   faceUpRotation = 180
+    -- else
+      faceUpRotation = 0
+    -- end
+  local items = findInRadiusBy(ENCOUNTER_DECK_POS, 4, isCardOrDeck)
+  if #items > 0 then
+    for i, v in ipairs(items) do
+      if v.tag == 'Deck' then
+        if privateDraw then
+          v.deal(1, playerColour)
+        else
+          v.takeObject({index = 0, position = position, rotation = {0,rotation.y,faceUpRotation}})
         end
+        return
       end
+    end
 -- we didn't find the deck so just pull the first thing we did find
+    if privateDraw then
+      items[1].deal(1, playerColour)
+    else
       items[1].setPositionSmooth(position, false, false)
       items[1].setRotationSmooth({0,rotation.y,faceUpRotation}, false, false)
+    end
     return
   end
 -- nothing here, time to reshuffle
-  reshuffleEncounterDeck(position, {0,rotation.y,faceUpRotation})
+  reshuffleEncounterDeck(position, {0,rotation.y,faceUpRotation}, privateDraw, playerColour)
 end
 
 IS_RESHUFFLING = false
-function reshuffleEncounterDeck(position, rotation)
+function reshuffleEncounterDeck(position, rotation, privateDraw, playerColour)
   -- finishes moving the deck back and draws a card
   local function move(deck)
     deck.setPositionSmooth(ENCOUNTER_DECK_SPAWN_POS, true, false)
-    deck.takeObject({index = 0, position = position, rotation = rotation, flip = false})
+    if privateDraw then
+      deck.deal(1, playerColour)
+    else
+      deck.takeObject({index = 0, position = position, rotation = rotation, flip = false})
+    end
     Wait.time(function() IS_RESHUFFLING = false end, 1)
   end
   -- bail out if we're mid reshuffle

@@ -195,8 +195,8 @@ function drawChaostokenButton(object, player, isRightClick)
 end
 
 function drawEncountercard(object, player, isRightClick)
-local toPosition = self.positionToWorld(DRAWN_ENCOUNTER_CARD_OFFSET)
-Global.call("drawEncountercard", {toPosition, self.getRotation(), isRightClick})
+  local toPosition = self.positionToWorld(DRAWN_ENCOUNTER_CARD_OFFSET)
+  Global.call("drawEncountercard", {toPosition, self.getRotation(), isRightClick, "Yellow"})
 end
 
 function spawnToken(position, tokenType)
