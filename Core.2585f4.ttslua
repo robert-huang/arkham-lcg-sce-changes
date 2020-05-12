@@ -88,11 +88,11 @@ function createSetupActionButtons()
         position={0,3,-7}, rotation={0,0,0}, height=700, width=2000,
         font_size=700, color={0,0,0}, font_color={1,1,1}
     })
---    self.createButton({
---        label="Reset", click_function="buttonClick_reset", function_owner=self,
---        position={3,2.5,6}, rotation={0,0,0}, height=550, width=1100,
---        font_size=400, color={0,0,0}, font_color={1,1,1}
---    })
+    self.createButton({
+        label="Reset", click_function="buttonClick_reset", function_owner=self,
+        position={3,2.5,6}, rotation={0,0,0}, height=550, width=1100,
+        font_size=400, color={0,0,0}, font_color={1,1,1}
+    })
 end
 
 
@@ -178,11 +178,11 @@ function createMemoryActionButtons()
         position={-2.4,3,7}, rotation={0,0,0}, height=850, width=2200,
         font_size=700, color={0,0,0}, font_color={1,1,1}
     })
---    self.createButton({
---        label="Setup", click_function="buttonClick_setup", function_owner=self,
---        position={2,0.3,0}, rotation={0,90,0}, height=350, width=800,
---        font_size=250, color={0,0,0}, font_color={1,1,1}
---    })
+    self.createButton({
+        label="Setup", click_function="buttonClick_setup", function_owner=self,
+        position={2,0.3,0}, rotation={0,90,0}, height=350, width=800,
+        font_size=250, color={0,0,0}, font_color={1,1,1}
+    })
 end
 
 --Sends objects from bag/table to their saved position/rotation
