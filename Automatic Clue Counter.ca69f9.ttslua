@@ -1,0 +1,216 @@
+MIN_VALUE = -99
+MAX_VALUE = 999
+
+p1ClueCounterId = '37be78'
+p2ClueCounterId = '1769ed'
+p3ClueCounterId = '032300'
+p4ClueCounterId = '0602a3'
+
+p1ManualClueCounterId = '25103c'
+p2ManualClueCounterId = '326ec4'
+p3ManualClueCounterId = '1d8875'
+p4ManualClueCounterId = 'aa9093'
+
+function onload(saved_data)
+    light_mode = false
+    val = 0
+
+    if saved_data ~= "" then
+        local loaded_data = JSON.decode(saved_data)
+        light_mode = loaded_data[1]
+        val = loaded_data[2]
+    end
+    p1ClueCounter = getObjectFromGUID(p1ClueCounterId)
+    p2ClueCounter = getObjectFromGUID(p2ClueCounterId)
+    p3ClueCounter = getObjectFromGUID(p3ClueCounterId)
+    p4ClueCounter = getObjectFromGUID(p4ClueCounterId)
+
+    p1ManualClueCounter = getObjectFromGUID(p1ManualClueCounterId)
+    p2ManualClueCounter = getObjectFromGUID(p2ManualClueCounterId)
+    p3ManualClueCounter = getObjectFromGUID(p3ManualClueCounterId)
+    p4ManualClueCounter = getObjectFromGUID(p4ManualClueCounterId)
+
+    timerID = self.getGUID()..math.random(9999999999999)
+    Timer.create({
+        identifier=timerID,
+        function_name="totalCounters", function_owner=self,
+        repetitions=0, delay=1
+    })
+    createAll()
+end
+
+function loadPlayerCounters()
+  p1ClueCounter = getObjectFromGUID(p1ClueCounterId)
+  p2ClueCounter = getObjectFromGUID(p2ClueCounterId)
+  p3ClueCounter = getObjectFromGUID(p3ClueCounterId)
+  p4ClueCounter = getObjectFromGUID(p4ClueCounterId)
+
+  p1ManualClueCounter = getObjectFromGUID(p1ManualClueCounterId)
+  p2ManualClueCounter = getObjectFromGUID(p2ManualClueCounterId)
+  p3ManualClueCounter = getObjectFromGUID(p3ManualClueCounterId)
+  p4ManualClueCounter = getObjectFromGUID(p4ManualClueCounterId)
+end
+
+
+function totalCounters()
+    if p1ClueCounter == nil or p2ClueCounter == nil or p3ClueCounter == nil or p4ClueCounter == nil
+      or p1ManualClueCounter == nil or p2ManualClueCounter == nil or p3ManualClueCounter == nil or p4ManualClueCounter == nil then
+        loadPlayerCounters()
+    end
+    local p1ClueCount = p1ClueCounter.getVar("exposedValue")
+    local p2ClueCount = p2ClueCounter.getVar("exposedValue")
+    local p3ClueCount = p3ClueCounter.getVar("exposedValue")
+    local p4ClueCount = p4ClueCounter.getVar("exposedValue")
+
+    val = tonumber(p1ClueCount) + tonumber(p2ClueCount) + tonumber(p3ClueCount) + tonumber(p4ClueCount)
+
+    if p1ManualClueCounter ~= nil then
+      local p1ManualClueCount = p1ManualClueCounter.getVar("val")
+      val = val + tonumber(p1ManualClueCount)
+    end
+    if p2ManualClueCounter ~= nil then
+      local p2ManualClueCount = p2ManualClueCounter.getVar("val")
+      val = val + tonumber(p2ManualClueCount)
+    end
+    if p3ManualClueCounter ~= nil then
+      local p3ManualClueCount = p3ManualClueCounter.getVar("val")
+      val = val + tonumber(p3ManualClueCount)
+    end
+    if p4ManualClueCounter ~= nil then
+      local p4ManualClueCount = p4ManualClueCounter.getVar("val")
+      val = val + tonumber(p4ManualClueCount)
+    end
+
+    updateVal()
+    updateSave()
+end
+
+function updateSave()
+    local data_to_save = {light_mode, val}
+    saved_data = JSON.encode(data_to_save)
+    self.script_state = saved_data
+end
+
+function createAll()
+    s_color = {0.5, 0.5, 0.5, 95}
+
+    if light_mode then
+        f_color = {1,1,1,95}
+    else
+        f_color = {0,0,0,100}
+    end
+
+    self.createButton({
+      label=tostring(val),
+      click_function="removeAllPlayerClues",
+      function_owner=self,
+      position={0,0.05,0},
+      height=600,
+      width=1000,
+      alignment = 3,
+      tooltip = "Click button to remove all clues from all investigators",
+      scale={x=1.5, y=1.5, z=1.5},
+      font_size=600,
+      font_color=f_color,
+      color={0,0,0,0}
+      })
+
+    if light_mode then
+        lightButtonText = "[ Set dark ]"
+    else
+        lightButtonText = "[ Set light ]"
+    end
+
+end
+
+function removeAll()
+    self.removeInput(0)
+    self.removeInput(1)
+    self.removeButton(0)
+    self.removeButton(1)
+    self.removeButton(2)
+end
+
+function removeAllPlayerClues()
+  p1ClueCounter.call("removeAllClues")
+  p2ClueCounter.call("removeAllClues")
+  p3ClueCounter.call("removeAllClues")
+  p4ClueCounter.call("removeAllClues")
+
+  if p1ManualClueCounter ~= nil then
+    p1ManualClueCounter.setVar("val", 0)
+    p1ManualClueCounter.call("updateVal")
+  end
+  if p2ManualClueCounter ~= nil then
+    p2ManualClueCounter.setVar("val", 0)
+    p2ManualClueCounter.call("updateVal")
+  end
+  if p3ManualClueCounter ~= nil then
+    p3ManualClueCounter.setVar("val", 0)
+    p3ManualClueCounter.call("updateVal")
+  end
+  if p4ManualClueCounter ~= nil then
+    p4ManualClueCounter.setVar("val", 0)
+    p4ManualClueCounter.call("updateVal")
+  end
+end
+
+
+function reloadAll()
+    removeAll()
+    createAll()
+    updateSave()
+end
+
+function swap_fcolor(_obj, _color, alt_click)
+    light_mode = not light_mode
+    reloadAll()
+end
+
+function swap_align(_obj, _color, alt_click)
+    center_mode = not center_mode
+    reloadAll()
+end
+
+function editName(_obj, _string, value)
+    self.setName(value)
+    setTooltips()
+end
+
+function updateVal()
+    self.editButton({
+        index = 0,
+        label = tostring(val),
+
+        })
+end
+
+function reset_val()
+    val = 0
+    updateVal()
+    updateSave()
+end
+
+function setTooltips()
+    self.editInput({
+        index = 0,
+        value = self.getName(),
+        tooltip = "Click button to remove all clues from all investigators"
+        })
+    self.editButton({
+        index = 0,
+        value = tostring(val),
+
+        })
+end
+
+function null()
+end
+
+function keepSample(_obj, _string, value)
+    reloadAll()
+end
+
+function onDestroy()
+    Timer.destroy(timerID)
+end

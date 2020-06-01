@@ -1,6 +1,8 @@
 --[[ Lua code. See documentation: http://berserk-games.com/knowledgebase/scripting/ --]]
 -- Card size used for autodealing --
 
+debug = false
+
 -- global position constants
 ENCOUNTER_DECK_POS = {-3.8, 1, 5.7}
 ENCOUNTER_DECK_SPAWN_POS = {-3.8, 3, 5.7}
@@ -36,25 +38,27 @@ function onload()
   }
 
   TOKEN_DATA = {
-    clue = {image = tokenplayerone.clue, scale = {0.15, 0.15, 0.15}},
-    resource = {image = tokenplayerone.resource, scale = {0.17, 0.17, 0.17}},
-    doom = {image = tokenplayerone.doom, scale = {0.17, 0.17, 0.17}},
-    ammo = {image = tokenplayerone.ammo, scale = {0.17, 0.17, 0.17}},
-    charge = {image = tokenplayerone.charge, scale = {0.17, 0.17, 0.17}},
-    secret = {image = tokenplayerone.secret, scale = {0.17, 0.17, 0.17}},
-    damage = {image = tokenplayerone.damageone, scale = {0.17, 0.17, 0.17}},
-    horror = {image = tokenplayerone.horrorone, scale = {0.17, 0.17, 0.17}},
+    clue = {image = tokenplayerone.clue, scale = {0.15, 1, 0.15}},
+    resource = {image = tokenplayerone.resource, scale = {0.17, 1, 0.17}},
+    doom = {image = tokenplayerone.doom, scale = {0.17, 1, 0.17}},
+    ammo = {image = tokenplayerone.ammo, scale = {0.17, 1, 0.17}},
+    charge = {image = tokenplayerone.charge, scale = {0.17, 1, 0.17}},
+    secret = {image = tokenplayerone.secret, scale = {0.17, 1, 0.17}},
+    damage = {image = tokenplayerone.damageone, scale = {0.17, 1, 0.17}},
+    horror = {image = tokenplayerone.horrorone, scale = {0.17, 1, 0.17}},
   }
 
-getObjectFromGUID("6161b4").interactable=false
-getObjectFromGUID("721ba2").interactable=false
-getObjectFromGUID("9f334f").interactable=false
-getObjectFromGUID("23a43c").interactable=false
-getObjectFromGUID("5450cc").interactable=false
-getObjectFromGUID("463022").interactable=false
-getObjectFromGUID("9487a4").interactable=false
-getObjectFromGUID("91dd9b").interactable=false
-getObjectFromGUID("f182ee").interactable=false
+  if not debug then
+    getObjectFromGUID("6161b4").interactable=false
+    getObjectFromGUID("721ba2").interactable=false
+    getObjectFromGUID("9f334f").interactable=false
+    getObjectFromGUID("23a43c").interactable=false
+    getObjectFromGUID("5450cc").interactable=false
+    getObjectFromGUID("463022").interactable=false
+    getObjectFromGUID("9487a4").interactable=false
+    getObjectFromGUID("91dd9b").interactable=false
+    getObjectFromGUID("f182ee").interactable=false
+  end
 end
 
 -- Remove comments to enable autorotate cards on hands.

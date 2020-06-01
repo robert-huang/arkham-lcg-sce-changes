@@ -832,7 +832,7 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 4
   },
-  "Mk1 Grenades (4)": {
+  "Mk 1 Grenades (4)": {
     "tokenType": "resource",
     "tokenCount": 3
   },
@@ -1179,7 +1179,7 @@ modeData = {
     hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue'} },
     expert = { token = { '0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue'} },
   },
-  
+
   --fan-made
   ['The Nephew Calls'] = {
     easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },

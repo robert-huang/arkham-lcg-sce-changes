@@ -2,7 +2,7 @@ MIN_VALUE = -99
 MAX_VALUE = 999
 
 function onload(saved_data)
-    light_mode = false
+    light_mode = true
     val = 0
 
     if saved_data ~= "" then
@@ -21,10 +21,10 @@ function updateSave()
 end
 
 function createAll()
-    s_color = {0.5, 0.5, 0.5, 95}
+    s_color = {0,0,0,100}
 
     if light_mode then
-        f_color = {1,1,1,95}
+        f_color = {1,1,1,100}
     else
         f_color = {0,0,0,100}
     end
@@ -35,14 +35,14 @@ function createAll()
       label=tostring(val),
       click_function="add_subtract",
       function_owner=self,
-      position={0,0.05,0},
+      position={0,0.05,0.1},
       height=600,
       width=1000,
       alignment = 3,
       scale={x=1.5, y=1.5, z=1.5},
       font_size=600,
       font_color=f_color,
-      color={0,0,0,0}
+      color={1,1,1,0}
       })
 
 
@@ -53,7 +53,7 @@ function createAll()
     else
         lightButtonText = "[ Set light ]"
     end
- 
+
 end
 
 function removeAll()
@@ -81,7 +81,7 @@ function swap_align(_obj, _color, alt_click)
     reloadAll()
 end
 
-function editName(_obj, _string, value) 
+function editName(_obj, _string, value)
     self.setName(value)
     setTooltips()
 end
@@ -127,6 +127,6 @@ end
 function null()
 end
 
-function keepSample(_obj, _string, value) 
+function keepSample(_obj, _string, value)
     reloadAll()
 end

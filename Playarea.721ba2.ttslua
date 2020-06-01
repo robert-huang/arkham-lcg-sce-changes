@@ -113,6 +113,7 @@ function spawnToken(position, number)
     token.setCustomObject(custom)
     token.scale {0.15, 1, 0.15}
     token.use_snap_points=false
+    token.setName('Clue')
     return token
   end
 
