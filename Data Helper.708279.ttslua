@@ -492,6 +492,10 @@ Player cards with token counts and types
 ]]
 PLAYER_CARD_DATA_JSON = [[
 {
+  "Night of the Zealot (core)":{
+    "tokenType": "doom",
+    "tokenCount": 0
+  },
   "Roland's .38 Special": {
     "tokenType": "resource",
     "tokenCount": 4
@@ -547,6 +551,10 @@ PLAYER_CARD_DATA_JSON = [[
   "Flashlight": {
     "tokenType": "resource",
     "tokenCount": 3
+  },
+  "The Dunwich Legacy (dwl)":{
+    "tokenType": "doom",
+    "tokenCount": 0
   },
   "Liquid Courage": {
     "tokenType": "resource",
@@ -620,6 +628,10 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 4
   },
+  "The Path to Carcosa (ptc)":{
+    "tokenType": "doom",
+    "tokenCount": 0
+  },
   ".32 Colt": {
     "tokenType": "resource",
     "tokenCount": 6
@@ -687,6 +699,10 @@ PLAYER_CARD_DATA_JSON = [[
   "Alchemical Transmutation (2)": {
     "tokenType": "resource",
     "tokenCount": 4
+  },
+  "The Forgotten Age (tfa)":{
+    "tokenType": "doom",
+    "tokenCount": 0
   },
   "Finn's Trusty .38": {
     "tokenType": "resource",
@@ -764,6 +780,10 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 7
   },
+  "The Circle Undone (tcu)":{
+    "tokenType": "doom",
+    "tokenCount": 0
+  },
   "Rational Thought": {
     "tokenType": "horror",
     "tokenCount": 4
@@ -840,6 +860,10 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
+  "The Dream-Eaters (tde)":{
+    "tokenType": "doom",
+    "tokenCount": 0
+  },
   "Becky": {
     "tokenType": "resource",
     "tokenCount": 2
@@ -895,6 +919,74 @@ PLAYER_CARD_DATA_JSON = [[
   "Mind's Eye (2)": {
     "tokenType": "resource",
     "tokenCount": 3
+  },
+  "The Innsmouth Conspiracy (tic)":{
+    "tokenType": "doom",
+    "tokenCount": 0
+  },
+  "Investigator Starter Decks":{
+    "tokenType": "doom",
+    "tokenCount": 0
+  },
+  "Flesh Ward": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "The Necronomicon (5)": {
+    "tokenType": "resource",
+    "tokenCount": 6
+  },
+  "Beretta M1918 (4)": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "Scrying Mirror": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "Azure Flame": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "Clairvoyance": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Ineffable Truth (3)": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  ".18 Derringer": {
+    "tokenType": "resource",
+    "tokenCount": 2
+  },
+  "Grimm's Fairy Tales": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "Old Keyring": {
+    "tokenType": "resource",
+    "tokenCount": 2
+  },
+  ".18 Derringer (2)": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Standalones":{
+    "tokenType": "doom",
+    "tokenCount": 0
+  },
+  "Ancient Ankh": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "Summoned Nightgaunt": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Promo Investigators":{
+    "tokenType": "doom",
+    "tokenCount": 0
   },
   "Foolishness": {
     "tokenType": "horror",

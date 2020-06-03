@@ -10,7 +10,7 @@ function onLoad()
   cardURL="https://arkhamdb.com/api/public/card/"
   tabooListURL="https://arkhamdb.com/api/public/taboos/"
   subnameCards={{name="Dream Diary",xp=3},{name="Relic of Ages",xp=0},{name="The Necronomicon",xp=0},{name="Archaic Glyphs",xp=3},{name="Strange Solution",xp=4},{name="Relic of Ages",xp=0}, {name="Ancient Stone",xp=4}, {"Dream Diary",xp=0}}
-  extraPermanents={["Duke"]=true,["Sophie"]=true}
+  extraPermanents={["Duke"]=true,["Sophie"]=true,["Gate Box"]=true}
   multiClassCards={{name=".45 Thompson",xp=3},{name="Scroll of Secrets",xp=3},{name="Tennessee Sour Mash",xp=3},{name="Enchanted Blade",xp=3},{name="Grisly Totem",xp=3}}
 --  bondedCards={{name="Hallowed Mirror",bondedName="Soothing Melody",bondedCode=05314,copies=3},{name="Occult Lexicon",bondedName="Blood-Rite",bondedCode=05317,copies=3}}
   privateDeck = true
