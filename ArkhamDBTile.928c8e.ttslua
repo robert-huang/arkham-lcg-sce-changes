@@ -314,7 +314,7 @@ function searchForCard(cardName, subName, cardCount, permanent)
     if taken.getName() == 'Indebted' then
       taken.setPosition(permPos)
     end
-    broadcastToAll("Drew random basic weakness: " .. taken.getName())
+    -- broadcastToAll("Drew random basic weakness: " .. taken.getName())
     return
   end
   allCards = tmpDeck.getObjects()

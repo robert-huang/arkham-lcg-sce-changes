@@ -10,6 +10,7 @@ p1ManualClueCounterId = '25103c'
 p2ManualClueCounterId = '326ec4'
 p3ManualClueCounterId = '1d8875'
 p4ManualClueCounterId = 'aa9093'
+p5ManualClueCounterId = '1235d9'
 
 function onload(saved_data)
     light_mode = false
@@ -29,6 +30,7 @@ function onload(saved_data)
     p2ManualClueCounter = getObjectFromGUID(p2ManualClueCounterId)
     p3ManualClueCounter = getObjectFromGUID(p3ManualClueCounterId)
     p4ManualClueCounter = getObjectFromGUID(p4ManualClueCounterId)
+    p5ManualClueCounter = getObjectFromGUID(p5ManualClueCounterId)
 
     timerID = self.getGUID()..math.random(9999999999999)
     Timer.create({
@@ -49,6 +51,7 @@ function loadPlayerCounters()
   p2ManualClueCounter = getObjectFromGUID(p2ManualClueCounterId)
   p3ManualClueCounter = getObjectFromGUID(p3ManualClueCounterId)
   p4ManualClueCounter = getObjectFromGUID(p4ManualClueCounterId)
+  p5ManualClueCounter = getObjectFromGUID(p5ManualClueCounterId)
 end
 
 
@@ -79,6 +82,10 @@ function totalCounters()
     if p4ManualClueCounter ~= nil then
       local p4ManualClueCount = p4ManualClueCounter.getVar("val")
       val = val + tonumber(p4ManualClueCount)
+    end
+    if p5ManualClueCounter ~= nil then
+      local p5ManualClueCount = p5ManualClueCounter.getVar("val")
+      val = val + tonumber(p5ManualClueCount)
     end
 
     updateVal()
@@ -152,6 +159,10 @@ function removeAllPlayerClues()
   if p4ManualClueCounter ~= nil then
     p4ManualClueCounter.setVar("val", 0)
     p4ManualClueCounter.call("updateVal")
+  end
+  if p5ManualClueCounter ~= nil then
+    p5ManualClueCounter.setVar("val", 0)
+    p5ManualClueCounter.call("updateVal")
   end
 end
 
