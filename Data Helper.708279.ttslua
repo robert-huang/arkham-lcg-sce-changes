@@ -306,6 +306,7 @@ LOCATIONS_DATA_JSON = [[
   "Atlantis": {"type": "fixed", "value": 2, "clueSide": "front"},
   "Pnakotus": {"type": "fixed", "value": 3, "clueSide": "front"},
   "Ruins of New York": {"type": "fixed", "value": 3, "clueSide": "front"},
+  "Plateau of Leng": {"type": "fixed", "value": 1, "clueSide": "front"},
   "Yuggoth": {"type": "fixed", "value": 3, "clueSide": "front"},
   "Mu": {"type": "fixed", "value": 4, "clueSide": "front"},
 
