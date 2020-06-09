@@ -933,6 +933,10 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 4
   },
+  "Forbidden Tome": {
+    "tokenType": "resource",
+    "tokenCount": 5
+  },
   "The Necronomicon (5)": {
     "tokenType": "resource",
     "tokenCount": 6
