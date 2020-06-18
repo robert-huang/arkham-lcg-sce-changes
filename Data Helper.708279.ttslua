@@ -74,7 +74,6 @@ LOCATIONS_DATA_JSON = [[
   "Faceless Sphinx": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Desert Oasis": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Sandswept Ruins": {"type": "perPlayer", "value": 1, "clueSide": "front"},
-  "A Dream Betwixt": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "The Great Abyss": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Tunnels under Ngranek": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Stairway to Sarkomand": {"type": "perPlayer", "value": 1, "clueSide": "back"},
