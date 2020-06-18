@@ -460,7 +460,29 @@ LOCATIONS_DATA_JSON = [[
   "The Great Web_5c5ec4": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "The Great Web_361fd7": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "The Great Web_dfdc8c": {"type": "perPlayer", "value": 2, "clueSide": "back"},
-
+  
+  "Expedition Camp": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+  "Desert Oasis": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Untouched Vault": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Sands of Dashur": {"type": "perPlayer", "value": 0, "clueSide": "front"},
+  "Sandswept Ruins": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Nile River": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Faceless Sphinx": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Dunes of the Sahara": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  
+  "Streets of Cairo": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Cairo Bazaar": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Temple Courtyard": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Museum of Egyptian Antiquities": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Outskirts of Cairo": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  
+  "Eldritch Gate": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Mist-Filled Caverns": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Stairway to Sarkomand": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Tunnels under Ngranek": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "The Great Abyss": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "A Dream Betwixt": {"type": "perPlayer", "value": 0, "clueSide": "front"},
+  
   "XXXX": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "xxx": {"type": "perPlayer", "value": 2, "clueSide": "back"}
 }
