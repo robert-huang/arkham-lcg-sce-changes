@@ -988,6 +988,14 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
+  "Universal Solvent": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "Mi-Go Weapon": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
   "Promo Investigators":{
     "tokenType": "doom",
     "tokenCount": 0
