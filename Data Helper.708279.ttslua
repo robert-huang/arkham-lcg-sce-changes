@@ -780,6 +780,18 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 7
   },
+  "The Chthonian Stone (3)": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Mists of R'lyeh (2)": {
+    "tokenType": "resource",
+    "tokenCount": 5
+  },
+  "Colt Vest Pocket (2)": {
+    "tokenType": "resource",
+    "tokenCount": 5
+  },
   "The Circle Undone (tcu)":{
     "tokenType": "doom",
     "tokenCount": 0
@@ -956,6 +968,18 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
+  "Ineffable Truth": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Azure Flame (3)": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "Clairvoyance (3)": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
   "Ineffable Truth (3)": {
     "tokenType": "resource",
     "tokenCount": 3
@@ -973,6 +997,10 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenCount": 2
   },
   ".18 Derringer (2)": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Chainsaw (4)": {
     "tokenType": "resource",
     "tokenCount": 3
   },
