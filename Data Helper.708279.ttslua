@@ -948,9 +948,21 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 5
   },
+  "Esoteric Atlas (2)": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
   "The Necronomicon (5)": {
     "tokenType": "resource",
     "tokenCount": 6
+  },
+  "Mauser C96": {
+    "tokenType": "resource",
+    "tokenCount": 5
+  },
+  "Liquid Courage (1)": {
+    "tokenType": "resource",
+    "tokenCount": 4
   },
   "Beretta M1918 (4)": {
     "tokenType": "resource",
@@ -981,6 +993,18 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenCount": 3
   },
   "Ineffable Truth (3)": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Azure Flame (5)": {
+    "tokenType": "resource",
+    "tokenCount": 4
+  },
+  "Clairvoyance (5)": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Ineffable Truth (5)": {
     "tokenType": "resource",
     "tokenCount": 3
   },
