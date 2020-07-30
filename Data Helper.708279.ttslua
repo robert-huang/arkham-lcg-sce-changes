@@ -15,6 +15,7 @@ format is [location_guid -> clueCount]
 ]]
 LOCATIONS_DATA_JSON = [[
 {
+  "NotZ - The Gathering": {},
   "Study": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Study_670914": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Attic_377b20": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -26,6 +27,7 @@ LOCATIONS_DATA_JSON = [[
   "Far Above Your House": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Deep Below Your House": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
+  "NotZ - The Midnight Masks": {},
   "Northside_86faac": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Northside": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Graveyard": {"type": "perPlayer", "value": 2, "clueSide": "back"},
@@ -41,10 +43,12 @@ LOCATIONS_DATA_JSON = [[
   "Your House_377b20": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Your House_b28633": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
+  "NotZ - The Devourer Below": {},
   "Ritual Site": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Arkham Woods_e8e04b": {"type": "perPlayer", "value": 0, "clueSide": "back"},
   "Arkham Woods": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
+  "Standalone - Curse of the Rougarou": {},
   "New Orleans_5ab18a": {"type": "perPlayer", "value": 0, "clueSide": "back"},
   "New Orleans": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Riverside_ab9d69": {"type": "perPlayer", "value": 0, "clueSide": "back"},
@@ -54,6 +58,7 @@ LOCATIONS_DATA_JSON = [[
   "Unhallowed Land_552a1d": {"type": "perPlayer", "value": 0, "clueSide": "back"},
   "Unhallowed Land": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
+  "Standalone - Carnevale of Horrors": {},
   "Flooded Square": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Venetian Garden": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "The Guardian": {"type": "perPlayer", "value": 2, "clueSide": "back"},
@@ -63,6 +68,7 @@ LOCATIONS_DATA_JSON = [[
   "Streets of Venice": {"type": "fixed", "value": 2, "clueSide": "back"},
   "Rialto Bridge": {"type": "fixed", "value": 1, "clueSide": "back"},
 
+  "Standalone - Guardians of the Abyss": {},
   "Streets of Cairo": {"type":"perPlayer", "value": 2, "clueSide": "back"},
   "Cairo Bazaar": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Museum of Egyptian Antiquities": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -80,6 +86,7 @@ LOCATIONS_DATA_JSON = [[
   "Mist-Filled Caverns": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Eldritch Gate": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
+  "TDL - Extracurricular Activities": {},
   "Warren Observatory": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Science Building": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Orne Library": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -90,9 +97,11 @@ LOCATIONS_DATA_JSON = [[
   "Faculty Offices": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Faculty Offices_1c567d": {"type": "perPlayer", "value": 0, "clueSide": "back"},
 
+  "TDL - The House Always Wins": {},
   "La Bella Luna": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Back Hall Doorway": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
+  "TDL - The Miskatonic Museum": {},
   "Museum Entrance": {"type": "fixed", "value": 2, "clueSide": "back"},
   "Security Office": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Security Office_fcb3e4": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -105,6 +114,7 @@ LOCATIONS_DATA_JSON = [[
   "Exhibit Hall_2d87e6": {"type": "perPlayer", "value": 0, "clueSide": "back"},
   "Exhibit Hall_da02ea": {"type": "perPlayer", "value": 0, "clueSide": "back"},
 
+  "TDL - The Essex County Express": {},
   "Train Car": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Train Car_f3f902": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Train Car_905f69": {"type": "perPlayer", "value": 2, "clueSide": "back"},
@@ -115,6 +125,7 @@ LOCATIONS_DATA_JSON = [[
   "Train Car_0fb5f0": {"type": "perPlayer", "value": 3, "clueSide": "back"},
   "Engine Car": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 
+  "TDL - Blood on the Altar": {},
   "House in the Reeds": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Osborn's General Store": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Congregational Church": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -122,6 +133,7 @@ LOCATIONS_DATA_JSON = [[
   "Burned Ruins": {"type": "fixed", "value": 3, "clueSide": "back"},
   "Schoolhouse": {"type": "fixed", "value": 1, "clueSide": "back"},
 
+  "TDL - Undimensioned and Unseen": {},
   "Dunwich Village": {"type": "fixed", "value": 1, "clueSide": "back"},
   "Dunwich Village_ac4427": {"type": "fixed", "value": 3, "clueSide": "back"},
   "Cold Spring Glen": {"type": "fixed", "value": 0, "clueSide": "back"},
@@ -134,6 +146,7 @@ LOCATIONS_DATA_JSON = [[
   "Devil's Hop Yard": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Devil's Hop Yard_f7dd31": {"type": "fixed", "value": 2, "clueSide": "back"},
 
+  "TDL - Where Doom Awaits": {},
   "Base of the Hill": {"type": "fixed", "value": 3, "clueSide": "back"},
   "Base of the Hill_de3ca2": {"type": "fixed", "value": 0, "clueSide": "back"},
   "Ascending Path": {"type": "fixed", "value": 3, "clueSide": "back"},
@@ -143,6 +156,7 @@ LOCATIONS_DATA_JSON = [[
   "Diverging Path_7239aa": {"type": "fixed", "value": 0, "clueSide": "back"},
   "Altered Path": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
+  "TDL - Lost in Time and Space": {},
   "The Edge of the Universe": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Tear Through Time": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Prismatic Cascade": {"type": "fixed", "value": 3, "clueSide": "front"},
@@ -154,6 +168,7 @@ LOCATIONS_DATA_JSON = [[
   "Unstable Vortex": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Indecipherable Stairs": {"type": "fixed", "value": 1, "clueSide": "front"},
 
+  "PtC - Curtain Call": {},
   "Backstage Doorway": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Backstage Doorway_0797a9": {"type": "fixed", "value": 0, "clueSide": "back"},
   "Lobby Doorway": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -162,8 +177,10 @@ LOCATIONS_DATA_JSON = [[
   "Backstage": {"type": "fixed", "value": 1, "clueSide": "back"},
   "Balcony": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
+  "PtC - The Last King": {},
   "Foyer": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
+  "PtC - Echoes of the Past": {},
   "Historical Society": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Historical Society_40f79d": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Historical Society_b352f8": {"type": "perPlayer", "value": 2, "clueSide": "back"},
@@ -172,6 +189,7 @@ LOCATIONS_DATA_JSON = [[
   "Historical Society_ab6a72": {"type": "fixed", "value": 1, "clueSide": "back"},
   "Hidden Library": {"type": "perPlayer", "value": 3, "clueSide": "back"},
 
+  "PtC - The Unspeakable Oath": {},
   "Patient Confinement": {"type": "fixed", "value": 1, "clueSide": "back"},
   "Asylum Halls": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Asylum Halls_f99530": {"type": "fixed", "value": 0, "clueSide": "back"},
@@ -183,6 +201,7 @@ LOCATIONS_DATA_JSON = [[
   "Kitchen": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Mess Hall": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 
+  "PtC - A Phantom of Truth": {},
   "Grand Guignol": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Montmartre": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Montmartre_cbaacc": {"type": "perPlayer", "value": 0, "clueSide": "front"},
@@ -195,6 +214,7 @@ LOCATIONS_DATA_JSON = [[
   "Gardens of Luxembourg": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Père Lachaise Cemetery": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 
+  "PtC - The Pallid Mask": {},
   "Catacombs": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Catacombs_29170f": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Catacombs_f1237c": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -207,6 +227,7 @@ LOCATIONS_DATA_JSON = [[
   "Catacombs_7c7f4a": {"type": "fixed", "value": 0, "clueSide": "back"},
   "Catacombs_80cf41": {"type": "fixed", "value": 0, "clueSide": "back"},
 
+  "PtC - Black Stars Rise": {},
   "Abbey Church": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Porte de l'Avancée": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Grand Rue": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -222,6 +243,7 @@ LOCATIONS_DATA_JSON = [[
   "Abbey Tower": {"type": "perPlayer", "value": 3, "clueSide": "back"},
   "Abbey Tower_2f3d21": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 
+  "PtC - Dim Carcosa": {},
   "Shores of Hali": {"type": "perPlayer", "value": 2, "clueSide": "front"},
   "Dark Spires": {"type": "perPlayer", "value": 2, "clueSide": "front"},
   "Palace of the King": {"type": "perPlayer", "value": 3, "clueSide": "front"},
@@ -234,6 +256,7 @@ LOCATIONS_DATA_JSON = [[
   "The Throne Room": {"type": "perPlayer", "value": 2, "clueSide": "front"},
   "Stage of the Ward Theatre": {"type": "perPlayer", "value": 2, "clueSide": "front"},
 
+  "TFA - The Untamed Wilds": {},
   "Serpent’s Haven": {"type": "perPlayer", "value": 2, "clueSide": "front"},
   "Ruins of Eztli": {"type": "perPlayer", "value": 2, "clueSide": "front"},
   "Rope Bridge": {"type": "perPlayer", "value": 1, "clueSide": "front"},
@@ -243,6 +266,7 @@ LOCATIONS_DATA_JSON = [[
   "Temple of the Fang": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Circuitous Trail": {"type": "perPlayer", "value": 1, "clueSide": "front"},
 
+  "TFA - The Doom of Etzli": {},
   "Chamber of Time": {"type": "perPlayer", "value": 2, "clueSide": "front"},
   "Ancient Hall": {"type": "perPlayer", "value": 2, "clueSide": "front"},
   "Grand Chamber": {"type": "perPlayer", "value": 1, "clueSide": "front"},
@@ -251,6 +275,7 @@ LOCATIONS_DATA_JSON = [[
   "Burial Pit": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Secret Passage": {"type": "perPlayer", "value": 1, "clueSide": "front"},
 
+  "TFA - Threads of Fate": {},
   "Town Hall": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Curiositie Shoppe": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "At the Station_7edfb0": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -258,6 +283,7 @@ LOCATIONS_DATA_JSON = [[
   "At the Station_28ebe1": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "At the Station_e59778": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 
+  "TFA - The Boundary Beyond": {},
   "Sacred Woods": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Chapultepec Hill": {"type": "perPlayer", "value": 2, "clueSide": "front"},
   "Chapultepec Hill_b5d586": {"type": "perPlayer", "value": 1, "clueSide": "front"},
@@ -269,6 +295,7 @@ LOCATIONS_DATA_JSON = [[
   "Temples of Tenochtitlán": {"type": "perPlayer", "value": 2, "clueSide": "front"},
   "Temples of Tenochtitlán_c097d8": {"type": "perPlayer", "value": 1, "clueSide": "front"},
 
+  "TFA - Heart of the Elders": {},
   "Mouth of K'n-yan": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Stone Altar": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Time-Wracked Woods": {"type": "perPlayer", "value": 2, "clueSide": "front"},
@@ -278,6 +305,7 @@ LOCATIONS_DATA_JSON = [[
   "Hall of Idolatry": {"type": "perPlayer", "value": 2, "clueSide": "front"},
   "Crystal Pillars": {"type": "perPlayer", "value": 2, "clueSide": "front"},
 
+  "TFA - The City of Archives": {},
   "Interview Room": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Interview Room_508f85": {"type": "perPlayer", "value": 0, "clueSide": "back"},
   "Interview Room_4440de": {"type": "perPlayer", "value": 0, "clueSide": "back"},
@@ -288,6 +316,7 @@ LOCATIONS_DATA_JSON = [[
   "Yithian Orrery": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Great Library": {"type": "fixed", "value": 4, "clueSide": "back"},
 
+  "TFA - The Depths of Yoth": {},
   "City of the Serpents": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Bridge over N'kai": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Abandoned Site": {"type": "perPlayer", "value": 1, "clueSide": "front"},
@@ -296,11 +325,11 @@ LOCATIONS_DATA_JSON = [[
   "Bright Canyon": {"type": "perPlayer", "value": 2, "clueSide": "front"},
   "Forked Path": {"type": "perPlayer", "value": 2, "clueSide": "front"},
 
+  "TFA - Shattered Aeons": {},
   "Nexus of N'kai": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "A Pocket in Time": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "City of the Unseen": {"type": "fixed", "value": 1, "clueSide": "front"},
   "Valusia": {"type": "fixed", "value": 2, "clueSide": "front"},
-
   "Shores of R’lyeh": {"type": "fixed", "value": 2, "clueSide": "front"},
   "Atlantis": {"type": "fixed", "value": 2, "clueSide": "front"},
   "Pnakotus": {"type": "fixed", "value": 3, "clueSide": "front"},
@@ -309,6 +338,14 @@ LOCATIONS_DATA_JSON = [[
   "Yuggoth": {"type": "fixed", "value": 3, "clueSide": "front"},
   "Mu": {"type": "fixed", "value": 4, "clueSide": "front"},
 
+  "TCU - The Witching Hour": {},
+  "Witch-Haunted Woods_1539ea": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Witch-Haunted Woods": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Witch-Haunted Woods_d3f8c3": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Witch-Haunted Woods_eca18e": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Paths into Twilight": {"type": "perPlayer", "value": 3, "clueSide": "back"},
+
+  "TCU - At Death's Doorstep": {},
   "Billiards Room": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Billiards Room_33990b": {"type": "perPlayer", "value": 0, "clueSide": "back"},
   "Trophy Room": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -317,32 +354,8 @@ LOCATIONS_DATA_JSON = [[
   "Balcony_1b5483": {"type": "fixed", "value": 0, "clueSide": "back"},
   "Office": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Office_a1bd9a": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-  "Witch-Haunted Woods_1539ea": {"type": "perPlayer", "value": 2, "clueSide": "back"},
-  "Witch-Haunted Woods": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-  "Witch-Haunted Woods_d3f8c3": {"type": "perPlayer", "value": 2, "clueSide": "back"},
-  "Witch-Haunted Woods_eca18e": {"type": "perPlayer", "value": 2, "clueSide": "back"},
-  "Paths into Twilight": {"type": "perPlayer", "value": 3, "clueSide": "back"},
 
-  "The Imperial Entrance": {"type": "fixed", "value": 1, "clueSide": "back"},
-  "Dark Stairwell": {"type": "fixed", "value": 1, "clueSide": "back"},
-  "Stairway": {"type": "fixed", "value": 1, "clueSide": "back"},
-  "The Balcony": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-  "The Back Booths": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-  "The Lobby": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-  "Backroom Door": {"type": "perPlayer", "value": 2, "clueSide": "back"},
-  "Backroom Door_ed439d": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-  "The Dining Area": {"type": "perPlayer", "value": 2, "clueSide": "back"},
-  "The Dance Floor": {"type": "perPlayer", "value": 2, "clueSide": "back"},
-  "Gateway to the East": {"type": "fixed", "value": 1, "clueSide": "back"},
-  "Back Alley": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-  "Mingzhu Laundry": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-  "The Dragon's Den": {"type": "perPlayer", "value": 1, "clueSide": "front"},
-  "The Phoenix's Nest": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-  "Golden Temple of the Heavens": {"type": "perPlayer", "value": 2, "clueSide": "back"},
-  "Flea Market": {"type": "perPlayer", "value": 2, "clueSide": "back"},
-  "Zihao's House of Fighting Arts": {"type": "perPlayer", "value": 2, "clueSide": "back"},
-  "Daiyu's Tea Garden": {"type": "perPlayer", "value": 2, "clueSide": "back"},
-
+  "TCU - The Secret Name": {},
   "Moldy Halls": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Decrepit Door": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Walter Gilman's Room": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -354,10 +367,12 @@ LOCATIONS_DATA_JSON = [[
   "Strange Geometry": {"type": "fixed", "value": 1, "clueSide": "front"},
   "Site of the Sacrifice": {"type": "perPlayer", "value": 3, "clueSide": "back"},
 
+  "TCU - The Wages of Sin": {},
   "Hangman's Brook": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Abandoned Chapel": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Haunted Fields": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 
+  "TCU - For the Greater Good": {},
   "Lobby_1c2dfe": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Lobby_bcd556": {"type": "perPlayer", "value": 0, "clueSide": "back"},
   "Lodge Gates_fa6a29": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -372,10 +387,12 @@ LOCATIONS_DATA_JSON = [[
   "Sanctum Doorway": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Sanctum Doorway_4da6c3": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
+  "TCU - Union and Disillusion": {},
   "The Geist-Trap": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Forbidding Shore": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Unvisited Isle": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 
+  "TCU - In the Clutches of Chaos": {},
   "Rivertown_92ee68": {"type": "fixed", "value": 0, "clueSide": "back"},
   "Rivertown_db4b20": {"type": "fixed", "value": 0, "clueSide": "back"},
   "Southside_c898a0": {"type": "fixed", "value": 0, "clueSide": "back"},
@@ -385,6 +402,7 @@ LOCATIONS_DATA_JSON = [[
   "Hangman's Hill": {"type": "fixed", "value": 0, "clueSide": "back"},
   "Hangman's Hill_5f4d8a": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
+  "TCU - Before the Black Throne": {},
   "Cosmic Ingress": {"type": "fixed", "value": 3, "clueSide": "back"},
   "Cosmos": {"type": "fixed", "value": 1, "clueSide": "back"},
   "Cosmos_a89dbf": {"type": "fixed", "value": 2, "clueSide": "back"},
@@ -396,11 +414,13 @@ LOCATIONS_DATA_JSON = [[
   "Cosmos_7a3ece": {"type": "fixed", "value": 6, "clueSide": "back"},
   "Cosmos_311eb1": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 
+  "TDE - Beyond the Gates of Sleep": {},
   "Seventy Steps": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Seven Hundred Steps": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Base of the Steps": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Enchanted Woods": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
+  "TDE - Waking Nightmare": {},
   "Stairwell": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Basement Door_42fa87": {"type": "perPlayer", "value": 0, "clueSide": "back"},
   "Basement Door": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -409,6 +429,7 @@ LOCATIONS_DATA_JSON = [[
   "Experimental Therapies Ward": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Records Office": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 
+  "Standalone - Murder at the Excelsior Hotel": {},
   "Foyer_9a9f9a": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Room 245": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Hotel Roof": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -420,6 +441,7 @@ LOCATIONS_DATA_JSON = [[
   "Restaurant": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Suite Balcony": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
+  "TDE - The Search for Kadath": {},
   "Ulthar": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Dylath-Leen": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Mt. Ngranek": {"type": "perPlayer", "value": 1, "clueSide": "front"},
@@ -436,6 +458,7 @@ LOCATIONS_DATA_JSON = [[
   "Hazuth-Kleg": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Serannian": {"type": "perPlayer", "value": 1, "clueSide": "front"},
 
+  "TDE - A Thousand Shapes of Horror": {},
   "Mysterious Stairs": {"type": "perPlayer", "value": 0, "clueSide": "back"},
   "Mysterious Stairs_df1a40": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Attic_10faf9": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -446,6 +469,7 @@ LOCATIONS_DATA_JSON = [[
   "Downstairs Doorway_c93906": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Burial Ground": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
+  "TDE - Dark Side of the Moon": {},
   "Temple of the Moon Lizard": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "City of the Moon-Beasts": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Moon-Forest": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -454,6 +478,7 @@ LOCATIONS_DATA_JSON = [[
   "The Black Core": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Light Side of the Moon": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
+  "TDE - Point of No Return": {},
   "City of Gugs": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Vaults of Zin": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Plain of the Ghouls": {"type": "perPlayer", "value": 1, "clueSide": "front"},
@@ -462,12 +487,14 @@ LOCATIONS_DATA_JSON = [[
   "Crag of the Ghouls": {"type": "perPlayer", "value": 2, "clueSide": "front"},
   "Sea of Pitch": {"type": "perPlayer", "value": 1, "clueSide": "front"},
 
+  "TDE - Where the Gods Dwell": {},
   "Plateau of Leng": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Cold Wastes": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Monastery of Leng": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Onyx Gates": {"type": "fixed", "value": 12, "clueSide": "back"},
   "Forsaken Tower": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
+  "Standalone - The Blob That Ate Everything": {},
   "The Crater": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Quarantine Zone": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Quarantine Zone_5f2a9b": {"type": "perPlayer", "value": 0, "clueSide": "back"},
@@ -475,12 +502,36 @@ LOCATIONS_DATA_JSON = [[
   "Quarantine Zone_5193e9": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Quarantine Zone_b3a920": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 
+  "TDE - Weaver of the Cosmos": {},
   "The Great Web": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "The Great Web_39ace3": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "The Great Web_727790": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "The Great Web_5c5ec4": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "The Great Web_361fd7": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "The Great Web_dfdc8c": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+
+  "Idol Thoughts - Bread and Circuses": {},
+  "The Imperial Entrance": {"type": "fixed", "value": 1, "clueSide": "back"},
+  "Dark Stairwell": {"type": "fixed", "value": 1, "clueSide": "back"},
+  "Stairway": {"type": "fixed", "value": 1, "clueSide": "back"},
+  "The Balcony": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "The Back Booths": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "The Lobby": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Backroom Door": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Backroom Door_ed439d": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "The Dining Area": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "The Dance Floor": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+
+  "Idol Thoughts - Enter the Dragon": {},
+  "Gateway to the East": {"type": "fixed", "value": 1, "clueSide": "back"},
+  "Back Alley": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Mingzhu Laundry": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "The Dragon's Den": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "The Phoenix's Nest": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Golden Temple of the Heavens": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Flea Market": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Zihao's House of Fighting Arts": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Daiyu's Tea Garden": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 
   "XXXX": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "xxx": {"type": "perPlayer", "value": 2, "clueSide": "back"}
