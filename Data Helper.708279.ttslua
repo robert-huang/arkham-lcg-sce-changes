@@ -995,6 +995,14 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 4
   },
+  "Encyclopedia": {
+    "tokenType": "resource",
+    "tokenCount": 5
+  },
+  "Feed the Mind": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
   "Forbidden Tome": {
     "tokenType": "resource",
     "tokenCount": 5
@@ -1015,6 +1023,10 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 4
   },
+  "Mauser C96 (2)": {
+    "tokenType": "resource",
+    "tokenCount": 5
+  },
   "Beretta M1918 (4)": {
     "tokenType": "resource",
     "tokenCount": 4
@@ -1032,6 +1044,10 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenCount": 3
   },
   "Ineffable Truth": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Grotesque Statue (2)": {
     "tokenType": "resource",
     "tokenCount": 3
   },
