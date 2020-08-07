@@ -12,6 +12,8 @@ function onLoad()
   subnameCards={{name="Randolph Carter",xp=0},{name="Dream Diary",xp=3},{name="Relic of Ages",xp=0},{name="The Necronomicon",xp=0},{name="Archaic Glyphs",xp=3},{name="Strange Solution",xp=4},{name="Relic of Ages",xp=0}, {name="Ancient Stone",xp=4}, {"Dream Diary",xp=0}}
   extraPermanents={["Duke"]=true,["Sophie"]=true}
   multiClassCards={{name=".45 Thompson",xp=3},{name="Scroll of Secrets",xp=3},{name="Tennessee Sour Mash",xp=3},{name="Enchanted Blade",xp=3},{name="Grisly Totem",xp=3}}
+  returningCards={{name="On Your Own"}}
+  advancedSignatures={{name="Daisy's Tote Bag"},{name="The Necronomicon"}}
 --  bondedCards={{name="Hallowed Mirror",bondedName="Soothing Melody",bondedCode=05314,copies=3},{name="Occult Lexicon",bondedName="Blood-Rite",bondedCode=05317,copies=3}}
   privateDeck = true
   permanents = true
@@ -211,6 +213,12 @@ function cardReadCallback(req)
     cardList[JsonCardRes.code].cardName = JsonCardRes.real_name .. " (" .. JsonCardRes.xp .. ")"
   end
 
+  -- Make Subname blank if it does not exist
+  if (JsonCardRes.subname == nil and (JsonCardRes.subtype_name ~= "Basic Weakness" and JsonCardRes.subtype_name ~= "Weakness"))
+	then
+	  cardList[JsonCardRes.code].subName = ""
+  end
+
   -- Check for subname
   for k,v in pairs(subnameCards) do
     if (v.name == JsonCardRes.real_name and (v.xp == JsonCardRes.xp or JsonCardRes.xp == nil))
@@ -225,6 +233,27 @@ function cardReadCallback(req)
     then
       cardList[JsonCardRes.code].subName = JsonCardRes.faction_name
     end
+  end
+
+  -- Check for returning cards (cards with the same name/level but different and from a new set)
+  for k,v in pairs(returningCards) do
+	if (v.name == JsonCardRes.real_name and JsonCardRes.pack_name  == "Return to the Forgotten Age")
+	then
+	  cardList[JsonCardRes.code].subName = "Permanent"
+	end
+  end
+
+  -- Check for advanced signature cards (this happens after subname check, so it should be fine)
+  for k,v in pairs(advancedSignatures) do
+	if (v.name == JsonCardRes.real_name and JsonCardRes.pack_name == "Read or Die")
+	then
+		if (v.name == "Daisy's Tote Bag")
+		then
+		  cardList[JsonCardRes.code].subName = "Advanced"
+		else
+		  cardList[JsonCardRes.code].subName = "John Dee Translation (Advanced)"
+		end
+	end
   end
 
   -- Check if card is permanent (if separation is selected)
