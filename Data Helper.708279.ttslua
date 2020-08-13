@@ -265,15 +265,24 @@ LOCATIONS_DATA_JSON = [[
   "Path of Thorns": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Temple of the Fang": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Circuitous Trail": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Riverside Temple": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Waterfall": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Trail of the Dead": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Cloud Forest": {"type": "perPlayer", "value": 2, "clueSide": "front"},
 
   "TFA - The Doom of Etzli": {},
   "Chamber of Time": {"type": "perPlayer", "value": 2, "clueSide": "front"},
   "Ancient Hall": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Ancient Hall_b9acb8": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Grand Chamber": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Entryway": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Underground Ruins": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Burial Pit": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Secret Passage": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Snake Pit": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Throne Room": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Mosaic Chamber": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Tomb of the Ancients": {"type": "perPlayer", "value": 1, "clueSide": "front"},
 
   "TFA - Threads of Fate": {},
   "Town Hall": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -282,6 +291,9 @@ LOCATIONS_DATA_JSON = [[
   "At the Station_e2806c": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "At the Station_28ebe1": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "At the Station_e59778": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Search for the Meaning": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Seeking Trouble": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Seeking Trouble_42f93b": {"type": "perPlayer", "value": 0, "clueSide": "back"},
 
   "TFA - The Boundary Beyond": {},
   "Sacred Woods": {"type": "perPlayer", "value": 1, "clueSide": "front"},
@@ -294,6 +306,10 @@ LOCATIONS_DATA_JSON = [[
   "Templo Mayor_f3c531": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Temples of Tenochtitlán": {"type": "perPlayer", "value": 2, "clueSide": "front"},
   "Temples of Tenochtitlán_c097d8": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Ruins of K’n-yan": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Chthonian Depths": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Subterranean Swamp": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Treacherous Descent": {"type": "perPlayer", "value": 1, "clueSide": "front"},
 
   "TFA - Heart of the Elders": {},
   "Mouth of K'n-yan": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -307,14 +323,15 @@ LOCATIONS_DATA_JSON = [[
 
   "TFA - The City of Archives": {},
   "Interview Room": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-  "Interview Room_508f85": {"type": "perPlayer", "value": 0, "clueSide": "back"},
-  "Interview Room_4440de": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+  "Interview Room_b1861c": {"type": "perPlayer", "value": 0, "clueSide": "back"},
   "Halls of Pnakotus": {"type": "fixed", "value": 1, "clueSide": "back"},
   "Deconstruction Room": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Towers of Pnakotus": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Laboratory of the Great Race": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Yithian Orrery": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Great Library": {"type": "fixed", "value": 4, "clueSide": "back"},
+  "Cyclopean Vaults": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Alien Conservatory": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
   "TFA - The Depths of Yoth": {},
   "City of the Serpents": {"type": "perPlayer", "value": 1, "clueSide": "front"},
@@ -330,6 +347,9 @@ LOCATIONS_DATA_JSON = [[
   "A Pocket in Time": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "City of the Unseen": {"type": "fixed", "value": 1, "clueSide": "front"},
   "Valusia": {"type": "fixed", "value": 2, "clueSide": "front"},
+  "Great Hall of Celeano": {"type": "fixed", "value": 3, "clueSide": "front"},
+  "Buenos Aires": {"type": "fixed", "value": 3, "clueSide": "front"},
+  "Ultima Thule": {"type": "fixed", "value": 2, "clueSide": "front"},
   "Shores of R’lyeh": {"type": "fixed", "value": 2, "clueSide": "front"},
   "Atlantis": {"type": "fixed", "value": 2, "clueSide": "front"},
   "Pnakotus": {"type": "fixed", "value": 3, "clueSide": "front"},
@@ -831,15 +851,19 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 7
   },
+  "Truth from Fiction (2)": {
+    "tokenType": "resource",
+    "tokenCount": 3
+  },
+  "Colt Vest Pocket (2)": {
+    "tokenType": "resource",
+    "tokenCount": 5
+  },
   "The Chthonian Stone (3)": {
     "tokenType": "resource",
     "tokenCount": 3
   },
   "Mists of R'lyeh (2)": {
-    "tokenType": "resource",
-    "tokenCount": 5
-  },
-  "Colt Vest Pocket (2)": {
     "tokenType": "resource",
     "tokenCount": 5
   },
