@@ -12,10 +12,10 @@ function onLoad()
   subnameCards={{name="Randolph Carter",xp=0},{name="Dream Diary",xp=3},{name="Relic of Ages",xp=0},{name="The Necronomicon",xp=0},{name="Archaic Glyphs",xp=3},{name="Strange Solution",xp=4},{name="Ancient Stone",xp=4},{name="Empower Self",xp=2}}
   bondedCardsOneThree={{name="Hallowed Mirror",bondedName="Soothing Melody",bondedCode=05314},{name="Occult Lexicon",bondedName="Blood-Rite",bondedCode=05317},{name="The Hungering Blade",bondedName="Bloodlust",bondedCode=06019},{name="Nightmare Bauble",bondedName="Dream Parasite",bondedCode=06331},{name="Miss Doyle",bondedName="Hope",bondedCode=06031,bondedNameSecond="Zeal",bondedCodeSecond=06032,bondedNameThird="Augur",bondedCodeThird=06033}}
   bondedCardsBoolean = {{name="Gate Box",bondedName="Dream-Gate",bondedCode="06015a",bondCount=1},{name="Crystallizer of Dreams",bondedName="Guardian of the Crystallizer",bondedCode=06025,bondCount=2},{name="Dream Diary",bondedName="Essence of the Dream",bondedCode=06113,bondCount=1},{name="Empty Vessel",bondedName="Wish Eater",bondedCode=06277,bondCount=1},{name="Segment of Onyx",bondedName="Pendant of the Queen",bondedCode=06022,bondCount=1},{name="Stargazing",bondedName="The Stars Are Right",bondedCode=06028,bondCount=2},{name="Summoned Hound",bondedName="Unbound Beast",bondedCode=06283,bondCount=2}}
-  extraPermanents={["Duke"]=true,["Sophie"]=true,["Gate Box"]=true}
+  extraPermanents={["Duke"]=true,["Sophie"]=true,["Gate Box"]=true,["Dark Insight"]=true}
   multiClassCards={{name=".45 Thompson",xp=3},{name="Scroll of Secrets",xp=3},{name="Tennessee Sour Mash",xp=3},{name="Enchanted Blade",xp=3},{name="Grisly Totem",xp=3}}
   returningCards={{name="On Your Own"}}
-  advancedSignatures={{name="Daisy's Tote Bag"},{name="The Necronomicon"}}
+  advancedSignatures={{name="Daisy's Tote Bag"},{name="The Necronomicon"},{name="On the Lam"},{name="Hospital Debts"}}
 --  bondedCards={{name="Hallowed Mirror",bondedName="Soothing Melody",bondedCode=05314,copies=3},{name="Occult Lexicon",bondedName="Blood-Rite",bondedCode=05317,copies=3}}
   privateDeck = true
   permanents = true
@@ -247,15 +247,18 @@ function cardReadCallback(req)
 
   -- Check for advanced signature cards (this happens after subname check, so it should be fine)
   for k,v in pairs(advancedSignatures) do
-	if (v.name == JsonCardRes.real_name and JsonCardRes.pack_name == "Read or Die")
-	then
-		if (v.name == "Daisy's Tote Bag")
-		then
-		  cardList[JsonCardRes.code].subName = "Advanced"
-		else
-		  cardList[JsonCardRes.code].subName = "John Dee Translation (Advanced)"
-		end
-	end
+  	if (v.name == JsonCardRes.real_name)
+  	then
+      if (JsonCardRes.pack_name == "Read or Die" or JsonCardRes.pack_name == "All or Nothing")
+  	  then
+  	    if (v.name == "The Necronomicon")
+  	    then
+          cardList[JsonCardRes.code].subName = "John Dee Translation (Advanced)"
+  	    else
+          cardList[JsonCardRes.code].subName = "Advanced"
+   	    end
+  	  end
+  	end
   end
 
   -- Check if card is permanent (if separation is selected)
