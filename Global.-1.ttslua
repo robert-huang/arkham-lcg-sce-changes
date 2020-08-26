@@ -20,7 +20,7 @@ CACHE = {
 --[[ The OnLoad function. This is called after everything in the game save finishes loading.
 Most of your script code goes here. --]]
 function onload()
-  Player.White.changeColor('Yellow')
+  --Player.White.changeColor('Yellow')
   tokenplayerone = {
     damageone = "https://i.imgur.com/XIJHw3J.png",
     damagethree = "https://i.imgur.com/eqRC712.png",
@@ -52,7 +52,7 @@ end
 -- Remove comments to enable autorotate cards on hands.
 -- function onObjectEnterScriptingZone(zone, object)
 -- Autorotate cards with right side up when entering hand.
---      if zone.getGUID() == "c506bf" or   -- yellow
+--      if zone.getGUID() == "c506bf" or   -- white
 --         zone.getGUID() == "cbc751" then -- orange
 --         object.setRotationSmooth({0,270,0})
 -- elseif zone.getGUID() == "67ce9a" then -- green
@@ -275,12 +275,13 @@ function spawnToken(params)
   local token = spawnObject({
     type = 'Custom_Token',
     position = position,
+	rotation = {x=0, y=270, z=0}
   })
   token.setCustomObject({
     image = tokenData['image'],
-    thickness = 0.1,
+    thickness = 0.3,
     merge_distance = 5.0,
-    stackable = false,
+    stackable = true,
   })
   token.use_snap_points=false
   token.scale(tokenData['scale'])

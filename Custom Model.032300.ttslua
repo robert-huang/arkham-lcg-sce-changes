@@ -18,7 +18,6 @@ validCountItemList = {
 
 function onLoad()
     timerID = self.getGUID()..math.random(9999999999999)
-
     --Sets position/color for the button, spawns it
     self.createButton({
         label="", click_function="removeAllClues", function_owner=self,
@@ -31,9 +30,8 @@ function onLoad()
         function_name="countItems", function_owner=self,
         repetitions=0, delay=1
     })
-    exposedValue = 0
-    trashCan = getObjectFromGUID("5f896a")
-
+    exposedValue = 0 
+    trashCan = getObjectFromGUID("147e80")
 end
 
 function findValidItemsInSphere()
@@ -54,7 +52,6 @@ function countItems()
             --Otherwise use the value in validCountItemList
             totalValue = totalValue + validCountItemList[entry.hit_object.getName()] * stackMult
         end
-
     end
     exposedValue = totalValue
     --Updates the number display
@@ -87,7 +84,7 @@ function findItemsInSphere()
     --Ray trace to get all objects
     return Physics.cast({
         origin=pos, direction={0,1,0}, type=2, max_distance=0,
-        size={13*scale.x,13*scale.y,13*scale.z}, --debug=true
+        size={6*scale.x,6*scale.y,6*scale.z}, --debug=true
     })
 end
 

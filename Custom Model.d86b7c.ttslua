@@ -84,7 +84,7 @@ function findItemsInSphere()
     --Ray trace to get all objects
     return Physics.cast({
         origin=pos, direction={0,1,0}, type=2, max_distance=0,
-        size={13*scale.x,13*scale.y,13*scale.z}, --debug=true
+        size={6*scale.x,6*scale.y,6*scale.z}, --debug=true
     })
 end
 

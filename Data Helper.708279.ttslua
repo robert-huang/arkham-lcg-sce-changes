@@ -262,7 +262,7 @@
 	  "Temples of Tenochtitlán": {"type": "perPlayer", "value": 2, "clueSide": "front"},
 	  "Temples of Tenochtitlán_80cef8": {"type": "perPlayer", "value": 1, "clueSide": "front"},
 
-	  "Mouth of K'n-yan": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Mouth of K'n-yan_38a3e5": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 	  "Stone Altar": {"type": "perPlayer", "value": 1, "clueSide": "front"},
 	  "Time-Wracked Woods": {"type": "perPlayer", "value": 2, "clueSide": "front"},
 	  "Vast Passages": {"type": "perPlayer", "value": 1, "clueSide": "front"},
@@ -1447,11 +1447,37 @@
 		normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'red', 'blue' } },
 		hard = { token = { '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm5', 'skull', 'skull', 'cultist', 'tablet', 'red', 'blue' } }
 	  },
+	  ['War of the Worlds'] = {
+		easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'elder', 'red', 'blue' } },
+		normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'elder', 'red', 'blue' } },
+		hard = { token = { 'p1', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'skull', 'skull', 'elder', 'red', 'blue' } },
+		expert = { token = { '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'elder', 'red', 'blue' } }
+	  },
 	  ['Alice in Wonderland'] = {
 		easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'elder', 'red', 'blue' } },
 		normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'elder', 'red', 'blue' } },
 		hard = { token = { 'p1', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'skull', 'skull', 'elder', 'red', 'blue' } },
 		expert = { token = { '0', 'm1', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'skull', 'skull', 'elder', 'red', 'blue' } }
+	  },
+	  ['Pokemon'] = {
+		easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm2', 'm3', 'skull', 'skull', 'tablet', 'elder', 'red', 'blue' } },
+		normal = { token = { 'p1', '0', '0', '0', 'm1', 'm2', 'm2', 'm3', 'm5', 'skull', 'skull', 'tablet', 'elder', 'red', 'blue' } },
+		hard = { token = { 'p1', '0', '0', 'm1', 'm2', 'm3', 'm3', 'm4', 'm6', 'skull', 'skull', 'tablet', 'elder', 'red', 'blue' } },
+		expert = { token = { '0', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm6', 'm8', 'skull', 'skull', 'tablet', 'elder', 'red', 'blue' } }
+	  },
+	  ['Safari'] = {
+		normal = { token = { 'p1', '0', '0', '0', 'm1', 'm2', 'm2', 'm3', 'm5', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+		hard = { token = { 'p1', '0', '0', 'm1', 'm2', 'm3', 'm3', 'm4', 'm6', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+	  },
+	  ['Cerulean'] = {
+		normal = { token = { 'p1', '0', '0', '0', 'm1', 'm2', 'm2', 'm3', 'm5', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+		hard = { token = { 'p1', '0', '0', 'm1', 'm2', 'm3', 'm3', 'm4', 'm6', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+	  },
+	  ['Erich Zann'] = {
+		easy = { token = { 'p1', '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+		normal = { token = { 'p1', '0', 'm1', 'm1', 'm2', 'm3', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+		hard = { token = { '0', 'm1', 'm2', 'm3', 'm4', 'm4', 'm5', 'm6', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+		expert = { token = { '0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
 	  },
 	  ['XXXX'] = {
 		easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'tablet', 'red', 'blue' } },
