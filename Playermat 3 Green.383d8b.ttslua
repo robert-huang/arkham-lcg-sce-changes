@@ -7,11 +7,11 @@ COLLISION_ENABLED = false
 DRAWN_ENCOUNTER_CARD_OFFSET = {0.98, 0.5, -0.635}
 DRAWN_CHAOS_TOKEN_OFFSET = {-1.2, 0.5, -0.45}
 DISCARD_BUTTON_OFFSETS = {
-  {-0.98, 0.2, -0.935},
-  {-0.525, 0.2, -0.935},
-  {-0.07, 0.2, -0.935},
-  {0.39, 0.2, -0.935},
-  {0.84, 0.2, -0.935},
+  {-0.98, 0.2, -0.945},
+  {-0.525, 0.2, -0.945},
+  {-0.07, 0.2, -0.945},
+  {0.39, 0.2, -0.945},
+  {0.84, 0.2, -0.945},
 }
 
 -- the position of the global discard pile
