@@ -181,7 +181,16 @@ function onCollisionEnter(collision_info)
   local boundaryLocalToCard = object.positionToLocal(discardSpawnBoundary)
   if boundaryLocalToCard.x > 0 then
     log('not checking for token spawn, boundary relative is ' .. boundaryLocalToCard.x)
-    return
+    if object ~= nil and object.guid ~= nil then
+      if object.tag == 'Deck' then
+        for i,v in ipairs(object.getObjects()) do
+          if v.guid ~= nil then DATA_HELPER.call('setSpawnedPlayerCardGuid', {v.guid, false}) end
+        end
+      else
+        if object.tag == 'Card' then DATA_HELPER.call('setSpawnedPlayerCardGuid', {object.getGUID(), false}) end
+      end
+      return
+    end
   end
   if not object.is_face_down and shouldSpawnTokens(object) then
     spawnTokensFor(object)

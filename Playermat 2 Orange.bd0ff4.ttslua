@@ -178,14 +178,10 @@ function onCollisionEnter(collision_info)
   local object = collision_info.collision_object
   -- anything to the left of this is legal to spawn
   local discardSpawnBoundary = self.positionToWorld({-1.2, 0, 0})
-  if object.tag == 'Card' then print(discardSpawnBoundary) end
   local boundaryLocalToCard = object.positionToLocal(discardSpawnBoundary)
-  if object.tag == 'Card' then print(boundaryLocalToCard) end
   if boundaryLocalToCard.x > 0 then
-    print('out of bounds')
     log('not checking for token spawn, boundary relative is ' .. boundaryLocalToCard.x)
     if object ~= nil and object.guid ~= nil then
-      print('remove ' .. object.guid .. ' from spawned list')
       if object.tag == 'Deck' then
         for i,v in ipairs(object.getObjects()) do
           if v.guid ~= nil then DATA_HELPER.call('setSpawnedPlayerCardGuid', {v.guid, false}) end
