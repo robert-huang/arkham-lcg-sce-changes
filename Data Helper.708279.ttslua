@@ -956,7 +956,7 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenCount": 2
   },
   "Bounty Contracts": {
-    "tokenType": "resource",
+    "tokenType": "ammo",
     "tokenCount": 6
   },
   "Tony's .38 Long Colt": {
