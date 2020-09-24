@@ -1479,6 +1479,21 @@
 		hard = { token = { '0', 'm1', 'm2', 'm3', 'm4', 'm4', 'm5', 'm6', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
 		expert = { token = { '0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
 	  },
+	  ['Kaimonogatari'] = {
+		easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'red', 'blue' } },
+		normal = { token = { 'p1', '0', '0', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'skull', 'skull', 'cultist', 'red', 'blue' } },
+		hard = { token = { '0', '0', '0', 'm1', 'm2', 'm2', 'm3', 'm4', 'm4', 'm5', 'skull', 'skull', 'cultist', 'red', 'blue' } },
+		expert = { token = { '0', '0', 'm1', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm6', 'm8', 'skull', 'skull', 'cultist', 'red', 'blue' } }
+	  },	  
+	  ['Sleepy Hollow'] = {
+		normal = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm5', 'm6', 'skull', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+		hard = { token = { 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+	  },
+	  ['Flesh'] = {
+		easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm3', 'skull', 'skull', 'cultist', 'tablet', 'tablet', 'red', 'blue' } },
+		normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'tablet', 'red', 'blue' } },
+		hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm3', 'm3', 'm4', 'm4', 'm6', 'skull', 'skull', 'cultist', 'tablet', 'tablet', 'red', 'blue' } },
+	  },
 	  ['XXXX'] = {
 		easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'tablet', 'red', 'blue' } },
 		normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'red', 'blue' } },

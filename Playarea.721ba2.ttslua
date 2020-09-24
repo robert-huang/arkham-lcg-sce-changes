@@ -85,45 +85,59 @@ function getClueCount(object, isFaceDown, playerCount)
 end
 
 function spawnToken(position, number)
-  local obj_parameters = {}
-  obj_parameters.type = 'Custom_Token'
-  obj_parameters.position = position
-  obj_parameters.rotation = {3.87674022, -90, 0.239081308}
-  local token = spawnObject(obj_parameters)
-  local custom = {}
-  custom.thickness = 0.1
-  custom.merge_distance = 5.0
-  custom.stackable = true
-  if number == '1' then
-    custom.image = TOKEN_PLAYER_ONE.damageone
-    token.setCustomObject(custom)
-    token.scale {0.17, 1, 0.17}
-    return token
+  local obj_parameters = {
+    position = position,
+    rotation = {3.87674022, -90, 0.239081308}
+  }
+  local custom = {
+    thickness = 0.1,
+    stackable = true
+  }
+
+  if number == '1' or number == '2' then
+    obj_parameters.type = 'Custom_Token'
+    custom.merge_distance = 5.0
+    local token = spawnObject(obj_parameters)
+      if number == '1' then
+        custom.image = TOKEN_PLAYER_ONE.damageone
+        token.setCustomObject(custom)
+        token.scale {0.17, 1, 0.17}
+        return token
+      end
+
+      if number == '2' then
+        custom.image = TOKEN_PLAYER_ONE.damagethree
+        token.setCustomObject(custom)
+        token.scale {0.18, 1, 0.18}
+        return token
+      end
   end
 
-  if number == '2' then
-    custom.image = TOKEN_PLAYER_ONE.damagethree
-    token.setCustomObject(custom)
-    token.scale {0.18, 1, 0.18}
-    return token
+  if number == '3' or number == '4' then
+    obj_parameters.type = 'Custom_Tile'
+    custom.type = 2
+    local token = spawnObject(obj_parameters)
+    if number == '3' then
+      custom.image = TOKEN_PLAYER_ONE.clue
+      custom.image_bottom = TOKEN_PLAYER_ONE.doom
+      token.setCustomObject(custom)
+      token.scale {0.25, 1, 0.25}
+      token.use_snap_points=false
+      return token
+    end
+
+    if number == '4' then
+      custom.image = TOKEN_PLAYER_ONE.doom
+      custom.image_bottom = TOKEN_PLAYER_ONE.clue
+      token.setCustomObject(custom)
+      token.scale {0.25, 1, 0.25}
+      token.use_snap_points=false
+      return token
+    end
   end
 
-  if number == '3' then
-    custom.image = TOKEN_PLAYER_ONE.clue
-    token.setCustomObject(custom)
-    token.scale {0.15, 1, 0.15}
-    token.use_snap_points=false
-    return token
-  end
-
-  if number == '4' then
-    custom.image = TOKEN_PLAYER_ONE.doom
-    token.setCustomObject(custom)
-    token.scale {0.17, 1, 0.17}
-    token.use_snap_points=false
-    return token
-  end
 end
+
 
 function spawnCluesAtLocation(clueCount, collision_info)
   local object = collision_info.collision_object

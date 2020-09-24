@@ -38,15 +38,16 @@ function onload()
     doom = {image = tokenplayerone.doom, scale = {0.17, 0.17, 0.17}}
   }
 
-getObjectFromGUID("6161b4").interactable=false
-getObjectFromGUID("721ba2").interactable=false
-getObjectFromGUID("9f334f").interactable=false
-getObjectFromGUID("23a43c").interactable=false
-getObjectFromGUID("5450cc").interactable=false
-getObjectFromGUID("463022").interactable=false
-getObjectFromGUID("9487a4").interactable=false
-getObjectFromGUID("91dd9b").interactable=false
-getObjectFromGUID("f182ee").interactable=false
+  getObjectFromGUID("6161b4").interactable=false
+  getObjectFromGUID("721ba2").interactable=false
+  getObjectFromGUID("9f334f").interactable=false
+  getObjectFromGUID("23a43c").interactable=false
+  getObjectFromGUID("5450cc").interactable=false
+  getObjectFromGUID("463022").interactable=false
+  getObjectFromGUID("9487a4").interactable=false
+  getObjectFromGUID("91dd9b").interactable=false
+  getObjectFromGUID("f182ee").interactable=false
+
 end
 
 -- Remove comments to enable autorotate cards on hands.
