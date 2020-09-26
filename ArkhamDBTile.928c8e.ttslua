@@ -433,8 +433,8 @@ function makeText()
   local input_parameters = {}
   input_parameters.input_function = "inputTyped"
   input_parameters.function_owner = self
-  input_parameters.position = {0.7,0.2,-0.3}
-  input_parameters.width = 1620
+  input_parameters.position = {0.8,0.2,-0.3}
+  input_parameters.width = 2220
   input_parameters.scale = {0.1,0.1,0.1}
   input_parameters.height = 600
   input_parameters.font_size = 500
