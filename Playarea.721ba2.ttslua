@@ -28,6 +28,7 @@ function onload(save_state)
   if save_state ~= '' then
     SPAWNED_LOCATION_GUIDS = JSON.decode(save_state)
   end
+
   COLLISION_ENABLED = true
 end
 
@@ -181,6 +182,15 @@ function spawnCluesAtLocation(clueCount, collision_info)
     spawnToken(obj_parameters.position, '3')
     i = i + 1
   end
+end
+
+
+function updateLocations(args)
+    local custom_data_helper = getObjectFromGUID(args[1])
+    data_locations = custom_data_helper.getTable("LOCATIONS_DATA")
+    for k, v in pairs(data_locations) do
+        LOCATIONS[k] = v
+    end
 end
 
 function onCollisionEnter(collision_info)

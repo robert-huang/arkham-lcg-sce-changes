@@ -818,7 +818,7 @@
 		"tokenType": "resource",
 		"tokenCount": 3
 	  },
-	  "Dayana Esperence": {
+	  "Dayana Esperence (3)": {
 		"tokenType": "resource",
 		"tokenCount": 3
 	  },
@@ -1001,6 +1001,10 @@
 	  "Chainsaw (4)": {
 		"tokenType": "resource",
 		"tokenCount": 3
+	  },
+	  "Becky": {
+		"tokenType": "resource",
+		"tokenCount": 2
 	  },
 	  "xxx": {
 		"tokenType": "resource",

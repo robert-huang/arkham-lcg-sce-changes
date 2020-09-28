@@ -13,6 +13,9 @@ DISCARD_BUTTON_OFFSETS = {
   {0.39, 0.2, -0.945},
   {0.84, 0.2, -0.945},
 }
+-- draw deck and discard zone
+DECK_POSITION = { x=-1.4, y=0, z=0.3 }
+DECK_ZONE_SCALE = { x=3, y=5, z=8 }
 
 -- the position of the global discard pile
 -- TODO: delegate to global for any auto discard actions
@@ -96,7 +99,22 @@ function onload()
     font_size = 50
   })
 
+  local pos = self.positionToWorld(DECK_POSITION)
+  local zoneProps = {
+    position = pos,
+    scale = DECK_ZONE_SCALE,
+    type = 'ScriptingTrigger',
+    callback = 'zoneCallback',
+    callback_owner = self,
+    rotation = self.getRotation()
+  }
+  spawnObject(zoneProps)
+
   COLLISION_ENABLED = true
+end
+
+function zoneCallback(zone)
+    zoneID = zone.getGUID()
 end
 
 function findObjectsAtPosition(localPos)
@@ -170,12 +188,37 @@ function spawnTokensFor(object)
   markSpawned(object)
 end
 
+function resetSpawnState()
+    local zone = getObjectFromGUID(zoneID)
+    if zone == nil then return end
+
+    for i,object in ipairs(zone.getObjects()) do
+        if object.tag == "Card" then
+            local guid = object.getGUID()
+            if guid ~= nil then unmarkSpawned(guid, true) end
+        elseif object.tag == "Deck" then
+            local cards = object.getObjects()
+            if (cards ~= nil) then
+                for i,v in ipairs(cards) do
+                    if v.guid ~= nil then unmarkSpawned(v.guid) end
+                end
+            end
+        end
+    end
+end
+
+function unmarkSpawned(guid, force)
+  if not force and getObjectFromGUID(guid) ~= nil then return end
+  DATA_HELPER.call('setSpawnedPlayerCardGuid', {guid, false})
+end
+
 function onCollisionEnter(collision_info)
   if not COLLISION_ENABLED then
     return
   end
 
   local object = collision_info.collision_object
+  Wait.time(resetSpawnState, 1)
   -- anything to the left of this is legal to spawn
   local discardSpawnBoundary = self.positionToWorld({-1.2, 0, 0})
   local boundaryLocalToCard = object.positionToLocal(discardSpawnBoundary)
