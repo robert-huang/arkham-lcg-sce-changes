@@ -504,7 +504,18 @@
 	  "Tunnels under Ngranek": {"type": "perPlayer", "value": 1, "clueSide": "front"},
 	  "The Great Abyss": {"type": "perPlayer", "value": 1, "clueSide": "front"},
 	  "A Dream Betwixt": {"type": "perPlayer", "value": 0, "clueSide": "front"},
-
+	  
+	  "Velma's Doghouse": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+	  "Barkham City Pound": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+	  "Barkham Asylum": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Beasttown": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Tailside": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Slobbertown": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Snoutside": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Muttskatonic University": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Boneyard": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+	  "St. Mary's Animal Hospital": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+	  
 	  "XXXX": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 	  "xxx": {"type": "perPlayer", "value": 2, "clueSide": "back"}
 	}
@@ -1292,6 +1303,13 @@
 		hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
 		expert = { token = { '0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
 	  },
+	  
+	  ['Meowlathotep'] = {
+		easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+		normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+		hard = { token = { '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm5', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+		expert = { token = { '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
+	  },
 
 	  --fan-made
 	  ['Carnevale of Spiders'] = {
@@ -1497,6 +1515,12 @@
 		easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm3', 'skull', 'skull', 'cultist', 'tablet', 'tablet', 'red', 'blue' } },
 		normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'tablet', 'red', 'blue' } },
 		hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm3', 'm3', 'm4', 'm4', 'm6', 'skull', 'skull', 'cultist', 'tablet', 'tablet', 'red', 'blue' } },
+	  },
+	  ['Dark Matter'] = {
+		easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'cultist', 'red', 'blue' } },
+		normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'red', 'blue' } },
+		hard = { token = { '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm5', 'skull', 'skull', 'cultist', 'cultist', 'red', 'blue' } },
+		expert = { token = { '0', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'cultist', 'cultist', 'red', 'blue' } }
 	  },
 	  ['XXXX'] = {
 		easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'tablet', 'red', 'blue' } },
