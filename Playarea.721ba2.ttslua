@@ -189,3 +189,12 @@ function onCollisionEnter(collision_info)
     end
   end
 end
+
+-- support code for custom clue spawning from Axolotl's Custom Data Helper
+function updateLocations(args)
+    local custom_data_helper = getObjectFromGUID(args[1])
+    data_locations = custom_data_helper.getTable("LOCATIONS_DATA")
+    for k, v in pairs(data_locations) do
+        LOCATIONS[k] = v
+    end
+end
