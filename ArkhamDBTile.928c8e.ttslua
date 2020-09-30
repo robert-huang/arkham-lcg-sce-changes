@@ -110,12 +110,12 @@ function checkboxPPClicked()
   for k,v in pairs(buttons) do
     if (v.label == "Private deck") then
       local button_parameters = {}
-      button_parameters.label = "Public deck"
+      button_parameters.label = "Published deck"
       button_parameters.index = v.index
       tile.editButton(button_parameters)
       privateDeck = false
     else
-      if (v.label == "Public deck") then
+      if (v.label == "Published deck") then
         local button_parameters = {}
         button_parameters.label = "Private deck"
         button_parameters.index = v.index
@@ -438,7 +438,7 @@ function makeText()
   input_parameters.scale = {0.1,0.1,0.1}
   input_parameters.height = 600
   input_parameters.font_size = 500
-  input_parameters.tooltip = "*****PLEASE USE A PRIVATE DECK IF JUST FOR TTS TO AVOID FLOODING ARKHAMDB PUBLIC DECK LISTS!*****\nInput deck ID from ArkhamDB URL of the published version of the deck\nExample: For the URL 'https://arkhamdb.com/decklist/view/101/knowledge-overwhelming-solo-deck-1.0', you should input '101'"
+  input_parameters.tooltip = "*****PLEASE USE AN UNPUBLISHED DECK IF JUST FOR TTS TO AVOID FLOODING ARKHAMDB PUBLISHED DECK LISTS!*****\nInput deck ID from ArkhamDB URL of the deck\nExample: For the URL 'https://arkhamdb.com/decklist/view/101/knowledge-overwhelming-solo-deck-1.0', you should input '101'"
   input_parameters.alignment = 3 -- (1 = Automatic, 2 = Left, 3 = Center, 4 = Right, 5 = Justified) –Optional
   input_parameters.value=""
   tile.createInput(input_parameters)
@@ -460,10 +460,10 @@ function makeCheckboxPP()
   local checkbox_parameters = {}
   checkbox_parameters.click_function = "checkboxPPClicked"
   checkbox_parameters.function_owner = self
-  checkbox_parameters.position = {-0.7,0.2,-0.3}
+  checkbox_parameters.position = {-0.8,0.2,-0.3}
   checkbox_parameters.width = 2200
   checkbox_parameters.height = 500
-  checkbox_parameters.tooltip = "Click to toggle Private/Public deck ID"
+  checkbox_parameters.tooltip = "Click to toggle Private/Published deck ID"
   checkbox_parameters.label = "Private deck"
   checkbox_parameters.font_size = 350
   checkbox_parameters.scale = {0.1,0.1,0.1}
