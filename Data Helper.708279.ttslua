@@ -516,6 +516,28 @@
 	  "Boneyard": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 	  "St. Mary's Animal Hospital": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 	  
+	  "Unfamiliar Chamber": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Tidal Tunnel": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Tidal Tunnel_0f20fc": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+	  "Tidal Tunnel_d5566b": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+	  "Tidal Tunnel_dc9eb7": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+	  "Tidal Tunnel_513d82": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+	  
+	  "First National Grocery": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Marsh Refinery": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Innsmouth Square": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Innsmouth Harbour": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+	  "Fish Street Bridge": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Gilman House": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "The Little Bookshop": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+	  
+	  "Innsmouth Jail": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+	  "New Church Green": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+	  "Sawbone Alley": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+	  "The House on Water Street": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+	  "Shoreward Slums": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+	  "Esoteric Order of Dagon": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+	  
 	  "XXXX": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 	  "xxx": {"type": "perPlayer", "value": 2, "clueSide": "back"}
 	}
@@ -1017,6 +1039,22 @@
 		"tokenType": "resource",
 		"tokenCount": 2
 	  },
+	  "Book of Psalms": {
+		"tokenType": "resource",
+		"tokenCount": 4
+	  },
+	  "Cryptographic Cipher": {
+		"tokenType": "resource",
+		"tokenCount": 3
+	  },
+	  ".25 Automatic": {
+		"tokenType": "resource",
+		"tokenCount": 4
+	  },
+	  "Obfuscation": {
+		"tokenType": "resource",
+		"tokenCount": 3
+	  },
 	  "xxx": {
 		"tokenType": "resource",
 		"tokenCount": 3
@@ -1267,6 +1305,15 @@
 	  },
 	  ['Weaver of the Cosmos'] = {
 		standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'skull', 'cultist', 'elder', 'elder', 'red', 'blue' } }
+	  },
+	  
+	  
+	  -----------------The Innsmouth Conspiracy
+	  ['The Innsmouth Conspiracy'] = {
+		easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } },
+		normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } },
+		hard = { token = { '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm5', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } } ,
+		expert = { token = { '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } } 
 	  },
 
 	  -----------------The Side Missions
