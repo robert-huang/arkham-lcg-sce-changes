@@ -298,18 +298,14 @@ LOCATIONS_DATA_JSON = [[
   "TFA - The Boundary Beyond": {},
   "Sacred Woods": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Chapultepec Hill": {"type": "perPlayer", "value": 2, "clueSide": "front"},
-  "Chapultepec Hill_b5d586": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Chapultepec Hill_baec21": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Canals of Tenochtitlán": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Lake Xochimilco": {"type": "perPlayer", "value": 2, "clueSide": "front"},
-  "Lake Xochimilco_e3a79d": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Lake Xochimilco_59bf7d": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Templo Mayor": {"type": "perPlayer", "value": 2, "clueSide": "front"},
-  "Templo Mayor_f3c531": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Templo Mayor_fb0083": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Temples of Tenochtitlán": {"type": "perPlayer", "value": 2, "clueSide": "front"},
-  "Temples of Tenochtitlán_c097d8": {"type": "perPlayer", "value": 1, "clueSide": "front"},
-  "Ruins of K’n-yan": {"type": "perPlayer", "value": 2, "clueSide": "front"},
-  "Chthonian Depths": {"type": "perPlayer", "value": 1, "clueSide": "front"},
-  "Subterranean Swamp": {"type": "perPlayer", "value": 2, "clueSide": "front"},
-  "Treacherous Descent": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Temples of Tenochtitlán_80cef8": {"type": "perPlayer", "value": 1, "clueSide": "front"},
 
   "TFA - Heart of the Elders": {},
   "Mouth of K'n-yan_38a3e5": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -320,6 +316,10 @@ LOCATIONS_DATA_JSON = [[
   "Dark Hollow": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Hall of Idolatry": {"type": "perPlayer", "value": 2, "clueSide": "front"},
   "Crystal Pillars": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Ruins of K’n-yan": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Chthonian Depths": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Subterranean Swamp": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Treacherous Descent": {"type": "perPlayer", "value": 1, "clueSide": "front"},
 
   "TFA - The City of Archives": {},
   "Interview Room": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -541,6 +541,29 @@ LOCATIONS_DATA_JSON = [[
   "Muttskatonic University": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Boneyard": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "St. Mary's Animal Hospital": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+
+  "TIC - The Pit of Despair": {},
+  "Unfamiliar Chamber": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Tidal Tunnel": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Tidal Tunnel_0f20fc": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Tidal Tunnel_d5566b": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Tidal Tunnel_dc9eb7": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+  "Tidal Tunnel_513d82": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+
+  "TIC - The Vanishing of Elina Harper": {},
+  "First National Grocery": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Marsh Refinery": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Innsmouth Square": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Innsmouth Harbour": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Fish Street Bridge": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Gilman House": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "The Little Bookshop": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Innsmouth Jail": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "New Church Green": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Sawbone Alley": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "The House on Water Street": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Shoreward Slums": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Esoteric Order of Dagon": {"type": "perPlayer", "value": 1, "clueSide": "front"},
 
   "Idol Thoughts - Bread and Circuses": {},
   "The Imperial Entrance": {"type": "fixed", "value": 1, "clueSide": "back"},
@@ -1023,6 +1046,22 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "doom",
     "tokenCount": 0
   },
+  "Book of Psalms": {
+  	"tokenType": "resource",
+  	"tokenCount": 4
+  },
+  "Cryptographic Cipher": {
+  	"tokenType": "resource",
+  	"tokenCount": 3
+  },
+  ".25 Automatic": {
+  	"tokenType": "resource",
+  	"tokenCount": 4
+  },
+  "Obfuscation": {
+  	"tokenType": "resource",
+  	"tokenCount": 3
+  },
   "Investigator Starter Decks":{
     "tokenType": "doom",
     "tokenCount": 0
@@ -1408,6 +1447,15 @@ modeData = {
   },
   ['Weaver of the Cosmos'] = {
     standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'skull', 'cultist', 'elder', 'elder', 'red', 'blue' } }
+  },
+
+  -----------------The Innsmouth Conspiracy
+
+  ['The Innsmouth Conspiracy'] = {
+  	easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } },
+  	normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } },
+  	hard = { token = { '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm5', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } } ,
+  	expert = { token = { '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
   },
 
   -----------------The Side Missions
