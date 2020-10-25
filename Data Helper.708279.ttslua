@@ -68,24 +68,6 @@ LOCATIONS_DATA_JSON = [[
   "Streets of Venice": {"type": "fixed", "value": 2, "clueSide": "back"},
   "Rialto Bridge": {"type": "fixed", "value": 1, "clueSide": "back"},
 
-  "Standalone - Guardians of the Abyss": {},
-  "Streets of Cairo": {"type":"perPlayer", "value": 2, "clueSide": "back"},
-  "Cairo Bazaar": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-  "Museum of Egyptian Antiquities": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-  "Outskirts of Cairo": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-  "Temple Courtyard": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-  "Nile River": {"type": "perPlayer", "value": 1, "clueSide": "front"},
-  "Dunes of the Sahara": {"type": "perPlayer", "value": 1, "clueSide": "front"},
-  "Untouched Vault": {"type": "perPlayer", "value": 1, "clueSide": "front"},
-  "Faceless Sphinx": {"type": "perPlayer", "value": 1, "clueSide": "front"},
-  "Desert Oasis": {"type": "perPlayer", "value": 1, "clueSide": "front"},
-  "Sandswept Ruins": {"type": "perPlayer", "value": 1, "clueSide": "front"},
-  "The Great Abyss": {"type": "perPlayer", "value": 1, "clueSide": "front"},
-  "Tunnels under Ngranek": {"type": "perPlayer", "value": 1, "clueSide": "front"},
-  "Stairway to Sarkomand": {"type": "perPlayer", "value": 1, "clueSide": "front"},
-  "Mist-Filled Caverns": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-  "Eldritch Gate": {"type": "perPlayer", "value": 1, "clueSide": "front"},
-
   "TDL - Extracurricular Activities": {},
   "Warren Observatory": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Science Building": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -287,10 +269,11 @@ LOCATIONS_DATA_JSON = [[
   "TFA - Threads of Fate": {},
   "Town Hall": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Curiositie Shoppe": {"type": "perPlayer", "value": 2, "clueSide": "back"},
-  "At the Station_7edfb0": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-  "At the Station_e2806c": {"type": "perPlayer", "value": 2, "clueSide": "back"},
-  "At the Station_28ebe1": {"type": "perPlayer", "value": 2, "clueSide": "back"},
-  "At the Station_e59778": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "At the Station": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "At the Station_e0833c": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+  "Missing Persons": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "The Relic is Missing!": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Trial of the Huntress": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Search for the Meaning": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Seeking Trouble": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Seeking Trouble_42f93b": {"type": "perPlayer", "value": 0, "clueSide": "back"},
@@ -529,6 +512,24 @@ LOCATIONS_DATA_JSON = [[
   "The Great Web_5c5ec4": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "The Great Web_361fd7": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "The Great Web_dfdc8c": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+
+  "Standalone - Guardians of the Abyss": {},
+  "Streets of Cairo": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Cairo Bazaar": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Museum of Egyptian Antiquities": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Outskirts of Cairo": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Temple Courtyard": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Nile River": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Dunes of the Sahara": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Untouched Vault": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Faceless Sphinx": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Desert Oasis": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Sandswept Ruins": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "The Great Abyss": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Tunnels under Ngranek": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Stairway to Sarkomand": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Mist-Filled Caverns": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+  "Eldritch Gate": {"type": "perPlayer", "value": 1, "clueSide": "front"},
 
   "Standalone - Barkham Horror": {},
   "Velma's Doghouse": {"type": "perPlayer", "value": 2, "clueSide": "back"},
@@ -1406,13 +1407,25 @@ modeData = {
     hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'skull', 'skull', 'red', 'blue' } },
     expert = { token = { '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm6', 'm8', 'skull', 'skull', 'red', 'blue' } }
   },
-  ['The Witching Hour'] = {
+  ["At Death's Doorstep"] = {
+    standalone = { token = { 'p1', '0', '0', 'm1','m1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'tablet', 'elder', 'red', 'blue' } }
+  },
+  ['The Secret Name'] = {
     standalone = { token = { 'p1', '0', '0', 'm1','m1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'tablet', 'elder', 'red', 'blue' } }
   },
   ['The Wages of Sin'] = {
     standalone = { token = { 'p1', '0', '0', 'm1','m1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
   },
   ['For the Greater Good'] = {
+    standalone = { token = { 'p1', '0', '0', 'm1','m1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
+  },
+  ['Union and Disillusion'] = {
+    standalone = { token = { 'p1', '0', '0', 'm1','m1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
+  },
+  ['In the Clutches of Chaos'] = {
+    standalone = { token = { 'p1', '0', '0', 'm1','m1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
+  },
+  ['Before the Black Throne'] = {
     standalone = { token = { 'p1', '0', '0', 'm1','m1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
   },
 
@@ -1464,12 +1477,6 @@ modeData = {
     normal = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm5', 'm6', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
     hard = { token = { 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm5', 'm5', 'm6', 'm8', 'skull', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
   },
-  ['All or Nothing'] = {
-    easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
-    normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
-    hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
-    expert = { token = { '0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
-  },
   ['Carnevale of Horrors'] = {
     normal = { token = { 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm3', 'm4', 'm6', 'skull', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
     hard = { token = { 'p1', '0', '0', '0', 'm1', 'm1', 'm3', 'm4', 'm5', 'm6', 'm7', 'skull', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
@@ -1491,6 +1498,12 @@ modeData = {
     normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue'} },
     hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue'} },
     expert = { token = { '0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue'} },
+  },
+  ['All or Nothing'] = {
+    easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+    normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+    hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+    expert = { token = { '0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
   },
   ['Meowlathotep'] = {
     easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
