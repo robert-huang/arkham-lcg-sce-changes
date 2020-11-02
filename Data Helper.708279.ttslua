@@ -875,6 +875,10 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 4
   },
+  "Flamethrower (5) (Taboo)": {
+  	"tokenType": "resource",
+  	"tokenCount": 4
+  },
   "Pnakotic Manuscripts (5)": {
     "tokenType": "resource",
     "tokenCount": 3
@@ -927,6 +931,10 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
+  "Scroll of Secrets (Taboo)": {
+		"tokenType": "resource",
+		"tokenCount": 3
+  },
   "Tennessee Sour Mash": {
     "tokenType": "resource",
     "tokenCount": 2
@@ -939,6 +947,10 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
+  "Mr. \"Rook\" (Taboo)": {
+		"tokenType": "resource",
+		"tokenCount": 3
+  },
   ".45 Thompson (3)": {
     "tokenType": "resource",
     "tokenCount": 5
@@ -947,9 +959,17 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 3
   },
+  "Scroll of Secrets (3) (Taboo):Seeker": {
+		"tokenType": "resource",
+		"tokenCount": 3
+  },
   "Scroll of Secrets (3):Mystic": {
     "tokenType": "resource",
     "tokenCount": 4
+  },
+  "Scroll of Secrets (3) (Taboo):Mystic": {
+		"tokenType": "resource",
+		"tokenCount": 4
   },
   "Tennessee Sour Mash (3):Rogue": {
     "tokenType": "resource",
@@ -1031,6 +1051,10 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenType": "resource",
     "tokenCount": 5
   },
+  ".35 Winchester (Taboo)": {
+		"tokenType": "resource",
+		"tokenCount": 5
+  },
   "Old Book of Lore (3)": {
     "tokenType": "resource",
     "tokenCount": 2
@@ -1090,6 +1114,10 @@ PLAYER_CARD_DATA_JSON = [[
   "The Necronomicon (5)": {
     "tokenType": "resource",
     "tokenCount": 6
+  },
+  "The Necronomicon (5) (Taboo)": {
+		"tokenType": "resource",
+		"tokenCount": 6
   },
   "Mauser C96": {
     "tokenType": "resource",
