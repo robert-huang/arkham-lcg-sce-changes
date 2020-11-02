@@ -7,10 +7,7 @@ IMAGE_URL = {
     Curse = "http://cloud-3.steamusercontent.com/ugc/1011565208488654691/8F0B399048EBC34CD24B99AAD415AEC40E679C65/"
 }
 
-function onload(saveState)
-    numInPlay = { Bless=0, Curse=0 }
-    tokensTaken = { Bless={}, Curse={} }
-
+function onload()
     self.createButton({
         label="Add",
         click_function="addBlessToken",
@@ -114,6 +111,50 @@ function onload(saveState)
         font_color={ r=1, g=1, b=1 },
         color=CURSE_COLOR
     })
+
+    numInPlay = { Bless=0, Curse=0 }
+    tokensTaken = { Bless={}, Curse={} }
+    Wait.time(initializeState, 1)
+end
+
+function initializeState()
+    playerColor = "White"
+    -- count tokens in the bag
+    local chaosbag = getChaosBag()
+    if chaosbag == nil then return end
+    local tokens = {}
+    for i,v in ipairs(chaosbag.getObjects()) do
+        if v.name == "Bless" then
+            numInPlay.Bless = numInPlay.Bless + 1
+        elseif v.name == "Curse" then
+            numInPlay.Curse = numInPlay.Curse + 1
+        end
+    end
+
+    -- find tokens in the play area
+    local objs = Physics.cast({
+        origin = { x=-33, y=0, z=0.5 },
+        direction = { x=0, y=1, z=0 },
+        type = 3,
+        size = { x=77, y=5, z=77 },
+        orientation = { x=0, y=90, z=0 }
+    })
+
+    for i,v in ipairs(objs) do
+        local obj = v.hit_object
+        if obj.getName() == "Bless" then
+            table.insert(tokensTaken.Bless, obj.getGUID())
+            numInPlay.Bless = numInPlay.Bless + 1
+        elseif obj.getName() == "Curse" then
+            table.insert(tokensTaken.Curse, obj.getGUID())
+            numInPlay.Curse = numInPlay.Curse + 1
+        end
+    end
+
+    mode = "Bless"
+    print("Bless Tokens " .. getTokenCount())
+    mode = "Curse"
+    print("Curse Tokens " .. getTokenCount())
 end
 
 function addBlessToken(_obj, _color, alt_click)

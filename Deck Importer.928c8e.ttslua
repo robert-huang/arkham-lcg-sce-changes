@@ -9,7 +9,7 @@ function onLoad()
   privateDeckURL="https://arkhamdb.com/api/public/deck/"
   cardURL="https://arkhamdb.com/api/public/card/"
   tabooListURL="https://arkhamdb.com/api/public/taboos/"
-  subnameCards={{name="Randolph Carter",xp=0},{name="Dream Diary",xp=3},{name="Relic of Ages",xp=0},{name="The Necronomicon",xp=0},{name="Archaic Glyphs",xp=3},{name="Strange Solution",xp=4},{name="Relic of Ages",xp=0}, {name="Ancient Stone",xp=4}, {"Dream Diary",xp=0},{name="Empower Self",xp=2}}
+  subnameCards={{name="Randolph Carter",xp=0},{name="Dream Diary",xp=3},{name="Relic of Ages",xp=0},{name="The Necronomicon",xp=0},{name="Archaic Glyphs",xp=3},{name="Strange Solution",xp=4},{name="Forbidden Tome",xp=3},{name="Relic of Ages",xp=0}, {name="Ancient Stone",xp=4}, {"Dream Diary",xp=0},{name="Empower Self",xp=2}}
   extraPermanents={["Duke"]=true,["Sophie"]=true,["Gate Box"]=true,["Dark Insight"]=true}
   multiClassCards={{name=".45 Thompson",xp=3},{name="Scroll of Secrets",xp=3},{name="Tennessee Sour Mash",xp=3},{name="Enchanted Blade",xp=3},{name="Grisly Totem",xp=3}}
   returningCards={{name="On Your Own"}}

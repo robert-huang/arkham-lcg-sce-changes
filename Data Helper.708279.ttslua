@@ -53,7 +53,10 @@
 	  "Wilderness": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 	  "Unhallowed Land_552a1d": {"type": "perPlayer", "value": 0, "clueSide": "back"},
 	  "Unhallowed Land": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-	  "Flooded": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  
+	  "Flooded Square": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Streets of Venice": {"type": "fixed", "value": 2, "clueSide": "back"},
+	  "Rialto Bridge": {"type": "fixed", "value": 1, "clueSide": "back"},
 	  "Venetian Garden": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 	  "The Guardian": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 	  "Canal-side": {"type": "fixed", "value": 1, "clueSide": "back"},
@@ -651,6 +654,10 @@
 		"tokenType": "resource",
 		"tokenCount": 3
 	  },
+	  "Springfield M1903 (4) (Taboo)": {
+		"tokenType": "resource",
+		"tokenCount": 3
+	  },
 	  ".32 Colt": {
 		"tokenType": "resource",
 		"tokenCount": 6
@@ -747,6 +754,10 @@
 		"tokenType": "resource",
 		"tokenCount": 4
 	  },
+	  "Flamethrower (5) (Taboo)": {
+		"tokenType": "resource",
+		"tokenCount": 4
+	  },
 	  "Pnakotic Manuscripts (5)": {
 		"tokenType": "resource",
 		"tokenCount": 3
@@ -807,6 +818,10 @@
 		"tokenType": "resource",
 		"tokenCount": 3
 	  },
+	  "Scroll of Secrets (Taboo)": {
+		"tokenType": "resource",
+		"tokenCount": 3
+	  },
 	  ".45 Thompson": {
 		"tokenType": "resource",
 		"tokenCount": 5
@@ -815,11 +830,23 @@
 		"tokenType": "resource",
 		"tokenCount": 3
 	  },
+	  "Mr. \"Rook\" (Taboo)": {
+		"tokenType": "resource",
+		"tokenCount": 3
+	  },
 	  "Scroll of Secrets (3):Seeker": {
 		"tokenType": "resource",
 		"tokenCount": 3
 	  },
+	  "Scroll of Secrets (3) (Taboo):Seeker": {
+		"tokenType": "resource",
+		"tokenCount": 3
+	  },
 	  "Scroll of Secrets (3):Mystic": {
+		"tokenType": "resource",
+		"tokenCount": 4
+	  },
+	  "Scroll of Secrets (3) (Taboo):Mystic": {
 		"tokenType": "resource",
 		"tokenCount": 4
 	  },
@@ -847,7 +874,7 @@
 		"tokenType": "resource",
 		"tokenCount": 3
 	  },
-	  "Mk1 Grenades (4)": {
+	  "Mk 1 Grenades (4)": {
 		"tokenType": "resource",
 		"tokenCount": 3
 	  },
@@ -896,6 +923,10 @@
 		"tokenCount": 3
 	  },
 	  ".35 Winchester": {
+		"tokenType": "resource",
+		"tokenCount": 5
+	  },
+	  ".35 Winchester (Taboo)": {
 		"tokenType": "resource",
 		"tokenCount": 5
 	  },
@@ -948,6 +979,10 @@
 		"tokenCount": 4
 	  },
 	  "The Necronomicon (5)": {
+		"tokenType": "resource",
+		"tokenCount": 6
+	  },
+	  "The Necronomicon (5) (Taboo)": {
 		"tokenType": "resource",
 		"tokenCount": 6
 	  },

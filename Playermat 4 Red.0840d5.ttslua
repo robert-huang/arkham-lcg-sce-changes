@@ -56,7 +56,7 @@ function makeDiscardButton(position, searchPosition, discardPosition, number)
   })
 end
 
-function onload()
+function onload(save_state)
   self.interactable = DEBUG
   DATA_HELPER = getObjectFromGUID('708279')
   PLAYER_CARDS = DATA_HELPER.getTable('PLAYER_CARD_DATA')
@@ -99,18 +99,37 @@ function onload()
     font_size = 50
   })
 
-  local pos = self.positionToWorld(DECK_POSITION)
-  local zoneProps = {
-    position = pos,
-    scale = DECK_ZONE_SCALE,
-    type = 'ScriptingTrigger',
-    callback = 'zoneCallback',
-    callback_owner = self,
-    rotation = self.getRotation()
-  }
-  spawnObject(zoneProps)
+  local state = JSON.decode(save_state)
+  if state ~= nil and state.zoneID ~= nil then
+    zoneID = state.zoneID
+    Wait.time(checkDeckZoneExists, 30)
+  else
+    spawnDeckZone()
+  end
 
   COLLISION_ENABLED = true
+end
+
+function onSave()
+    return JSON.encode({ zoneID=zoneID })
+end
+
+function checkDeckZoneExists()
+    if getObjectFromGUID(zoneID) ~= nil then return end
+    spawnDeckZone()
+end
+
+function spawnDeckZone()
+    local pos = self.positionToWorld(DECK_POSITION)
+    local zoneProps = {
+      position = pos,
+      scale = DECK_ZONE_SCALE,
+      type = 'ScriptingTrigger',
+      callback = 'zoneCallback',
+      callback_owner = self,
+      rotation = self.getRotation()
+    }
+    spawnObject(zoneProps)
 end
 
 function zoneCallback(zone)
