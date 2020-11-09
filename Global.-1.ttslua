@@ -50,6 +50,173 @@ function onload()
 
 end
 
+function take_callback(object_spawned, mat)
+    customObject = object_spawned.getCustomObject()
+    local player = mat.getGUID();
+
+    local image = customObject.image
+
+    -- Update global stats
+    if PULLS[image] == nil then
+      PULLS[image] = 0
+    end
+    PULLS[image] = PULLS[image] + 1
+    -- Update player stats
+    if PLAYER_PULLS[player][image] == nil then
+      PLAYER_PULLS[player][image] = 0
+    end
+    PLAYER_PULLS[player][image] = PLAYER_PULLS[player][image] + 1
+
+end
+MAT_GUID_TO_COLOUR = {
+  ["8b081b"] = "White",
+  -- player 2 conrad
+  ["bd0ff4"] = "Orange",
+  -- player
+  ["383d8b"] = "Green",
+  -- playur 4 olivia
+  ["0840d5"] = "Red"
+}
+
+
+PLAYER_PULLS = {
+  -- player 1 max
+  ["8b081b"] = {},
+  -- player 2 conrad
+  ["bd0ff4"] = {},
+  -- player
+  ["383d8b"] = {},
+  -- playur 4 olivia
+  ["0840d5"] = {}
+}
+
+PULLS = {
+  -- cultist
+  ["https://i.imgur.com/VzhJJaH.png"] = 0,
+  -- skull
+  ["https://i.imgur.com/stbBxtx.png"] = 0,
+  -- tablet
+  ["https://i.imgur.com/1plY463.png"] = 0,
+  -- curse
+  ["http://cloud-3.steamusercontent.com/ugc/1011565208488654691/8F0B399048EBC34CD24B99AAD415AEC40E679C65/"] = 0,
+  -- tentacle
+  ["https://i.imgur.com/lns4fhz.png"] = 0,
+  -- minus eight
+  ["https://i.imgur.com/9t3rPTQ.png"] = 0,
+  -- minus seven
+  ["https://i.imgur.com/4WRD42n.png"] = 0,
+  -- minus six
+  ["https://i.imgur.com/c9qdSzS.png"] = 0,
+  -- minus five
+  ["https://i.imgur.com/3Ym1IeG.png"] = 0,
+  -- minus four
+  ["https://i.imgur.com/qrgGQRD.png"] = 0,
+  -- minus three
+  ["https://i.imgur.com/yfs8gHq.png"] = 0,
+  -- minus two
+  ["https://i.imgur.com/bfTg2hb.png"] = 0,
+  -- minus one
+  ["https://i.imgur.com/w3XbrCC.png"] = 0,
+  -- zero
+  ["https://i.imgur.com/btEtVfd.png"] = 0,
+  -- plus one
+  ["https://i.imgur.com/uIx8jbY.png"] = 0,
+  -- elder thing
+  ["https://i.imgur.com/ttnspKt.png"] = 0,
+  -- bless
+  ["http://cloud-3.steamusercontent.com/ugc/1011565208488650618/B2B081032AF3EFDBD90840A5D6888A3CEA228D66/"] = 0,
+  -- elder sign
+  ["https://i.imgur.com/nEmqjmj.png"] = 0,
+}
+
+IMAGE_TOKEN_MAP = {
+    -- cultist
+  ["https://i.imgur.com/VzhJJaH.png"] = "cultist",
+  -- skull
+  ["https://i.imgur.com/stbBxtx.png"] = "skull",
+  -- tablet
+  ["https://i.imgur.com/1plY463.png"] = "tablet",
+  -- elder thing
+  ["https://i.imgur.com/ttnspKt.png"] = "Elder Thing",
+  -- curse
+  ["http://cloud-3.steamusercontent.com/ugc/1011565208488654691/8F0B399048EBC34CD24B99AAD415AEC40E679C65/"] = "curse",
+  -- tentacle
+  ["https://i.imgur.com/lns4fhz.png"] = "Auto-Fail",
+  -- minus eight
+  ["https://i.imgur.com/9t3rPTQ.png"] = "-8",
+  -- minus seven
+  ["https://i.imgur.com/4WRD42n.png"] = "-7",
+  -- minus six
+  ["https://i.imgur.com/c9qdSzS.png"] = "-6",
+  -- minus five
+  ["https://i.imgur.com/3Ym1IeG.png"] = "-5",
+  -- minus four
+  ["https://i.imgur.com/qrgGQRD.png"] = "-4",
+  -- minus three
+  ["https://i.imgur.com/yfs8gHq.png"] = "-3",
+  -- minus two
+  ["https://i.imgur.com/bfTg2hb.png"] = "-2",
+  -- minus one
+  ["https://i.imgur.com/w3XbrCC.png"] = "-1",
+  -- zero
+  ["https://i.imgur.com/btEtVfd.png"] = "0",
+  -- plus one
+  ["https://i.imgur.com/uIx8jbY.png"] = "+1",
+  -- bless
+  ["http://cloud-3.steamusercontent.com/ugc/1011565208488650618/B2B081032AF3EFDBD90840A5D6888A3CEA228D66/"] = "bless",
+  -- elder sign
+  ["https://i.imgur.com/nEmqjmj.png"] = "Elder Sign",
+}
+
+function resetStats()
+    for key,value in pairs(PULLS) do
+      PULLS[key] = 0
+    end
+    for playerKey, playerValue in pairs(PLAYER_PULLS) do
+      for key,value in pairs(PULLS) do
+        PLAYER_PULLS[playerKey][key] = value
+      end
+    end
+
+
+end
+
+function getPlayerName(playerMatGuid)
+  local playerColour = MAT_GUID_TO_COLOUR[playerMatGuid]
+  if Player[playerColour].seated then
+    return Player[playerColour].steam_name
+  else
+    return playerColour
+  end
+end
+
+function printStats()
+  local squidKing = "Nobody"
+  local maxSquid = 0
+
+  printToAll("\nOverall Game stats\n")
+  printNonZeroTokenPairs(PULLS)
+  printToAll("\nIndividual Stats\n")
+  for playerMatGuid, countTable in pairs(PLAYER_PULLS) do
+    local playerName = getPlayerName(playerMatGuid)
+    printToAll(playerName ..  " Stats", {r=255,g=0,b=0})
+    printNonZeroTokenPairs(PLAYER_PULLS[playerMatGuid])
+    playerSquidCount = PLAYER_PULLS[playerMatGuid]["https://i.imgur.com/lns4fhz.png"]
+    if playerSquidCount != nil and playerSquidCount > maxSquid then
+      squidKing = playerName
+    end
+  end
+  printToAll(squidKing .. " is an auto-fail magnet.", {r=255,g=0,b=0})
+end
+
+function printNonZeroTokenPairs(theTable)
+    for key,value in pairs(theTable) do
+      if value != 0 then
+        printToAll(IMAGE_TOKEN_MAP[key] .. '=' .. tostring(value))
+      end
+    end
+end
+
 -- Remove comments to enable autorotate cards on hands.
 -- function onObjectEnterScriptingZone(zone, object)
 -- Autorotate cards with right side up when entering hand.
@@ -252,7 +419,8 @@ function drawChaostoken(params)
     local token = chaosbag.takeObject({
       index = 0,
       position = toPosition,
-      rotation = mat.getRotation()
+      rotation = mat.getRotation(),
+	  callback_function = function(obj) take_callback(obj, mat) end
     })
     CHAOS_TOKENS[#CHAOS_TOKENS + 1] = token
     return

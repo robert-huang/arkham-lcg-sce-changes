@@ -16,6 +16,15 @@ DISCARD_BUTTON_OFFSETS = {
 -- draw deck and discard zone
 DECK_POSITION = { x=-1.4, y=0, z=0.3 }
 DECK_ZONE_SCALE = { x=3, y=5, z=8 }
+DRAW_DECK_POSITION = { x=-37, y=2.5, z=26.5 }
+
+-- play zone
+PLAYER_COLOR = "Green"
+PLAY_ZONE_POSITION = { x=-25, y=4, z=27 }
+PLAY_ZONE_ROTATION = { x=0, y=0, z=0 }
+PLAY_ZONE_SCALE = { x=30, y=5, z=15 }
+
+RESOURCE_COUNTER_GUID = "cd15ac"
 
 -- the position of the global discard pile
 -- TODO: delegate to global for any auto discard actions
@@ -99,6 +108,17 @@ function onload(save_state)
     font_size = 50
   })
 
+  self.createButton({
+      label="Upkeep",
+      click_function = "doUpkeep",
+      function_owner = self,
+      position = {1.48,0.1,-0.4},
+      scale = {0.12, 0.12, 0.12},
+      width = 800,
+      height = 280,
+      font_size = 180
+  })
+
   local state = JSON.decode(save_state)
   if state ~= nil and state.zoneID ~= nil then
     zoneID = state.zoneID
@@ -112,6 +132,125 @@ end
 
 function onSave()
     return JSON.encode({ zoneID=zoneID })
+end
+
+function doUpkeep(obj, color, alt_click)
+    -- right-click binds to new player color
+    if alt_click then
+        PLAYER_COLOR = color
+        printToColor("Upkeep button bound to " .. color, color)
+        return
+    end
+
+    -- unexhaust cards in play zone
+    local objs = Physics.cast({
+        origin = PLAY_ZONE_POSITION,
+        direction = { x=0, y=1, z=0 },
+        type = 3,
+        size = PLAY_ZONE_SCALE,
+        orientation = PLAY_ZONE_ROTATION
+    })
+
+    local y = PLAY_ZONE_ROTATION.y
+
+    local investigator = nil
+    for i,v in ipairs(objs) do
+        local obj = v.hit_object
+        local props = obj.getCustomObject()
+        if obj.tag == "Card" and not obj.is_face_down then
+            if props ~= nil and props.unique_back then
+                local name = obj.getName()
+                if string.match(name, "Jenny Barnes") ~= nil then
+                    investigator = "Jenny Barnes"
+                elseif name == "Patrice Hathaway" then
+                    investigator = name
+                end
+            else
+                local r = obj.getRotation()
+                if (r.y - y > 10) or (y - r.y > 10) then
+                    obj.setRotationSmooth(PLAY_ZONE_ROTATION)
+                end
+            end
+        end
+    end
+
+    -- gain resource
+    getObjectFromGUID(RESOURCE_COUNTER_GUID).call("add_subtract")
+    if investigator == "Jenny Barnes" then
+        getObjectFromGUID(RESOURCE_COUNTER_GUID).call("add_subtract")
+        printToColor("Taking 2 resources (Jenny)", PLAYER_COLOR)
+    end
+
+    -- draw card (shuffle discard if necessary)
+    local zone = getObjectFromGUID(zoneID)
+    if zone == nil then return end
+
+    drawDeck = nil
+    discardPile = nil
+    for i,object in ipairs(zone.getObjects()) do
+        if object.tag == "Deck" or object.tag == "Card" then
+            if object.is_face_down then
+                drawDeck = object
+            else
+                discardPile = object
+            end
+        end
+    end
+
+    if investigator == "Patrice Hathaway" then
+        patriceDraw()
+        return
+    end
+
+    if drawDeck == nil then
+        if discardPile ~= nil then
+            shuffleDiscardIntoDeck()
+            Wait.time(|| drawCards(1), 1)
+        end
+        printToColor("Take 1 horror (drawing card from empty deck)", PLAYER_COLOR)
+    else
+        drawCards(1)
+    end
+end
+
+function drawCards(numCards)
+    if drawDeck == nil then return end
+    drawDeck.deal(numCards, PLAYER_COLOR)
+end
+
+function shuffleDiscardIntoDeck()
+    discardPile.flip()
+    discardPile.shuffle()
+    discardPile.setPositionSmooth(DRAW_DECK_POSITION, false, false)
+    drawDeck = discardPile
+    discardPile = nil
+end
+
+function patriceDraw()
+    local handSize = #Player[PLAYER_COLOR].getHandObjects()
+    if handSize >= 5 then return end
+    local cardsToDraw = 5 - handSize
+    local deckSize
+    printToColor("Drawing " .. cardsToDraw .. " cards (Patrice)", PLAYER_COLOR)
+    if drawDeck == nil then
+        deckSize = 0
+    elseif drawDeck.tag == "Deck" then
+        deckSize = #drawDeck.getObjects()
+    else
+        deckSize = 1
+    end
+
+    if deckSize >= cardsToDraw then
+        drawCards(cardsToDraw)
+        return
+    end
+
+    drawCards(deckSize)
+    if discardPile ~= nil then
+        shuffleDiscardIntoDeck()
+        Wait.time(|| drawCards(cardsToDraw - deckSize), 1)
+    end
+    printToColor("Take 1 horror (drawing card from empty deck)", PLAYER_COLOR)
 end
 
 function checkDeckZoneExists()

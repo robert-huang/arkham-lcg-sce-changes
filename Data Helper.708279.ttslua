@@ -530,16 +530,30 @@
 	  "Marsh Refinery": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 	  "Innsmouth Square": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 	  "Innsmouth Harbour": {"type": "perPlayer", "value": 2, "clueSide": "back"},
-	  "Fish Street Bridge": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Fish Street Bridge_b6b9b7": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 	  "Gilman House": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 	  "The Little Bookshop": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 	  
-	  "Innsmouth Jail": {"type": "perPlayer", "value": 1, "clueSide": "front"},
-	  "New Church Green": {"type": "perPlayer", "value": 2, "clueSide": "front"},
-	  "Sawbone Alley": {"type": "perPlayer", "value": 2, "clueSide": "front"},
-	  "The House on Water Street": {"type": "perPlayer", "value": 2, "clueSide": "front"},
-	  "Shoreward Slums": {"type": "perPlayer", "value": 1, "clueSide": "front"},
-	  "Esoteric Order of Dagon": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+	  "Innsmouth Jail_f63738": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+	  "New Church Green_d1ef9c": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+	  "Sawbone Alley_899c2c": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+	  "The House on Water Street_e4f53a": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+	  "Shoreward Slums_24e42d": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+	  "Esoteric Order of Dagon_28c301": {"type": "perPlayer", "value": 1, "clueSide": "front"},
+	  
+	  "Esoteric Order of Dagon_ef8cef": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "New Church Green_921a9b": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Marsh Refinery_44c342": {"type": "fixed", "value": 1, "clueSide": "back"},
+	  "The House on Water Street_104e07": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "The Little Bookshop_a17a82": {"type": "fixed", "value": 1, "clueSide": "back"},
+	  "First National Grocery_9ae75c": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+	  "Fish Street Bridge_a358fc": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+	  "Innsmouth Harbour_30b2c0": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Sawbone Alley_e58cff": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+	  "Gilman House_e589b8": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+	  "Innsmouth Jail_755fc0": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Shoreward Slums_c0d0df": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+	  "Desolate Coastline": {"type": "fixed", "value": 1, "clueSide": "back"},
 	  
 	  "XXXX": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 	  "xxx": {"type": "perPlayer", "value": 2, "clueSide": "back"}
@@ -1090,6 +1104,22 @@
 		"tokenType": "resource",
 		"tokenCount": 3
 	  },
+	  "Eldritch Sophist": {
+		"tokenType": "resource",
+		"tokenCount": 3
+	  },
+	  "Armageddon": {
+		"tokenType": "resource",
+		"tokenCount": 3
+	  },
+	  "Eye of Chaos": {
+		"tokenType": "resource",
+		"tokenCount": 3
+	  },
+	  "Shroud of Shadows": {
+		"tokenType": "resource",
+		"tokenCount": 3
+	  },
 	  "xxx": {
 		"tokenType": "resource",
 		"tokenCount": 3
@@ -1349,6 +1379,9 @@
 		normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } },
 		hard = { token = { '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm5', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } } ,
 		expert = { token = { '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } } 
+	  },
+	  ['In Too Deep'] = {
+		standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
 	  },
 
 	  -----------------The Side Missions
