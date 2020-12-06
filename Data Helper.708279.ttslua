@@ -27,7 +27,7 @@ LOCATIONS_DATA_JSON = [[
     "Deep Below Your House": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
     "Northside_86faac": {"type": "perPlayer", "value": 1, "clueSide": "back"},
-    "Northside": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+    "Northside": {"type" : "perPlayer", "value": 2, "clueSide": "back"},
     "Graveyard": {"type": "perPlayer", "value": 2, "clueSide": "back"},
     "Miskatonic University_cedb0a": {"type": "perPlayer", "value": 1, "clueSide": "back"},
     "Miskatonic University": {"type": "perPlayer", "value": 2, "clueSide": "back"},
@@ -519,6 +519,17 @@ LOCATIONS_DATA_JSON = [[
     "Boneyard": {"type": "perPlayer", "value": 2, "clueSide": "back"},
     "St. Mary's Animal Hospital": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 
+    "Arkham": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+    "Streets of New York City": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+    "The Penthouse": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+    "The Burning Pit": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+    "Streets of Providence": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+    "Athenaeum of the Empty Sky": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+    "The Arcade": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+    "Streets of Montréal": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+    "Chateau Ramezay": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+    "Shrine of Magh’an Ark’at": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+
     "Unfamiliar Chamber": {"type": "perPlayer", "value": 1, "clueSide": "back"},
     "Tidal Tunnel": {"type": "perPlayer", "value": 1, "clueSide": "back"},
     "Tidal Tunnel_0f20fc": {"type": "perPlayer", "value": 2, "clueSide": "back"},
@@ -554,6 +565,13 @@ LOCATIONS_DATA_JSON = [[
     "Innsmouth Jail_755fc0": {"type": "perPlayer", "value": 1, "clueSide": "back"},
     "Shoreward Slums_c0d0df": {"type": "perPlayer", "value": 1, "clueSide": "back"},
     "Desolate Coastline": {"type": "fixed", "value": 1, "clueSide": "back"},
+
+    "Unfathomable Depths_cb5e3e": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+    "Unfathomable Depths_7d180e": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+    "Unfathomable Depths_fdf43f": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+    "Unfathomable Depths_431ca2": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+    "Unfathomable Depths_dfc9b4": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+    "Unfathomable Depths_086743": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
     "XXXX": {"type": "perPlayer", "value": 2, "clueSide": "back"},
     "xxx": {"type": "perPlayer", "value": 2, "clueSide": "back"}
@@ -1120,6 +1138,110 @@ PLAYER_CARD_DATA_JSON = [[
         "tokenType": "resource",
         "tokenCount": 3
     },
+    "Tool Belt (0)": {
+        "tokenType": "resource",
+        "tokenCount": 2
+    },
+    "Tool Belt (3)": {
+        "tokenType": "resource",
+        "tokenCount": 4
+    },
+    "Gabriel": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
+    "Fingerprint Kit (5)": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
+    "Old Keyring (5)": {
+        "tokenType": "resource",
+        "tokenCount": 2
+    },
+    "Flux Stabilizer": {
+        "tokenType": "resource",
+        "tokenCount": 2
+    },
+    "Cultes des Goules": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
+    "Dragon Idol": {
+        "tokenType": "resource",
+        "tokenCount": 2
+    },
+    "Elixir of Life": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
+    "Fetch Stick": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
+    "Heart of Winter": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
+    "Massa di Requiem per Shuggay": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
+    "Mi-Go Brain Case": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
+    "Milk of Shub-Niggurath": {
+        "tokenType": "resource",
+        "tokenCount": 1
+    },
+    "Ruby of R'yleh": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
+    "Sword of Saint Jerome": {
+        "tokenType": "resource",
+        "tokenCount": 4
+    },
+    "Sword of Y'ha-Talla": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
+    "Vach-Viraj Chant": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
+    "Zanthu Tablets": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
+    "Lamp of Alhazred": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
+    "Soul Gem": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
+    "Book of the Believer": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
+    "Mask of Wisdom": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
+    "Key of Tawil At-Umr": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
+    "Warding Statue": {
+        "tokenType": "resource",
+        "tokenCount": 4
+    },
+    "Yithian Rifle": {
+        "tokenType": "resource",
+        "tokenCount": 3
+    },
     "xxx": {
         "tokenType": "resource",
         "tokenCount": 3
@@ -1380,7 +1502,13 @@ modeData = {
         hard = { token = { '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm5', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } } ,
         expert = { token = { '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
     },
+    ['The Vanishing of Elina Harper'] = {
+        standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
+    },
     ['In Too Deep'] = {
+        standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
+    },
+    ['Devil Reef'] = {
         standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
     },
 
@@ -1424,6 +1552,20 @@ modeData = {
         normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
         hard = { token = { '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm5', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
         expert = { token = { '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
+    },
+
+    ['WotOG'] = {
+        easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'skull', 'red', 'blue' } },
+        normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'skull', 'red', 'blue' } },
+        hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'skull', 'skull', 'skull', 'red', 'blue' } },
+        expert = { token = { '0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'skull', 'skull', 'skull', 'red', 'blue' } }
+    },
+
+    ['Bad Blood'] = {
+        easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+        normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+        hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+        expert = { token = { '0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
     },
 
     --fan-made

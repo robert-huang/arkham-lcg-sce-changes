@@ -1,0 +1,431 @@
+--[[ Lua code. See documentation: https://api.tabletopsimulator.com/ --]]
+
+--[[ The onLoad event is called after the game save finishes loading. --]]
+function onLoad()
+  init()
+  -- Setup...
+  publicDeckURL="https://arkhamdb.com/api/public/decklist/"
+  privateDeckURL="https://arkhamdb.com/api/public/deck/"
+  cardURL="https://arkhamdb.com/api/public/card/"
+  tabooListURL="https://arkhamdb.com/api/public/taboos/"
+  subnameCards={{name="Randolph Carter",xp=0},{name="Dream Diary",xp=3},{name="Relic of Ages",xp=0},{name="The Necronomicon",xp=0},{name="Archaic Glyphs",xp=3},{name="Strange Solution",xp=4},{name="Forbidden Tome",xp=3},{name="Relic of Ages",xp=0}, {name="Ancient Stone",xp=4}, {"Dream Diary",xp=0},{name="Empower Self",xp=2}}
+  extraPermanents={["Duke"]=true,["Sophie"]=true,["Gate Box"]=true,["Dark Insight"]=true}
+  multiClassCards={{name=".45 Thompson",xp=3},{name="Scroll of Secrets",xp=3},{name="Tennessee Sour Mash",xp=3},{name="Enchanted Blade",xp=3},{name="Grisly Totem",xp=3}}
+  returningCards={{name="On Your Own"}}
+  advancedSignatures={{name="Daisy's Tote Bag"},{name="The Necronomicon"},{name="On the Lam"},{name="Hospital Debts"},{name="Dark Memory"},{name="Heirloom of Hyperborea"}}
+  bondedCardsOneThree={{name="Hallowed Mirror",bondedName="Soothing Melody",bondedCode=05314},{name="Occult Lexicon",bondedName="Blood-Rite",bondedCode=05317},{name="The Hungering Blade",bondedName="Bloodlust",bondedCode=06019},{name="Nightmare Bauble",bondedName="Dream Parasite",bondedCode=06331},{name="Miss Doyle",bondedName="Hope",bondedCode=06031,bondedNameSecond="Zeal",bondedCodeSecond=06032,bondedNameThird="Augur",bondedCodeThird=06033}}
+  bondedCardsBoolean = {{name="Gate Box",bondedName="Dream-Gate",bondedCode="06015a",bondCount=1},{name="Crystallizer of Dreams",bondedName="Guardian of the Crystallizer",bondedCode=06025,bondCount=2},{name="Dream Diary",bondedName="Essence of the Dream",bondedCode=06113,bondCount=1},{name="Empty Vessel",bondedName="Wish Eater",bondedCode=06277,bondCount=1},{name="Segment of Onyx",bondedName="Pendant of the Queen",bondedCode=06022,bondCount=1},{name="Stargazing",bondedName="The Stars Are Right",bondedCode=06028,bondCount=2},{name="Summoned Hound",bondedName="Unbound Beast",bondedCode=06283,bondCount=2}}
+  privateDeck = true
+
+  makeText()
+  makeButton()
+  makeCheckboxPP()
+
+  all_cards_bag = getObjectFromGUID("15bb07")
+  weaknesses_bag = getObjectFromGUID("770c4e")
+
+  -- Get current taboolist
+  tabooList = {}
+  WebRequest.get(tabooListURL, self, 'tabooListCallback')
+end
+
+function init()
+  cardList = {}
+  doneSlots = 0
+  totalCards = 0
+  tabooID = 0
+end
+
+-- Previously this was "spawnZone"
+function get_deck()
+    if deckID == nil then
+       broadcastToAll("Deck ID required", {0.5,0.5,0.5})
+       return 1
+    end
+
+    deckPos = self.positionToWorld({0.285,1.5,0.48})
+    permPos = self.positionToWorld({-0.285,1.5,0.48})
+
+    -- Get deck from ArkhamDB..
+    local deckURL
+    if privateDeck then deckURL = privateDeckURL
+    else deckURL = publicDeckURL
+    end
+
+    WebRequest.get(deckURL .. deckID, self, 'deckReadCallback')
+end
+
+function deckReadCallback(req)
+  -- Result check..
+  if req.is_done and not req.is_error
+  then
+    if string.find(req.text, "<!DOCTYPE html>")
+    then
+      broadcastToAll("Private deck "..deckID.." is not shared", {0.5,0.5,0.5})
+      return
+    end
+    JsonDeckRes = JSON.decode(req.text)
+  else
+    print (req.error)
+    return
+  end
+  if (JsonDeckRes == nil)
+  then
+    broadcastToAll("Deck not found!", {0.5,0.5,0.5})
+    return
+  else
+    print("Found decklist: "..JsonDeckRes.name)
+  end
+  -- Count number of cards in decklist
+  numSlots=0
+  for cardid,number in
+  pairs(JsonDeckRes.slots)
+  do
+    numSlots = numSlots + 1
+  end
+
+  -- Check for taboos
+  tabooID = JsonDeckRes.taboo_id
+  if tabooID
+  then
+    print("Using List of Taboos from "..tabooList[tabooID].date..".")
+  end
+
+  -- Save card id, number in table and request card info from ArkhamDB
+  for cardID,number in pairs(JsonDeckRes.slots)
+  do
+    local row = {}
+    row.cardName = ""
+    row.cardCount = number
+    cardList[cardID] = row
+    WebRequest.get(cardURL .. cardID, self, 'cardReadCallback')
+    totalCards = totalCards + number
+  end
+end
+
+function cardReadCallback(req)
+  -- Result check..
+  if req.is_done and not req.is_error
+  then
+    -- Find unicode before using JSON.decode since it doesnt handle hex UTF-16
+    local tmpText = string.gsub(req.text,"\\u(%w%w%w%w)", convertHexToDec)
+    JsonCardRes = JSON.decode(tmpText)
+  else
+    print(req.error)
+    return
+  end
+
+  -- Update card name in table
+  if(JsonCardRes.xp == nil or JsonCardRes.xp == 0)
+  then
+    cardList[JsonCardRes.code].cardName = JsonCardRes.real_name
+  else
+    cardList[JsonCardRes.code].cardName = JsonCardRes.real_name .. " (" .. JsonCardRes.xp .. ")"
+  end
+
+  -- Make Subname blank if it does not exist
+  if (JsonCardRes.subname == nil and (JsonCardRes.subtype_name ~= "Basic Weakness" and JsonCardRes.subtype_name ~= "Weakness"))
+	then
+	  cardList[JsonCardRes.code].subName = JsonCardRes.subname
+  end
+
+  -- Check for subname
+  for k,v in pairs(subnameCards) do
+    if (v.name == JsonCardRes.real_name and (v.xp == JsonCardRes.xp or JsonCardRes.xp == nil))
+    then
+      cardList[JsonCardRes.code].subName = nil
+    end
+  end
+
+  -- Check for multiclass
+  for k,v in pairs(multiClassCards) do
+    if (v.name == JsonCardRes.real_name and (v.xp == JsonCardRes.xp or JsonCardRes.xp == nil))
+    then
+      cardList[JsonCardRes.code].subName = JsonCardRes.faction_name
+    end
+  end
+
+  -- Check for returning cards (cards with the same name/level but different and from a new set)
+  for k,v in pairs(returningCards) do
+	if (v.name == JsonCardRes.real_name and JsonCardRes.pack_name  == "Return to the Forgotten Age")
+	then
+	  cardList[JsonCardRes.code].subName = "Permanent"
+	end
+  end
+
+  -- Check for advanced signature cards (this happens after subname check, so it should be fine)
+  for k,v in pairs(advancedSignatures) do
+    if (v.name == JsonCardRes.real_name) then
+	  --The Necronomicon is a whole can of worms, so handle it separately
+	  if (JsonCardRes.real_name == "The Necronomicon") then
+	    if (JsonCardRes.pack_name == "Read or Die") then
+		  cardList[JsonCardRes.code].subName = "John Dee Translation (Advanced)"
+		elseif (JsonCardRes.pack_name == "The Miskatonic Museum") then
+		  cardList[JsonCardRes.code].subName = "Olaus Wormius Translation"
+		elseif (JsonCardRes.pack_name == "Harvey Walters") then
+		  cardList[JsonCardRes.code].subName = "Petrus de Dacia Translation"
+		else
+		  cardList[JsonCardRes.code].subName = "John Dee Translation"
+		end		
+	  elseif (JsonCardRes.pack_name == "Read or Die" or JsonCardRes.pack_name == "All or Nothing" or JsonCardRes.pack_name == "Bad Blood") then
+		if (v.name == "Heirloom of Hyperborea") then
+		  cardList[JsonCardRes.code].subName = "Artifact from Another Life (Advanced)"
+	    else
+		  cardList[JsonCardRes.code].subName = "Advanced"
+		end
+	  else
+	    if (cardList[JsonCardRes.code].subName == nil) then
+		  if (v.name == "Heirloom of Hyperborea") then
+		    cardList[JsonCardRes.code].subName = "Artifact from Another Life"
+		  else
+		    cardList[JsonCardRes.code].subName = "Signature"
+	      end
+		end
+	  end
+	end
+  end
+
+  -- Check if card is permanent (always)
+    if (JsonCardRes.permanent == true or extraPermanents[JsonCardRes.real_name]) then
+      cardList[JsonCardRes.code].permanent = true
+    else
+      cardList[JsonCardRes.code].permanent = false
+    end
+
+  -- Check for '1:3' bonding cards, which always brings in 3 bonded cards, where the original card is limit 1 per deck.
+  for k,v in pairs(bondedCardsOneThree) do
+    if (v.name == JsonCardRes.real_name)
+    then
+
+	  -- Check for Miss Doyle, who has a special exception since her 3 cards are different
+	  if (v.name == "Miss Doyle")
+	  then
+		local row = {}
+		local rowSecond = {}
+		local rowThird = {}
+		row.cardName = v.bondedName
+		rowSecond.cardName = v.bondedNameSecond
+		rowThird.cardName = v.bondedNameThird
+		row.cardCount = 1
+		rowSecond.cardCount = 1
+		rowThird.cardCount = 1
+		row.permanent = true
+		rowSecond.permanent = true
+		rowThird.permanent = true
+		cardList[v.bondedCode] = row
+		cardList[v.bondedCodeSecond] = rowSecond
+		cardList[v.bondedCodeThird] = rowThird
+	  else
+		local row = {}
+		row.cardName = v.bondedName
+		row.cardCount = 3
+		row.permanent = true
+		cardList[v.bondedCode] = row
+	  end
+    end
+  end
+
+  -- Check for more complicated bonding cards
+  for k,v in pairs(bondedCardsBoolean) do
+    if (v.name == JsonCardRes.real_name and cardList[v.bondedCode] == nil)
+    then
+      local row = {}
+      row.cardName = v.bondedName
+      row.cardCount = v.bondCount
+      row.permanent = true
+      cardList[v.bondedCode] = row
+    end
+  end
+
+
+  -- Check for Taboos (add " (Taboo)" to card name)
+  if tabooID then
+    for k,v in pairs(tabooList[tabooID].cards) do
+      if v.code == JsonCardRes.code
+      then
+        cardList[JsonCardRes.code].cardName = cardList[JsonCardRes.code].cardName .. " (Taboo)"
+      end
+    end
+  end
+
+  -- Update number of processed slots, if complete, start building the deck
+  doneSlots = doneSlots + 1
+  if (doneSlots == numSlots)
+  then
+    createDeck()
+  end
+end
+
+function createDeck()
+  for k,v in pairs(cardList) do
+    searchForCard(v.cardName, v.subName, v.cardCount, v.permanent)
+  end
+end
+
+function searchForCard(cardName, subName, cardCount, permanent)
+  if cardName == 'Random Basic Weakness' then
+    -- pull a weakness card instead
+    weaknesses_bag.shuffle()
+    local taken = weaknesses_bag.takeObject({
+          position = deckPos,
+          index = 0,
+          smooth = false,
+          params = { cardName, cardCount, false }
+        })
+    -- just special case the one permanent for now
+    if taken.getName() == 'Indebted' then
+      taken.setPosition(permPos)
+    end
+    broadcastToAll("Drew random basic weakness: " .. taken.getName())
+    return
+  end
+
+  allCards = all_cards_bag.getObjects()
+  for k,v in pairs(allCards) do
+    if (v.nickname == cardName)
+    then
+      if(subName == nil or v.description == subName)
+      then
+        all_cards_bag.takeObject({
+          position = {0, 1.5, 0},
+          callback = 'cardTaken',
+          callback_owner=self,
+          index = v.index,
+          smooth = false,
+          params = { cardName, cardCount, permanent, v.guid }
+        })
+        print('Added '.. cardCount .. ' of ' .. cardName)
+        return
+      end
+    end
+  end
+  broadcastToAll("Card not found: "..cardName, {0.5,0.5,0.5})
+end
+
+function cardTaken(card, params)
+  -- Check destination deck (permanent?)
+    local destPos
+    local rotation = self.getRotation()
+    if (params[3] == true) then -- permanent card
+        destPos = permPos
+    else
+        destPos = deckPos
+        rotation = rotation + Vector(0, 0, 180) -- Flip non-permanents facedown
+    end
+
+    if (card.getName() == params[1]) then
+        for i=1, params[2] do
+            local cloneParams = {}
+            cloneParams.position=destPos
+            card.clone(cloneParams).setRotation(rotation)
+        end
+    all_cards_bag.putObject(card)
+    else
+        print('Wrong card: ' .. card.getName())
+        all_cards_bag.putObject(card)
+    end
+end
+
+function tabooListCallback(req)
+  -- Result check..
+  if req.is_done and not req.is_error
+  then
+    -- Find unicode before using JSON.decode since it doesnt handle hex UTF-16
+    local tmpText = string.gsub(req.text,"\\u(%w%w%w%w)", convertHexToDec)
+    JsonTabooRes = JSON.decode(tmpText)
+  else
+    print(req.error)
+    return
+  end
+  for k,v in pairs(JsonTabooRes) do
+    local row = {}
+    row.date = v.date_start
+    row.cards = JSON.decode(v.cards)
+    tabooList[v.id] = row
+  end
+end
+
+function makeText()
+  -- Create textbox
+  local input_parameters = {}
+  input_parameters.input_function = "inputTyped"
+  input_parameters.function_owner = self
+  input_parameters.position = {0.33,0.1,-0.255}
+  input_parameters.width = 2200
+  input_parameters.scale = {0.1,0.1,0.1}
+  input_parameters.height = 500
+  input_parameters.font_size = 450
+  input_parameters.tooltip = "*****PLEASE USE AN UNPUBLISHED DECK IF JUST FOR TTS TO AVOID FLOODING ARKHAMDB PUBLISHED DECK LISTS!*****\nInput deck ID from ArkhamDB URL of the deck\nExample: For the URL 'https://arkhamdb.com/decklist/view/101/knowledge-overwhelming-solo-deck-1.0', you should input '101'"
+  input_parameters.alignment = 3 -- (1 = Automatic, 2 = Left, 3 = Center, 4 = Right, 5 = Justified) –Optional
+  input_parameters.value=""
+  input_parameters.color = {0.9,0.7,0.5}
+  input_parameters.validation = 2
+  self.createInput(input_parameters)
+end
+
+function inputTyped(objectInputTyped, playerColorTyped, input_value, selected)
+    deckID = input_value
+end
+
+function makeButton()
+  -- Create Button
+  local button_parameters = {}
+  button_parameters.click_function = "buttonClicked"
+  button_parameters.function_owner = self
+  button_parameters.position = {0,0.05,-0.1}
+  button_parameters.width = 300
+  button_parameters.height = 100
+  button_parameters.tooltip = "Click to build your deck!"
+  button_parameters.scale = {1,1,0.6}
+  self.createButton(button_parameters)
+end
+
+function buttonClicked()
+  -- Reset
+  init()
+
+  get_deck()
+end
+
+function makeCheckboxPP()
+  -- Create Private/Published checkbox
+  local checkbox_parameters = {}
+  checkbox_parameters.click_function = "checkboxPPClicked"
+  checkbox_parameters.function_owner = self
+  checkbox_parameters.position = {-0.33,0.1,-0.255}
+  checkbox_parameters.width = 2100
+  checkbox_parameters.height = 500
+  checkbox_parameters.tooltip = "Click to toggle Private/Published deck ID"
+  checkbox_parameters.label = "Private"
+  checkbox_parameters.font_size = 350
+  checkbox_parameters.scale = {0.1,0.1,0.1}
+  checkbox_parameters.color = {0.9,0.7,0.5}
+  checkbox_parameters.hover_color = {0.4,0.6,0.8}
+  self.createButton(checkbox_parameters)
+end
+
+function checkboxPPClicked()
+  buttons = self.getButtons()
+  for k,v in pairs(buttons) do
+    if (v.label == "Private") then
+      local button_parameters = {}
+      button_parameters.label = "Published"
+      button_parameters.index = v.index
+      self.editButton(button_parameters)
+      privateDeck = false
+    else
+      if (v.label == "Published") then
+        local button_parameters = {}
+        button_parameters.label = "Private"
+        button_parameters.index = v.index
+        self.editButton(button_parameters)
+        privateDeck = true
+      end
+    end
+  end
+end
+
+-- Function to convert utf-16 hex to actual character since JSON.decode doesn't seem to handle utf-16 hex very well..
+function convertHexToDec(a)
+  return string.char(tonumber(a,16))
+end

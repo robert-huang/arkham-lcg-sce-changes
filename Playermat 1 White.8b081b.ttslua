@@ -171,6 +171,8 @@ function doUpkeep(obj, color, alt_click)
                     obj.setRotationSmooth(PLAY_ZONE_ROTATION)
                 end
             end
+        elseif obj.tag == "Board" and obj.getDescription() == "Action token" then
+            if obj.is_face_down then obj.flip() end
         end
     end
 
