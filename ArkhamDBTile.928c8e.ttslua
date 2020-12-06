@@ -15,8 +15,7 @@ function onLoad()
   extraPermanents={["Duke"]=true,["Sophie"]=true,["Gate Box"]=true,["Dark Insight"]=true}
   multiClassCards={{name=".45 Thompson",xp=3},{name="Scroll of Secrets",xp=3},{name="Tennessee Sour Mash",xp=3},{name="Enchanted Blade",xp=3},{name="Grisly Totem",xp=3}}
   returningCards={{name="On Your Own"}}
-  advancedSignatures={{name="Daisy's Tote Bag"},{name="The Necronomicon"},{name="On the Lam"},{name="Hospital Debts"}}
---  bondedCards={{name="Hallowed Mirror",bondedName="Soothing Melody",bondedCode=05314,copies=3},{name="Occult Lexicon",bondedName="Blood-Rite",bondedCode=05317,copies=3}}
+  advancedSignatures={{name="Daisy's Tote Bag"},{name="The Necronomicon"},{name="On the Lam"},{name="Hospital Debts"},{name="Dark Memory"},{name="Heirloom of Hyperborea"}}
   privateDeck = true
   permanents = true
 
@@ -247,18 +246,34 @@ function cardReadCallback(req)
 
   -- Check for advanced signature cards (this happens after subname check, so it should be fine)
   for k,v in pairs(advancedSignatures) do
-  	if (v.name == JsonCardRes.real_name)
-  	then
-      if (JsonCardRes.pack_name == "Read or Die" or JsonCardRes.pack_name == "All or Nothing")
-  	  then
-  	    if (v.name == "The Necronomicon")
-  	    then
+    if (v.name == JsonCardRes.real_name) then
+      --The Necronomicon is a whole can of worms, so handle it separately
+      if (JsonCardRes.real_name == "The Necronomicon") then
+        if (JsonCardRes.pack_name == "Read or Die") then
           cardList[JsonCardRes.code].subName = "John Dee Translation (Advanced)"
-  	    else
+        elseif (JsonCardRes.pack_name == "The Miskatonic Museum") then
+          cardList[JsonCardRes.code].subName = "Olaus Wormius Translation"
+        elseif (JsonCardRes.pack_name == "Harvey Walters") then
+          cardList[JsonCardRes.code].subName = "Petrus de Dacia Translation"
+        else
+          cardList[JsonCardRes.code].subName = "John Dee Translation"
+        end
+      elseif (JsonCardRes.pack_name == "Read or Die" or JsonCardRes.pack_name == "All or Nothing" or JsonCardRes.pack_name == "Bad Blood") then
+        if (v.name == "Heirloom of Hyperborea") then
+          cardList[JsonCardRes.code].subName = "Artifact from Another Life (Advanced)"
+        else
           cardList[JsonCardRes.code].subName = "Advanced"
-   	    end
-  	  end
-  	end
+        end
+      else
+        if (cardList[JsonCardRes.code].subName == nil) then
+          if (v.name == "Heirloom of Hyperborea") then
+            cardList[JsonCardRes.code].subName = "Artifact from Another Life"
+          else
+            cardList[JsonCardRes.code].subName = ""
+          end
+        end
+      end
+    end
   end
 
   -- Check if card is permanent (if separation is selected)
