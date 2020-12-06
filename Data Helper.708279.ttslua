@@ -531,7 +531,7 @@ LOCATIONS_DATA_JSON = [[
   "Mist-Filled Caverns": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Eldritch Gate": {"type": "perPlayer", "value": 1, "clueSide": "front"},
 
-  "Standalone - Barkham Horror": {},
+  "Standalone - Barkham Horror Meowlathotep": {},
   "Velma's Doghouse": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Barkham City Pound": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Barkham Asylum": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -542,6 +542,18 @@ LOCATIONS_DATA_JSON = [[
   "Muttskatonic University": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Boneyard": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "St. Mary's Animal Hospital": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+
+  "Standalone - War of the Outer Gods": {},
+  "Arkham": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Streets of New York City": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "The Penthouse": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "The Burning Pit": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Streets of Providence": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Athenaeum of the Empty Sky": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "The Arcade": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Streets of Montréal": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Chateau Ramezay": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Shrine of Magh’an Ark’at": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
   "TIC - The Pit of Despair": {},
   "Unfamiliar Chamber": {"type": "perPlayer", "value": 1, "clueSide": "back"},
@@ -580,6 +592,14 @@ LOCATIONS_DATA_JSON = [[
   "Innsmouth Jail_755fc0": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Shoreward Slums_c0d0df": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Desolate Coastline": {"type": "fixed", "value": 1, "clueSide": "back"},
+
+  "TIC - Devil Reef": {},
+  "Unfathomable Depths_cb5e3e": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Unfathomable Depths_7d180e": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Unfathomable Depths_fdf43f": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Unfathomable Depths_431ca2": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Unfathomable Depths_dfc9b4": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Unfathomable Depths_086743": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
   "Idol Thoughts - Bread and Circuses": {},
   "The Imperial Entrance": {"type": "fixed", "value": 1, "clueSide": "back"},
@@ -891,8 +911,8 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenCount": 4
   },
   "Flamethrower (5) (Taboo)": {
-  	"tokenType": "resource",
-  	"tokenCount": 4
+    "tokenType": "resource",
+    "tokenCount": 4
   },
   "Pnakotic Manuscripts (5)": {
     "tokenType": "resource",
@@ -947,8 +967,8 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenCount": 3
   },
   "Scroll of Secrets (Taboo)": {
-		"tokenType": "resource",
-		"tokenCount": 3
+    "tokenType": "resource",
+    "tokenCount": 3
   },
   "Tennessee Sour Mash": {
     "tokenType": "resource",
@@ -963,8 +983,8 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenCount": 3
   },
   "Mr. \"Rook\" (Taboo)": {
-		"tokenType": "resource",
-		"tokenCount": 3
+    "tokenType": "resource",
+    "tokenCount": 3
   },
   ".45 Thompson (3)": {
     "tokenType": "resource",
@@ -975,16 +995,16 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenCount": 3
   },
   "Scroll of Secrets (3) (Taboo):Seeker": {
-		"tokenType": "resource",
-		"tokenCount": 3
+    "tokenType": "resource",
+    "tokenCount": 3
   },
   "Scroll of Secrets (3):Mystic": {
     "tokenType": "resource",
     "tokenCount": 4
   },
   "Scroll of Secrets (3) (Taboo):Mystic": {
-		"tokenType": "resource",
-		"tokenCount": 4
+    "tokenType": "resource",
+    "tokenCount": 4
   },
   "Tennessee Sour Mash (3):Rogue": {
     "tokenType": "resource",
@@ -1067,8 +1087,8 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenCount": 5
   },
   ".35 Winchester (Taboo)": {
-		"tokenType": "resource",
-		"tokenCount": 5
+    "tokenType": "resource",
+    "tokenCount": 5
   },
   "Old Book of Lore (3)": {
     "tokenType": "resource",
@@ -1087,36 +1107,36 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenCount": 0
   },
   "Book of Psalms": {
-  	"tokenType": "resource",
-  	"tokenCount": 4
+    "tokenType": "resource",
+    "tokenCount": 4
   },
   "Cryptographic Cipher": {
-  	"tokenType": "resource",
-  	"tokenCount": 3
+    "tokenType": "resource",
+    "tokenCount": 3
   },
   ".25 Automatic": {
-  	"tokenType": "resource",
-  	"tokenCount": 4
+    "tokenType": "resource",
+    "tokenCount": 4
   },
   "Obfuscation": {
-  	"tokenType": "resource",
-  	"tokenCount": 3
+    "tokenType": "resource",
+    "tokenCount": 3
   },
   "Eldritch Sophist": {
-		"tokenType": "resource",
-		"tokenCount": 3
+    "tokenType": "resource",
+    "tokenCount": 3
   },
   "Armageddon": {
-		"tokenType": "resource",
-		"tokenCount": 3
+    "tokenType": "resource",
+    "tokenCount": 3
   },
   "Eye of Chaos": {
-		"tokenType": "resource",
-		"tokenCount": 3
+    "tokenType": "resource",
+    "tokenCount": 3
   },
   "Shroud of Shadows": {
-		"tokenType": "resource",
-		"tokenCount": 3
+    "tokenType": "resource",
+    "tokenCount": 3
   },
   "Investigator Starter Decks":{
     "tokenType": "doom",
@@ -1147,8 +1167,8 @@ PLAYER_CARD_DATA_JSON = [[
     "tokenCount": 6
   },
   "The Necronomicon (5) (Taboo)": {
-		"tokenType": "resource",
-		"tokenCount": 6
+    "tokenType": "resource",
+    "tokenCount": 6
   },
   "Mauser C96": {
     "tokenType": "resource",
@@ -1524,16 +1544,19 @@ modeData = {
   -----------------The Innsmouth Conspiracy
 
   ['The Innsmouth Conspiracy'] = {
-  	easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } },
-  	normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } },
-  	hard = { token = { '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm5', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } } ,
-  	expert = { token = { '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
+    easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } },
+    normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } },
+    hard = { token = { '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm5', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } } ,
+    expert = { token = { '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
   },
   ['The Vanishing of Elina Harper'] = {
-		standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
+    standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
   },
   ['In Too Deep'] = {
-		standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
+    standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
+  },
+  ['Devil Reef'] = {
+    standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
   },
 
   -----------------The Side Missions
@@ -1575,6 +1598,18 @@ modeData = {
     normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
     hard = { token = { '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm5', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
     expert = { token = { '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
+  },
+  ['Bad Blood'] = {
+    easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+    normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+    hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+    expert = { token = { '0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
+  },
+  ['WotOG'] = {
+    easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'skull', 'red', 'blue' } },
+    normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'skull', 'red', 'blue' } },
+    hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'skull', 'skull', 'skull', 'red', 'blue' } },
+    expert = { token = { '0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'skull', 'skull', 'skull', 'red', 'blue' } }
   },
 
   --fan-made
@@ -1731,8 +1766,8 @@ modeData = {
     hard = { token = { 'p1', '0', '0', '0', 'm1', 'm1', 'm3', 'm4', 'm5', 'm6', 'm7', 'skull', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
   },
   ['Darkness Falls'] = {
-		normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'red', 'blue' } },
-		hard = { token = { '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm5', 'skull', 'skull', 'cultist', 'tablet', 'red', 'blue' } }
+    normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'red', 'blue' } },
+    hard = { token = { '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm5', 'skull', 'skull', 'cultist', 'tablet', 'red', 'blue' } }
   },
   ['War of the Worlds'] = {
     easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'elder', 'red', 'blue' } },
@@ -1741,10 +1776,10 @@ modeData = {
     expert = { token = { '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'elder', 'red', 'blue' } }
   },
   ['Alice in Wonderland'] = {
-		easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'elder', 'red', 'blue' } },
-		normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'elder', 'red', 'blue' } },
-		hard = { token = { 'p1', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'skull', 'skull', 'elder', 'red', 'blue' } },
-		expert = { token = { '0', 'm1', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'skull', 'skull', 'elder', 'red', 'blue' } }
+    easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'elder', 'red', 'blue' } },
+    normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'elder', 'red', 'blue' } },
+    hard = { token = { 'p1', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'skull', 'skull', 'elder', 'red', 'blue' } },
+    expert = { token = { '0', 'm1', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'skull', 'skull', 'elder', 'red', 'blue' } }
   },
   ['Pokemon'] = {
     easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm2', 'm3', 'skull', 'skull', 'tablet', 'elder', 'red', 'blue' } },
@@ -1782,10 +1817,10 @@ modeData = {
     hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm3', 'm3', 'm4', 'm4', 'm6', 'skull', 'skull', 'cultist', 'tablet', 'tablet', 'red', 'blue' } },
   },
   ['Dark Matter'] = {
-  	easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'cultist', 'red', 'blue' } },
-  	normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'red', 'blue' } },
-  	hard = { token = { '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm5', 'skull', 'skull', 'cultist', 'cultist', 'red', 'blue' } },
-  	expert = { token = { '0', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'cultist', 'cultist', 'red', 'blue' } }
+    easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'cultist', 'red', 'blue' } },
+    normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'red', 'blue' } },
+    hard = { token = { '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm5', 'skull', 'skull', 'cultist', 'cultist', 'red', 'blue' } },
+    expert = { token = { '0', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'cultist', 'cultist', 'red', 'blue' } }
   },
   ['XXXX'] = {
     easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'tablet', 'red', 'blue' } },
