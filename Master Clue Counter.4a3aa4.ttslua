@@ -155,5 +155,7 @@ function keepSample(_obj, _string, value)
 end
 
 function onDestroy()
+  if timerID and type(timerID) == 'object' then
     Timer.destroy(timerID)
+  end
 end

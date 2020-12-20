@@ -3,8 +3,8 @@ CURSE_COLOR = { r=0.2, g=0.08, b=0.24 }
 MIN_VALUE = 1
 MAX_VALUE = 10
 IMAGE_URL = {
-    Bless = "http://cloud-3.steamusercontent.com/ugc/1011565208488650618/B2B081032AF3EFDBD90840A5D6888A3CEA228D66/",
-    Curse = "http://cloud-3.steamusercontent.com/ugc/1011565208488654691/8F0B399048EBC34CD24B99AAD415AEC40E679C65/"
+    Bless = "http://cloud-3.steamusercontent.com/ugc/1655601092778627699/339FB716CB25CA6025C338F13AFDFD9AC6FA8356/",
+    Curse = "http://cloud-3.steamusercontent.com/ugc/1655601092778636039/2A25BD38E8C44701D80DD96BF0121DA21843672E/"
 }
 
 function onload()

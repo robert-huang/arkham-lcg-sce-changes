@@ -133,7 +133,7 @@ function cardReadCallback(req)
   for k,v in pairs(subnameCards) do
     if (v.name == JsonCardRes.real_name and (v.xp == JsonCardRes.xp or JsonCardRes.xp == nil))
     then
-      cardList[JsonCardRes.code].subName = nil
+      cardList[JsonCardRes.code].subName = JsonCardRes.subname
     end
   end
 
@@ -268,6 +268,7 @@ function searchForCard(cardName, subName, cardCount, permanent)
     weaknesses_bag.shuffle()
     local taken = weaknesses_bag.takeObject({
           position = deckPos,
+          rotation = self.getRotation() + Vector(0, 0, 180),
           index = 0,
           smooth = false,
           params = { cardName, cardCount, false }
@@ -275,6 +276,7 @@ function searchForCard(cardName, subName, cardCount, permanent)
     -- just special case the one permanent for now
     if taken.getName() == 'Indebted' then
       taken.setPosition(permPos)
+      taken.setRotation(self.getRotation())
     end
     broadcastToAll("Drew random basic weakness: " .. taken.getName())
     return
