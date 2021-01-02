@@ -48,6 +48,45 @@ function onload()
     horror = {image = tokenplayerone.horrorone, scale = {0.17, 1, 0.17}},
   }
 
+  IMAGE_TOKEN_MAP = {
+    -- elder sign
+    ["https://i.imgur.com/nEmqjmj.png"] = "Elder Sign",
+    -- plus one
+    ["https://i.imgur.com/uIx8jbY.png"] = "+1",
+    -- zero
+    ["https://i.imgur.com/btEtVfd.png"] = "0",
+    -- minus one
+    ["https://i.imgur.com/w3XbrCC.png"] = "-1",
+    -- minus two
+    ["https://i.imgur.com/bfTg2hb.png"] = "-2",
+    -- minus three
+    ["https://i.imgur.com/yfs8gHq.png"] = "-3",
+    -- minus four
+    ["https://i.imgur.com/qrgGQRD.png"] = "-4",
+    -- minus five
+    ["https://i.imgur.com/3Ym1IeG.png"] = "-5",
+    -- minus six
+    ["https://i.imgur.com/c9qdSzS.png"] = "-6",
+    -- minus seven
+    ["https://i.imgur.com/4WRD42n.png"] = "-7",
+    -- minus eight
+    ["https://i.imgur.com/9t3rPTQ.png"] = "-8",
+    -- skull
+    ["https://i.imgur.com/stbBxtx.png"] = "Skull",
+    -- cultist
+    ["https://i.imgur.com/VzhJJaH.png"] = "Cultist",
+    -- tablet
+    ["https://i.imgur.com/1plY463.png"] = "Tablet",
+    -- elder thing
+    ["https://i.imgur.com/ttnspKt.png"] = "Elder Thing",
+    -- tentacle
+    ["https://i.imgur.com/lns4fhz.png"] = "Auto-fail",
+    -- bless
+    ["http://cloud-3.steamusercontent.com/ugc/1655601092778627699/339FB716CB25CA6025C338F13AFDFD9AC6FA8356/"] = "Bless",
+    -- curse
+    ["http://cloud-3.steamusercontent.com/ugc/1655601092778636039/2A25BD38E8C44701D80DD96BF0121DA21843672E/"] = "Curse"
+  }
+
   if not debug then
     getObjectFromGUID("6161b4").interactable=false
     getObjectFromGUID("721ba2").interactable=false
@@ -59,6 +98,12 @@ function onload()
     getObjectFromGUID("91dd9b").interactable=false
     getObjectFromGUID("f182ee").interactable=false
   end
+end
+
+function getTokenName(params)
+  local name = IMAGE_TOKEN_MAP[params.url]
+  if name == nil then name = "" end
+  return name
 end
 
 -- Remove comments to enable autorotate cards on hands.
