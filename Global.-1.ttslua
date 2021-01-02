@@ -98,7 +98,7 @@ PULLS = {
   -- tablet
   ["https://i.imgur.com/1plY463.png"] = 0,
   -- curse
-  ["http://cloud-3.steamusercontent.com/ugc/1011565208488654691/8F0B399048EBC34CD24B99AAD415AEC40E679C65/"] = 0,
+  ["http://cloud-3.steamusercontent.com/ugc/1655601092778636039/2A25BD38E8C44701D80DD96BF0121DA21843672E/"] = 0,
   -- tentacle
   ["https://i.imgur.com/lns4fhz.png"] = 0,
   -- minus eight
@@ -124,48 +124,48 @@ PULLS = {
   -- elder thing
   ["https://i.imgur.com/ttnspKt.png"] = 0,
   -- bless
-  ["http://cloud-3.steamusercontent.com/ugc/1011565208488650618/B2B081032AF3EFDBD90840A5D6888A3CEA228D66/"] = 0,
+  ["http://cloud-3.steamusercontent.com/ugc/1655601092778627699/339FB716CB25CA6025C338F13AFDFD9AC6FA8356/"] = 0,
   -- elder sign
   ["https://i.imgur.com/nEmqjmj.png"] = 0,
 }
 
 IMAGE_TOKEN_MAP = {
+    -- elder sign
+    ["https://i.imgur.com/nEmqjmj.png"] = "Elder Sign",
+    -- plus one
+    ["https://i.imgur.com/uIx8jbY.png"] = "+1",
+    -- zero
+    ["https://i.imgur.com/btEtVfd.png"] = "0",
+    -- minus one
+    ["https://i.imgur.com/w3XbrCC.png"] = "-1",
+    -- minus two
+    ["https://i.imgur.com/bfTg2hb.png"] = "-2",
+    -- minus three
+    ["https://i.imgur.com/yfs8gHq.png"] = "-3",
+    -- minus four
+    ["https://i.imgur.com/qrgGQRD.png"] = "-4",
+    -- minus five
+    ["https://i.imgur.com/3Ym1IeG.png"] = "-5",
+    -- minus six
+    ["https://i.imgur.com/c9qdSzS.png"] = "-6",
+    -- minus seven
+    ["https://i.imgur.com/4WRD42n.png"] = "-7",
+    -- minus eight
+    ["https://i.imgur.com/9t3rPTQ.png"] = "-8",
+    -- skull
+    ["https://i.imgur.com/stbBxtx.png"] = "Skull",
     -- cultist
-  ["https://i.imgur.com/VzhJJaH.png"] = "cultist",
-  -- skull
-  ["https://i.imgur.com/stbBxtx.png"] = "skull",
-  -- tablet
-  ["https://i.imgur.com/1plY463.png"] = "tablet",
-  -- elder thing
-  ["https://i.imgur.com/ttnspKt.png"] = "Elder Thing",
-  -- curse
-  ["http://cloud-3.steamusercontent.com/ugc/1011565208488654691/8F0B399048EBC34CD24B99AAD415AEC40E679C65/"] = "curse",
-  -- tentacle
-  ["https://i.imgur.com/lns4fhz.png"] = "Auto-Fail",
-  -- minus eight
-  ["https://i.imgur.com/9t3rPTQ.png"] = "-8",
-  -- minus seven
-  ["https://i.imgur.com/4WRD42n.png"] = "-7",
-  -- minus six
-  ["https://i.imgur.com/c9qdSzS.png"] = "-6",
-  -- minus five
-  ["https://i.imgur.com/3Ym1IeG.png"] = "-5",
-  -- minus four
-  ["https://i.imgur.com/qrgGQRD.png"] = "-4",
-  -- minus three
-  ["https://i.imgur.com/yfs8gHq.png"] = "-3",
-  -- minus two
-  ["https://i.imgur.com/bfTg2hb.png"] = "-2",
-  -- minus one
-  ["https://i.imgur.com/w3XbrCC.png"] = "-1",
-  -- zero
-  ["https://i.imgur.com/btEtVfd.png"] = "0",
-  -- plus one
-  ["https://i.imgur.com/uIx8jbY.png"] = "+1",
-  -- bless
-  ["http://cloud-3.steamusercontent.com/ugc/1011565208488650618/B2B081032AF3EFDBD90840A5D6888A3CEA228D66/"] = "bless",
-  -- elder sign
-  ["https://i.imgur.com/nEmqjmj.png"] = "Elder Sign",
+    ["https://i.imgur.com/VzhJJaH.png"] = "Cultist",
+    -- tablet
+    ["https://i.imgur.com/1plY463.png"] = "Tablet",
+    -- elder thing
+    ["https://i.imgur.com/ttnspKt.png"] = "Elder Thing",
+    -- tentacle
+    ["https://i.imgur.com/lns4fhz.png"] = "Auto-fail",
+    -- bless
+    ["http://cloud-3.steamusercontent.com/ugc/1655601092778627699/339FB716CB25CA6025C338F13AFDFD9AC6FA8356/"] = "Bless",
+    -- curse
+    ["http://cloud-3.steamusercontent.com/ugc/1655601092778636039/2A25BD38E8C44701D80DD96BF0121DA21843672E/"] = "Curse"
 }
 
 function resetStats()
@@ -638,8 +638,15 @@ function spawnToken_2(id, pos)
             thickness = 0.10,
                     })
         obj.scale {0.81, 1, 0.81}
+        obj.setName(getTokenName({ url=url }))
         return obj
     end
+end
+
+function getTokenName(params)
+    local name = IMAGE_TOKEN_MAP[params.url]
+    if name == nil then name = "" end
+    return name
 end
 
 function getImageUrl(id)

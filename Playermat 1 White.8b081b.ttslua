@@ -405,3 +405,11 @@ end
 function spawnToken(position, tokenType)
   Global.call('spawnToken', {position, tokenType})
 end
+
+function updatePlayerCards(args)
+    local custom_data_helper = getObjectFromGUID(args[1])
+    data_player_cards = custom_data_helper.getTable("PLAYER_CARD_DATA")
+    for k, v in pairs(data_player_cards) do
+        PLAYER_CARDS[k] = v
+    end
+end 
