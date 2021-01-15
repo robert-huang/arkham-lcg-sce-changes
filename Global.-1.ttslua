@@ -554,6 +554,7 @@ function spawnToken_2(id, pos)
             thickness = 0.10,
                     })
         obj.scale {0.81, 1, 0.81}
+        obj.setName(getTokenName({ url=url }))
         return obj
     end
 end
