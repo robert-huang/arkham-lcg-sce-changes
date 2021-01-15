@@ -573,6 +573,22 @@ LOCATIONS_DATA_JSON = [[
   "Unfathomable Depths_dfc9b4": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Unfathomable Depths_086743": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
+  "Old Innsmouth Road": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+  "Old Innsmouth Road_07ba2e": {"type": "perPlayer", "value": 3, "clueSide": "back"},
+  "Old Innsmouth Road_48b819": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Old Innsmouth Road_02e79c": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Old Innsmouth Road_27826a": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Old Innsmouth Road_dd62cc": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Old Innsmouth Road_687b03": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Old Innsmouth Road_eb3303": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Old Innsmouth Road_bebfba": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Old Innsmouth Road_c36e38": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Old Innsmouth Road_175a8a": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Old Innsmouth Road_d2c47a": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Old Innsmouth Road_095dac": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Old Innsmouth Road_fe2e46": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Old Innsmouth Road_f35c3d": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  
   "XXXX": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "xxx": {"type": "perPlayer", "value": 2, "clueSide": "back"}
 }
@@ -1509,6 +1525,9 @@ modeData = {
   standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
   },
   ['Devil Reef'] = {
+  standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
+  },
+  ['Horror in High Gear'] = {
   standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
   },
 
