@@ -218,13 +218,14 @@ function drawEncountercard(params) --[[ Parameter Table Position, Table Rotation
   local rotation = params[2]
   local privateDraw = params[3]
   local playerColour = params[4]
-  local faceUpRotation
-    -- if isFaceDown then
-    --   faceUpRotation = 180
-    -- else
-      faceUpRotation = 0
-    -- end
   local items = findInRadiusBy(ENCOUNTER_DECK_POS, 4, isCardOrDeck)
+  local faceUpRotation
+    if #items > 0 and (getObjectFromGUID(tokenDataId).call('checkHiddenCard', items[1].getName()) or
+                       (items[1].tag == 'Deck' and getObjectFromGUID(tokenDataId).call('checkHiddenCard', items[1].getObjects()[1].name))) then
+      faceUpRotation = 180
+    else
+      faceUpRotation = 0
+    end
   if #items > 0 then
     for i, v in ipairs(items) do
       if v.tag == 'Deck' then

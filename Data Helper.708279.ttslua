@@ -1313,6 +1313,40 @@ PLAYER_CARD_DATA_JSON = [[
   }
 }
 ]]
+
+-- Encounter Cards with Hidden.
+HIDDEN_CARD_DATA = {
+  "Whispers in Your Head (Dismay)",
+  "Whispers in Your Head (Dread)",
+  "Whispers in Your Head (Anxiety)",
+  "Whispers in Your Head (Doubt)",
+  "Gift of Madness (Pity)",
+  "Gift of Madness (Misery)",
+  "Possession (Traitorous)",
+  "Possession (Torturous)",
+  "Possession (Murderous)",
+
+  "Hastur's Gaze",
+  "Hastur's Grasp",
+  "Delusory Evils",
+  "Visions in Your Mind (Horrors)",
+  "Visions in Your Mind (Failure)",
+  "Visions in Your Mind (Death)",
+  "Visions in Your Mind (Hatred)",
+
+  "Law of 'Ygiroth (Chaos)",
+  "Law of 'Ygiroth (Discord)",
+  "Law of 'Ygiroth (Pandemonium)",
+  "Whispering Chaos (North)",
+  "Whispering Chaos (East)",
+  "Whispering Chaos (South)",
+  "Whispering Chaos (West)",
+  "Restless Journey (Fallacy)",
+  "Restless Journey (Hardship)",
+  "Restless Journey (Lies)",
+  "Nyarlathotep",
+}
+
 LOCATIONS_DATA = JSON.decode(LOCATIONS_DATA_JSON)
 PLAYER_CARD_DATA = JSON.decode(PLAYER_CARD_DATA_JSON)
 
@@ -1886,4 +1920,21 @@ function setSpawnedPlayerCardGuid(params)
     return true
   end
   return false
+end
+
+function checkHiddenCard(name)
+  for _, n in ipairs(HIDDEN_CARD_DATA) do
+    if name == n then
+      return true
+    end
+  end
+  return false
+end
+
+function updateHiddenCards(args)
+    local custom_data_helper = getObjectFromGUID(args[1])
+    local data_hiddenCards = custom_data_helper.getTable("HIDDEN_CARD_DATA")
+    for k, v in ipairs(data_hiddenCards) do
+        table.insert(HIDDEN_CARD_DATA, v)
+    end
 end
