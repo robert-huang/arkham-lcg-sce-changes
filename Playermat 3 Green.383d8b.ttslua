@@ -120,9 +120,16 @@ function onload(save_state)
   })
 
   local state = JSON.decode(save_state)
-  if state ~= nil and state.zoneID ~= nil then
-    zoneID = state.zoneID
-    Wait.time(checkDeckZoneExists, 30)
+  if state ~= nil then
+    if state.playerColor ~= nil then
+        PLAYER_COLOR = state.playerColor
+    end
+    if state.zoneID ~= nil then
+        zoneID = state.zoneID
+        Wait.time(checkDeckZoneExists, 30)
+    else
+        spawnDeckZone()
+    end
   else
     spawnDeckZone()
   end
@@ -131,7 +138,7 @@ function onload(save_state)
 end
 
 function onSave()
-    return JSON.encode({ zoneID=zoneID })
+    return JSON.encode({ zoneID=zoneID, playerColor=PLAYER_COLOR })
 end
 
 function doUpkeep(obj, color, alt_click)
@@ -168,7 +175,7 @@ function doUpkeep(obj, color, alt_click)
             else
                 local r = obj.getRotation()
                 if (r.y - y > 10) or (y - r.y > 10) then
-                    obj.setRotationSmooth(PLAY_ZONE_ROTATION)
+                    obj.setRotation(PLAY_ZONE_ROTATION)
                 end
             end
         elseif obj.tag == "Board" and obj.getDescription() == "Action token" then
@@ -412,4 +419,4 @@ function updatePlayerCards(args)
     for k, v in pairs(data_player_cards) do
         PLAYER_CARDS[k] = v
     end
-end 
+end

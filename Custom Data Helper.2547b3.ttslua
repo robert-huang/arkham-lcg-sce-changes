@@ -51,6 +51,11 @@ PLAYER_CARD_DATA_JSON = [[
 }
 ]]
 
+HIDDEN_CARD_DATA = {
+  "Unpleasant Card (Doom)",
+  "Unpleasant Card (Gloom)",
+  "The Case of the Scarlet DOOOOOM!"
+}
 
 LOCATIONS_DATA = JSON.decode(LOCATIONS_DATA_JSON)
 PLAYER_CARD_DATA = JSON.decode(PLAYER_CARD_DATA_JSON)
@@ -66,4 +71,6 @@ function onload(save_state)
   playerMatGreen.call("updatePlayerCards", {self.getGUID()})
   local playerMatRed = getObjectFromGUID('0840d5')
   playerMatRed.call("updatePlayerCards", {self.getGUID()})
+  local dataHelper = getObjectFromGUID('708279')
+  dataHelper.call("updateHiddenCards", {self.getGUID()})
 end

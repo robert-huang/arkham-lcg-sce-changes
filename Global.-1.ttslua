@@ -327,37 +327,49 @@ end
 function drawEncountercard(params) --[[ Parameter Table Position, Table Rotation]]
   local position = params[1]
   local rotation = params[2]
-  local isFaceUp = params[3]
+  local alwaysFaceUp = params[3]
   local faceUpRotation
-    if (isFaceUp) then
-      faceUpRotation = 0
-      else
-        faceUpRotation = 180
-    end
-    local items = findInRadiusBy(ENCOUNTER_DECK_POS, 4, isCardOrDeck)
-      if #items > 0 then
-        for i, v in ipairs(items) do
-          if v.tag == 'Deck' then
-            v.takeObject({index = 0, position = position, rotation = {0,rotation.y,faceUpRotation}})
-          return
-        end
+  local card
+  local items = findInRadiusBy(ENCOUNTER_DECK_POS, 4, isCardOrDeck)
+  if #items > 0 then
+    for i, v in ipairs(items) do
+      if v.tag == 'Deck' then
+        card = v.takeObject({index = 0})
+        break
       end
--- we didn't find the deck so just pull the first thing we did find
-      items[1].setPositionSmooth(position, false, false)
-      items[1].setRotationSmooth({0,rotation.y,faceUpRotation}, false, false)
+    end
+    -- we didn't find the deck so just pull the first thing we did find
+    if card == nil then card = items[1] end
+    actualEncounterCardDraw(card, params)
     return
   end
 -- nothing here, time to reshuffle
-  reshuffleEncounterDeck(position, {0,rotation.y,faceUpRotation})
+  reshuffleEncounterDeck(params)
+end
+
+function actualEncounterCardDraw(card, params)
+  local position = params[1]
+  local rotation = params[2]
+  local alwaysFaceUp = params[3]
+  local faceUpRotation = 0
+  if not alwaysFaceUp then
+    if getObjectFromGUID(tokenDataId).call('checkHiddenCard', card.getName()) then
+      faceUpRotation = 180
+    end
+  end
+  card.setPositionSmooth(position, false, false)
+  card.setRotationSmooth({0,rotation.y,faceUpRotation}, false, false)
 end
 
 IS_RESHUFFLING = false
-function reshuffleEncounterDeck(position, rotation)
+function reshuffleEncounterDeck(params)
   -- finishes moving the deck back and draws a card
   local function move(deck)
     deck.setPositionSmooth(ENCOUNTER_DECK_SPAWN_POS, true, false)
-    deck.takeObject({index = 0, position = position, rotation = rotation, flip = false})
-    Wait.time(function() IS_RESHUFFLING = false end, 1)
+    actualEncounterCardDraw(deck.takeObject({index=0}), params)
+    Wait.time(function()
+      IS_RESHUFFLING = false
+    end, 1)
   end
   -- bail out if we're mid reshuffle
   if IS_RESHUFFLING then

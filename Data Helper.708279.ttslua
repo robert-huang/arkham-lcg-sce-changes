@@ -572,6 +572,8 @@ LOCATIONS_DATA_JSON = [[
   "Unfathomable Depths_431ca2": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Unfathomable Depths_dfc9b4": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Unfathomable Depths_086743": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Tidal Tunnel_0e611a": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Tidal Tunnel_b1a7f2": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 
   "Old Innsmouth Road": {"type": "perPlayer", "value": 0, "clueSide": "back"},
   "Old Innsmouth Road_07ba2e": {"type": "perPlayer", "value": 3, "clueSide": "back"},
@@ -588,6 +590,16 @@ LOCATIONS_DATA_JSON = [[
   "Old Innsmouth Road_095dac": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Old Innsmouth Road_fe2e46": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Old Innsmouth Road_f35c3d": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  
+  "Falcon Point Cliffside": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Lighthouse Stairwell": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Lantern Room": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Lighthouse Keeper's Cottage": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+ 
+ "Tidal Tunnel_7eba72": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Tidal Tunnel_b4bcd8": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+  "Tidal Tunnel_4ba689": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+  "Tidal Tunnel_ffdbef": {"type": "perPlayer", "value": 0, "clueSide": "back"},
   
   "XXXX": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "xxx": {"type": "perPlayer", "value": 2, "clueSide": "back"}
@@ -1258,12 +1270,62 @@ PLAYER_CARD_DATA_JSON = [[
   "tokenType": "resource",
   "tokenCount": 3
   },
+  "Guided by the Unseen (3)": {
+  "tokenType": "resource",
+  "tokenCount": 4
+  },
+  "Eye of Chaos (4)": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "Shroud of Shadows (4)": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "Armageddon (4)": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
   "xxx": {
   "tokenType": "resource",
   "tokenCount": 3
   }
 }
 ]]
+
+-- Encounter Cards with Hidden.
+HIDDEN_CARD_DATA = {
+  "Visions in Your Mind (Death)",
+  "Visions in Your Mind (Failure)",
+  "Visions in Your Mind (Hatred)",
+  "Visions in Your Mind (Horrors)",
+  "Gift of Madness (Misery)",
+  "Gift of Madness (Pity)",
+  "Possession (Murderous)",
+  "Possession (Torturous)",
+  "Possession (Traitorous)",
+  
+  "Whispers in Your Head (Anxiety)",
+  "Whispers in Your Head (Dismay)",
+  "Whispers in Your Head (Doubt)",
+  "Whispers in Your Head (Dread)",
+  "Delusory Evils",
+  "Hastur's Gaze",
+  "Hastur's Grasp",
+  
+  "Law of 'Ygiroth (Chaos)",
+  "Law of 'Ygiroth (Discord)",
+  "Law of 'Ygiroth (Pandemonium)",
+  "Nyarlathotep",
+  "Restless Journey (Fallacy)",
+  "Restless Journey (Hardship)",
+  "Restless Journey (Lies)",
+  "Whispering Chaos (East)",
+  "Whispering Chaos (North)",
+  "Whispering Chaos (South)",
+  "Whispering Chaos (West)"
+}
+
 LOCATIONS_DATA = JSON.decode(LOCATIONS_DATA_JSON)
 PLAYER_CARD_DATA = JSON.decode(PLAYER_CARD_DATA_JSON)
 
@@ -1528,6 +1590,9 @@ modeData = {
   standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
   },
   ['Horror in High Gear'] = {
+  standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
+  },
+  ['A Light in the Fog'] = {
   standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
   },
 
