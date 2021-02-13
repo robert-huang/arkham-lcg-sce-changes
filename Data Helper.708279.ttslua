@@ -1908,3 +1908,20 @@ function setSpawnedPlayerCardGuid(params)
   end
   return false
 end
+
+function checkHiddenCard(name)
+  for _, n in ipairs(HIDDEN_CARD_DATA) do
+    if name == n then
+      return true
+    end
+  end
+  return false
+end
+
+function updateHiddenCards(args)
+    local custom_data_helper = getObjectFromGUID(args[1])
+    local data_hiddenCards = custom_data_helper.getTable("HIDDEN_CARD_DATA")
+    for k, v in ipairs(data_hiddenCards) do
+        table.insert(HIDDEN_CARD_DATA, v)
+    end
+end
