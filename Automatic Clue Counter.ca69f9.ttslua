@@ -60,33 +60,20 @@ function totalCounters()
       or p1ManualClueCounter == nil or p2ManualClueCounter == nil or p3ManualClueCounter == nil or p4ManualClueCounter == nil then
         loadPlayerCounters()
     end
-    local p1ClueCount = p1ClueCounter.getVar("exposedValue")
-    local p2ClueCount = p2ClueCounter.getVar("exposedValue")
-    local p3ClueCount = p3ClueCounter.getVar("exposedValue")
-    local p4ClueCount = p4ClueCounter.getVar("exposedValue")
+
+    local p1ClueCount = p1ClueCounter and p1ClueCounter.getVar("exposedValue") or 0
+    local p2ClueCount = p2ClueCounter and p2ClueCounter.getVar("exposedValue") or 0
+    local p3ClueCount = p3ClueCounter and p3ClueCounter.getVar("exposedValue") or 0
+    local p4ClueCount = p4ClueCounter and p4ClueCounter.getVar("exposedValue") or 0
 
     val = tonumber(p1ClueCount) + tonumber(p2ClueCount) + tonumber(p3ClueCount) + tonumber(p4ClueCount)
 
-    if p1ManualClueCounter ~= nil then
-      local p1ManualClueCount = p1ManualClueCounter.getVar("val")
-      val = val + tonumber(p1ManualClueCount)
-    end
-    if p2ManualClueCounter ~= nil then
-      local p2ManualClueCount = p2ManualClueCounter.getVar("val")
-      val = val + tonumber(p2ManualClueCount)
-    end
-    if p3ManualClueCounter ~= nil then
-      local p3ManualClueCount = p3ManualClueCounter.getVar("val")
-      val = val + tonumber(p3ManualClueCount)
-    end
-    if p4ManualClueCounter ~= nil then
-      local p4ManualClueCount = p4ManualClueCounter.getVar("val")
-      val = val + tonumber(p4ManualClueCount)
-    end
-    if p5ManualClueCounter ~= nil then
-      local p5ManualClueCount = p5ManualClueCounter.getVar("val")
-      val = val + tonumber(p5ManualClueCount)
-    end
+    local p1ManualClueCount = p1ManualClueCounter and p1ManualClueCounter.getVar("val") or 0
+    local p2ManualClueCount = p2ManualClueCounter and p2ManualClueCounter.getVar("val") or 0
+    local p3ManualClueCount = p3ManualClueCounter and p3ManualClueCounter.getVar("val") or 0
+    local p4ManualClueCount = p4ManualClueCounter and p4ManualClueCounter.getVar("val") or 0
+
+    val = val + tonumber(p1ManualClueCount) + tonumber(p2ManualClueCount) + tonumber(p3ManualClueCount) + tonumber(p4ManualClueCount)
 
     updateVal()
     updateSave()
@@ -139,10 +126,18 @@ function removeAll()
 end
 
 function removeAllPlayerClues()
-  p1ClueCounter.call("removeAllClues")
-  p2ClueCounter.call("removeAllClues")
-  p3ClueCounter.call("removeAllClues")
-  p4ClueCounter.call("removeAllClues")
+  if p1ClueCounter ~= nil then
+    p1ClueCounter.call("removeAllClues")
+  end
+  if p2ClueCounter ~= nil then
+    p2ClueCounter.call("removeAllClues")
+  end
+  if p3ClueCounter ~= nil then
+    p3ClueCounter.call("removeAllClues")
+  end
+  if p4ClueCounter ~= nil then
+    p4ClueCounter.call("removeAllClues")
+  end
 
   if p1ManualClueCounter ~= nil then
     p1ManualClueCounter.setVar("val", 0)
