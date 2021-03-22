@@ -12,6 +12,8 @@ containerId = 'fea079'
 tokenDataId = '708279'
 
 
+maxSquid = 0
+
 CACHE = {
     object = {},
     data = {}
@@ -192,7 +194,7 @@ end
 
 function printStats()
   local squidKing = "Nobody"
-  local maxSquid = 0
+
 
   printToAll("\nOverall Game stats\n")
   printNonZeroTokenPairs(PULLS)
@@ -202,8 +204,9 @@ function printStats()
     printToAll(playerName ..  " Stats", {r=255,g=0,b=0})
     printNonZeroTokenPairs(PLAYER_PULLS[playerMatGuid])
     playerSquidCount = PLAYER_PULLS[playerMatGuid]["https://i.imgur.com/lns4fhz.png"]
-    if playerSquidCount != nil and playerSquidCount > maxSquid then
+    if playerSquidCount ~= nil and playerSquidCount > maxSquid then
       squidKing = playerName
+	  maxSquid = playerSquidCount
     end
   end
   printToAll(squidKing .. " is an auto-fail magnet.", {r=255,g=0,b=0})
@@ -211,7 +214,7 @@ end
 
 function printNonZeroTokenPairs(theTable)
     for key,value in pairs(theTable) do
-      if value != 0 then
+      if value ~= 0 then
         printToAll(IMAGE_TOKEN_MAP[key] .. '=' .. tostring(value))
       end
     end
@@ -394,7 +397,7 @@ CHAOS_TOKENS_LAST_MAT = nil
 function putBackChaosTokens()
   local chaosbagposition = chaosbag.getPosition()
   for k, token in pairs(CHAOS_TOKENS) do
-    if token != nil then
+    if token ~= nil then
       chaosbag.putObject(token)
       token.setPosition({chaosbagposition[1],chaosbagposition[2]+0.5,chaosbagposition[3]})
       end

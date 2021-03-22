@@ -596,10 +596,19 @@ LOCATIONS_DATA_JSON = [[
   "Lantern Room": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Lighthouse Keeper's Cottage": {"type": "perPlayer", "value": 2, "clueSide": "back"},
  
- "Tidal Tunnel_7eba72": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Tidal Tunnel_7eba72": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Tidal Tunnel_b4bcd8": {"type": "perPlayer", "value": 0, "clueSide": "back"},
   "Tidal Tunnel_4ba689": {"type": "perPlayer", "value": 0, "clueSide": "back"},
   "Tidal Tunnel_ffdbef": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+  
+  "First Floor Hall": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "First Floor Hall": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Second Floor Hall": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Second Floor Hall_b06d36": {"type": "fixed", "value": 1, "clueSide": "back"},
+  "Third Floor Hall": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Lair of Dagon": {"type": "perPlayer", "value": 3, "clueSide": "back"},
+  
+  "Tidal Tunnel_01c28f": {"type": "fixed", "value": 1, "clueSide": "back"},
   
   "XXXX": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "xxx": {"type": "perPlayer", "value": 2, "clueSide": "back"}
@@ -1286,6 +1295,18 @@ PLAYER_CARD_DATA_JSON = [[
   "tokenType": "resource",
   "tokenCount": 3
   },
+  "Hyperawareness (4)": {
+  "tokenType": "resource",
+  "tokenCount": 2
+  },
+  "Hard Knocks (4)": {
+  "tokenType": "resource",
+  "tokenCount": 2
+  },
+  "Dig Deep (4)": {
+  "tokenType": "resource",
+  "tokenCount": 2
+  },
   "xxx": {
   "tokenType": "resource",
   "tokenCount": 3
@@ -1593,6 +1614,9 @@ modeData = {
   standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
   },
   ['A Light in the Fog'] = {
+  standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
+  },
+  ['The Lair of Dagon'] = {
   standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
   },
 
