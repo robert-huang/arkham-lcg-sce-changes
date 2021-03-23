@@ -630,6 +630,14 @@ LOCATIONS_DATA_JSON = [[
   "Tidal Tunnel_4ba689": {"type": "perPlayer", "value": 0, "clueSide": "back"},
   "Tidal Tunnel_ffdbef": {"type": "perPlayer", "value": 0, "clueSide": "back"},
 
+  "TIC - The Lair of Dagon": {},
+  "First Floor Hall": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "First Floor Hall": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Second Floor Hall": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Second Floor Hall_b06d36": {"type": "fixed", "value": 1, "clueSide": "back"},
+  "Third Floor Hall": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Lair of Dagon": {"type": "perPlayer", "value": 3, "clueSide": "back"},
+  "Tidal Tunnel_01c28f": {"type": "fixed", "value": 1, "clueSide": "back"},
 
   "Idol Thoughts - Bread and Circuses": {},
   "The Imperial Entrance": {"type": "fixed", "value": 1, "clueSide": "back"},
@@ -1642,6 +1650,9 @@ modeData = {
     standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
   },
   ['A Light in the Fog'] = {
+  standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
+  },
+  ['The Lair of Dagon'] = {
   standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
   },
 
