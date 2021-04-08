@@ -149,6 +149,9 @@ function doUpkeep(obj, color, alt_click)
         return
     end
 
+    -- send messages to player who clicked button if no seated player found
+    messageColor = Player[PLAYER_COLOR].seated and PLAYER_COLOR or color
+
     -- unexhaust cards in play zone
     local objs = Physics.cast({
         origin = PLAY_ZONE_POSITION,
@@ -164,7 +167,7 @@ function doUpkeep(obj, color, alt_click)
     for i,v in ipairs(objs) do
         local obj = v.hit_object
         local props = obj.getCustomObject()
-        if obj.tag == "Card" and not obj.is_face_down then
+        if obj.tag == "Card" and not obj.is_face_down and not doNotReady(obj) then
             if props ~= nil and props.unique_back then
                 local name = obj.getName()
                 if string.match(name, "Jenny Barnes") ~= nil then
@@ -187,7 +190,7 @@ function doUpkeep(obj, color, alt_click)
     getObjectFromGUID(RESOURCE_COUNTER_GUID).call("add_subtract")
     if investigator == "Jenny Barnes" then
         getObjectFromGUID(RESOURCE_COUNTER_GUID).call("add_subtract")
-        printToColor("Taking 2 resources (Jenny)", PLAYER_COLOR)
+        printToColor("Taking 2 resources (Jenny)", messageColor)
     end
 
     -- draw card (shuffle discard if necessary)
@@ -216,9 +219,17 @@ function doUpkeep(obj, color, alt_click)
             shuffleDiscardIntoDeck()
             Wait.time(|| drawCards(1), 1)
         end
-        printToColor("Take 1 horror (drawing card from empty deck)", PLAYER_COLOR)
+        printToColor("Take 1 horror (drawing card from empty deck)", messageColor)
     else
         drawCards(1)
+    end
+end
+
+function doNotReady(card)
+    if card.getVar("do_not_ready") == true then
+        return true
+    else
+        return false
     end
 end
 
@@ -240,7 +251,7 @@ function patriceDraw()
     if handSize >= 5 then return end
     local cardsToDraw = 5 - handSize
     local deckSize
-    printToColor("Drawing " .. cardsToDraw .. " cards (Patrice)", PLAYER_COLOR)
+    printToColor("Drawing " .. cardsToDraw .. " cards (Patrice)", messageColor)
     if drawDeck == nil then
         deckSize = 0
     elseif drawDeck.tag == "Deck" then
@@ -259,7 +270,7 @@ function patriceDraw()
         shuffleDiscardIntoDeck()
         Wait.time(|| drawCards(cardsToDraw - deckSize), 1)
     end
-    printToColor("Take 1 horror (drawing card from empty deck)", PLAYER_COLOR)
+    printToColor("Take 1 horror (drawing card from empty deck)", messageColor)
 end
 
 function checkDeckZoneExists()
