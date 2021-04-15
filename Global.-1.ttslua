@@ -24,14 +24,14 @@ Most of your script code goes here. --]]
 function onload()
   Player.White.changeColor('Orange')
   tokenplayerone = {
-    damageone = "https://i.imgur.com/XIJHw3J.png",
-    damagethree = "https://i.imgur.com/eqRC712.png",
-    horrorone = "https://i.imgur.com/Bh0BO47.png",
-    horrorthree = "https://i.imgur.com/pZvTKA7.png",
-    resource = "https://i.imgur.com/j5v5E3j.png",
+    damageone = "http://cloud-3.steamusercontent.com/ugc/1758068501357115146/903D11AAE7BD5C254C8DC136E9202EE516289DEA/",
+    damagethree = "http://cloud-3.steamusercontent.com/ugc/1758068501357113055/8A45F27B2838FED09DEFE492C9C40DD82781613A/",
+    horrorone = "http://cloud-3.steamusercontent.com/ugc/1758068501357163535/6D9E0756503664D65BDB384656AC6D4BD713F5FC/",
+    horrorthree = "http://cloud-3.steamusercontent.com/ugc/1758068501357162977/E5D453CC14394519E004B4F8703FC425A7AE3D6C/",
+    resource = "http://cloud-3.steamusercontent.com/ugc/1758068501357192910/11DDDC7EF621320962FDCF3AE3211D5EDC3D1573/",
     resourcethree = "https://i.imgur.com/1GZsDTt.png",
     doom = "https://i.imgur.com/EoL7yaZ.png",
-    clue = "https://i.imgur.com/wfCaVU0.png",
+    clue = "http://cloud-3.steamusercontent.com/ugc/1758068501357164917/1D06F1DC4D6888B6F57124BD2AFE20D0B0DA15A8/",
     ammo = "https://i.imgur.com/fVPiBqM.png",
     charge = "https://i.imgur.com/KK38oJR.png",
     secret = "https://i.imgur.com/ah433h5.png"
