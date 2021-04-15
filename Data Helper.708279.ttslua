@@ -610,6 +610,15 @@ LOCATIONS_DATA_JSON = [[
   
   "Tidal Tunnel_01c28f": {"type": "fixed", "value": 1, "clueSide": "back"},
   
+  "Y'ha-nthlei": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+  "Y'ha-nthlei_014f88": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Y'ha-nthlei_eca6a9": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Y'ha-nthlei_3e58ef": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Y'ha-nthlei_ce1a94": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Y'ha-nthlei Sanctum": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Lair of Dagon_819894": {"type": "perPlayer", "value": 3, "clueSide": "back"},
+  "Lair of Hydra": {"type": "perPlayer", "value": 3, "clueSide": "back"},
+  
   "XXXX": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "xxx": {"type": "perPlayer", "value": 2, "clueSide": "back"}
 }
@@ -1307,6 +1316,15 @@ PLAYER_CARD_DATA_JSON = [[
   "tokenType": "resource",
   "tokenCount": 2
   },
+  ".25 Automatic (2)": {
+  "tokenType": "resource",
+  "tokenCount": 4
+  },
+  "Shrine of the Moirai (3)": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  
   "xxx": {
   "tokenType": "resource",
   "tokenCount": 3
@@ -1601,22 +1619,7 @@ modeData = {
   hard = { token = { '0', '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm5', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } } ,
   expert = { token = { '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm3', 'm4', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
   },
-  ['The Vanishing of Elina Harper'] = {
-  standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
-  },
-  ['In Too Deep'] = {
-  standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
-  },
-  ['Devil Reef'] = {
-  standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
-  },
-  ['Horror in High Gear'] = {
-  standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
-  },
-  ['A Light in the Fog'] = {
-  standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
-  },
-  ['The Lair of Dagon'] = {
+  ['TIC_Standalone'] = {
   standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
   },
 
