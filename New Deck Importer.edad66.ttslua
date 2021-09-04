@@ -8,11 +8,11 @@ function onLoad()
   privateDeckURL="https://arkhamdb.com/api/public/deck/"
   cardURL="https://arkhamdb.com/api/public/card/"
   tabooListURL="https://arkhamdb.com/api/public/taboos/"
-  subnameCards={{name="Randolph Carter",xp=0},{name="Dream Diary",xp=3},{name="Relic of Ages",xp=0},{name="The Necronomicon",xp=0},{name="Archaic Glyphs",xp=3},{name="Strange Solution",xp=4},{name="Forbidden Tome",xp=3},{name="Relic of Ages",xp=0}, {name="Ancient Stone",xp=4}, {"Dream Diary",xp=0},{name="Empower Self",xp=2}}
+  subnameCards={{name="Randolph Carter",xp=0},{name="Directive",xp=0},{name="Dream Diary",xp=3},{name="Relic of Ages",xp=0},{name="The Necronomicon",xp=0},{name="Archaic Glyphs",xp=3},{name="Strange Solution",xp=4},{name="Forbidden Tome",xp=3},{name="Relic of Ages",xp=0}, {name="Ancient Stone",xp=4}, {"Dream Diary",xp=0},{name="Empower Self",xp=2}}
   extraPermanents={["Duke"]=true,["Sophie"]=true,["Gate Box"]=true,["Dark Insight"]=true}
   multiClassCards={{name=".45 Thompson",xp=3},{name="Scroll of Secrets",xp=3},{name="Tennessee Sour Mash",xp=3},{name="Enchanted Blade",xp=3},{name="Grisly Totem",xp=3}}
   returningCards={{name="On Your Own"}}
-  advancedSignatures={{name="Daisy's Tote Bag"},{name="The Necronomicon"},{name="On the Lam"},{name="Hospital Debts"},{name="Dark Memory"},{name="Heirloom of Hyperborea"}}
+  advancedSignatures={{name="Daisy's Tote Bag"},{name="The Necronomicon"},{name="On the Lam"},{name="Hospital Debts"},{name="Dark Memory"},{name="Heirloom of Hyperborea"},{name="Roland's .38 Special"},{name="Cover Up"}}
   bondedCardsOneThree={{name="Hallowed Mirror",bondedName="Soothing Melody",bondedCode=05314},{name="Occult Lexicon",bondedName="Blood-Rite",bondedCode=05317},{name="The Hungering Blade",bondedName="Bloodlust",bondedCode=06019},{name="Nightmare Bauble",bondedName="Dream Parasite",bondedCode=06331},{name="Miss Doyle",bondedName="Hope",bondedCode=06031,bondedNameSecond="Zeal",bondedCodeSecond=06032,bondedNameThird="Augur",bondedCodeThird=06033}}
   bondedCardsBoolean = {{name="Gate Box",bondedName="Dream-Gate",bondedCode="06015a",bondCount=1},{name="Crystallizer of Dreams",bondedName="Guardian of the Crystallizer",bondedCode=06025,bondCount=2},{name="Dream Diary",bondedName="Essence of the Dream",bondedCode=06113,bondCount=1},{name="Empty Vessel",bondedName="Wish Eater",bondedCode=06277,bondCount=1},{name="Segment of Onyx",bondedName="Pendant of the Queen",bondedCode=06022,bondCount=1},{name="Stargazing",bondedName="The Stars Are Right",bondedCode=06028,bondCount=2},{name="Summoned Hound",bondedName="Unbound Beast",bondedCode=06283,bondCount=2}}
   privateDeck = true
@@ -167,7 +167,7 @@ function cardReadCallback(req)
 		else
 		  cardList[JsonCardRes.code].subName = "John Dee Translation"
 		end		
-	  elseif (JsonCardRes.pack_name == "Read or Die" or JsonCardRes.pack_name == "All or Nothing" or JsonCardRes.pack_name == "Bad Blood") then
+	  elseif (JsonCardRes.pack_name == "Read or Die" or JsonCardRes.pack_name == "All or Nothing" or JsonCardRes.pack_name == "Bad Blood" or JsonCardRes.pack_name == "By the Book") then
 		if (v.name == "Heirloom of Hyperborea") then
 		  cardList[JsonCardRes.code].subName = "Artifact from Another Life (Advanced)"
 	    else
