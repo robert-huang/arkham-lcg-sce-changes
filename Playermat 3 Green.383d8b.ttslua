@@ -109,14 +109,25 @@ function onload(save_state)
   })
 
   self.createButton({
-      label="Upkeep",
-      click_function = "doUpkeep",
-      function_owner = self,
-      position = {1.48,0.1,-0.4},
-      scale = {0.12, 0.12, 0.12},
-      width = 800,
-      height = 280,
-      font_size = 180
+    label="Upkeep",
+    click_function = "doUpkeep",
+    function_owner = self,
+    position = {1.48,0.1,-0.44},
+    scale = {0.12, 0.12, 0.12},
+    width = 800,
+    height = 280,
+    font_size = 180
+  })
+
+  self.createButton({
+    label="Draw 1",
+    click_function = "doDrawOne",
+    function_owner = self,
+    position = {1.48,0.1,-0.36},
+    scale = {0.12, 0.12, 0.12},
+    width = 800,
+    height = 280,
+    font_size = 180
   })
 
   local state = JSON.decode(save_state)
@@ -141,6 +152,39 @@ function onSave()
     return JSON.encode({ zoneID=zoneID, playerColor=PLAYER_COLOR })
 end
 
+function setMessageColor(color)
+    -- send messages to player who clicked button if no seated player found
+    messageColor = Player[PLAYER_COLOR].seated and PLAYER_COLOR or color
+end
+
+function getDrawDiscardDecks(zone)
+    -- get the draw deck and discard pile objects
+    drawDeck = nil
+    discardPile = nil
+    for i,object in ipairs(zone.getObjects()) do
+        if object.tag == "Deck" or object.tag == "Card" then
+            if object.is_face_down then
+                drawDeck = object
+            else
+                discardPile = object
+            end
+        end
+    end
+end
+
+function checkDeckThenDrawOne()
+    -- draw 1 card, shuffling the discard pile if necessary
+    if drawDeck == nil then
+        if discardPile ~= nil then
+            shuffleDiscardIntoDeck()
+            Wait.time(|| drawCards(1), 1)
+        end
+        printToColor("Take 1 horror (drawing card from empty deck)", messageColor)
+    else
+        drawCards(1)
+    end
+end
+
 function doUpkeep(obj, color, alt_click)
     -- right-click binds to new player color
     if alt_click then
@@ -149,8 +193,7 @@ function doUpkeep(obj, color, alt_click)
         return
     end
 
-    -- send messages to player who clicked button if no seated player found
-    messageColor = Player[PLAYER_COLOR].seated and PLAYER_COLOR or color
+    setMessageColor(color)
 
     -- unexhaust cards in play zone
     local objs = Physics.cast({
@@ -193,36 +236,40 @@ function doUpkeep(obj, color, alt_click)
         printToColor("Taking 2 resources (Jenny)", messageColor)
     end
 
-    -- draw card (shuffle discard if necessary)
+    -- get the draw deck and discard pile objects
     local zone = getObjectFromGUID(zoneID)
     if zone == nil then return end
 
-    drawDeck = nil
-    discardPile = nil
-    for i,object in ipairs(zone.getObjects()) do
-        if object.tag == "Deck" or object.tag == "Card" then
-            if object.is_face_down then
-                drawDeck = object
-            else
-                discardPile = object
-            end
-        end
-    end
+    getDrawDiscardDecks(zone)
 
+    -- special draw for Patrice Hathaway (shuffle discards if necessary)
     if investigator == "Patrice Hathaway" then
         patriceDraw()
         return
     end
 
-    if drawDeck == nil then
-        if discardPile ~= nil then
-            shuffleDiscardIntoDeck()
-            Wait.time(|| drawCards(1), 1)
-        end
-        printToColor("Take 1 horror (drawing card from empty deck)", messageColor)
-    else
-        drawCards(1)
+    -- draw 1 card (shuffle discards if necessary)
+    checkDeckThenDrawOne()
+end
+
+function doDrawOne(obj, color, alt_click)
+    -- right-click binds to new player color
+    if alt_click then
+        PLAYER_COLOR = color
+        printToColor("Draw 1 button bound to " .. color, color)
+        return
     end
+
+    setMessageColor(color)
+
+    -- get the draw deck and discard pile objects
+    local zone = getObjectFromGUID(zoneID)
+    if zone == nil then return end
+
+    getDrawDiscardDecks(zone)
+
+    -- draw 1 card (shuffle discards if necessary)
+    checkDeckThenDrawOne()
 end
 
 function doNotReady(card)
