@@ -193,7 +193,7 @@ local function random_weakness(source, zones)
         callback_function = position_card(source, 1, zones, false),
     }
 
-    broadcastToAll("Drew random basic weakness: " .. card:getName())
+    -- broadcastToAll("Drew random basic weakness: " .. card:getName())
 end
 
 ---@param configuration ArkhamImportConfiguration
