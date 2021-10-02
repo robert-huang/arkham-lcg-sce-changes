@@ -1,0 +1,3 @@
+[submodule "TTSDeckLoader"]
+	path = TTSDeckLoader
+	url = https://github.com/dkaygithub/TTSDeckLoader.git
