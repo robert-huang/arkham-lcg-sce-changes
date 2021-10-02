@@ -1,0 +1,5 @@
+tobiiDraftTools_isReadyToken = true
+
+function onDrop()
+    self.flip()
+end

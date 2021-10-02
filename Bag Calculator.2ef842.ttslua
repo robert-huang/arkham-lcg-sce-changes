@@ -1,0 +1,262 @@
+CHAOS_BAD_GUID = Global.getVar('containerId')
+SYMBOL_TOKENS = {'skull', 'cultist', 'tablet', 'elder_thing'}
+
+
+calculated_chances = {}
+token_config = {
+    skull = {
+        effect = 0,
+        draw_again = false,
+        auto_fail = false
+    },
+    cultist = {
+        effect = 0,
+        draw_again = false,
+        auto_fail = false
+    },
+    tablet = {
+        effect = 0,
+        draw_again = false,
+        auto_fail = false
+    },
+    elder_thing = {
+        effect = 0,
+        draw_again = false,
+        auto_fail = false
+    },
+    elder_sign = {
+        effect = 0,
+        auto_fail = false
+    },
+}
+
+function calculate_none_redraws(token_table)
+    local counter = 0
+    local effects_count = {}
+    local effects_percentage = {}
+    for token, count in pairs(get_none_redraw_tokens(token_table)) do
+        local token_value = get_token_value(token)
+        counter = counter + count
+        if effects_count[token_value] == nil then
+            effects_count[token_value] = count
+        else
+            effects_count[token_value] = effects_count[token_value] + count
+        end
+    end
+    for token_value, count in pairs(effects_count) do
+        effects_percentage[token_value] = effects_count[token_value] / counter
+    end
+    return effects_percentage
+end
+
+function get_token_count(token_table)
+    local count = 0
+    for k, v in pairs(token_table)
+    do
+        count = count + v
+    end
+    return count
+end
+
+function create_redraw_string(redraws_values)
+    local redraws_string = ''
+    for k, v in pairs(redraws_values)
+    do
+        redraws_string = redraws_string..k..":"..v..";"
+    end
+    if redraws_string == '' then
+        redraws_string = 'none'
+    end
+    return redraws_string
+end
+
+
+function calculate_all(current_token_table)
+    redraws = get_redraw_tokens()
+    local redraws_values = get_redraw_tokens_values(current_token_table, redraws)
+    local redraws_string = create_redraw_string(redraws_values)
+    if calculated_chances[redraws_string] ~= nil then
+        return calculated_chances[redraws_string]
+    else
+        local new_chances = {}
+        local complete_count = get_token_count(current_token_table)
+
+        local count_none_redraws = get_token_count(get_none_redraw_tokens(current_token_table))
+        for effect, percentage in pairs(calculated_chances['none']) do
+            new_chances[effect] = percentage * count_none_redraws / complete_count
+        end
+        for token, token_counter in pairs(current_token_table) do
+            if contains(redraws, token) and token_counter > 0 then
+                local new_token_table = {}
+                new_token_table[redraws_string] = {}
+                new_token_table[redraws_string][token] = {}
+                for k, v in pairs(current_token_table)do
+                    new_token_table[redraws_string][token][k] = v
+                end
+                new_token_table[redraws_string][token][token] = new_token_table[redraws_string][token][token] - 1
+                sub_new_chances = calculate_all(new_token_table[redraws_string][token])
+
+                for effect, percentage in pairs(sub_new_chances) do
+                    local new_effect = effect + get_token_value(token)
+                    if new_chances[new_effect] ~= nil then
+                        new_chances[new_effect] = new_chances[new_effect] + (token_counter*percentage / complete_count)
+                    else
+                        new_chances[new_effect] = token_counter*percentage / complete_count
+                    end
+                end
+            end
+        end
+
+        calculated_chances[redraws_string] = new_chances
+        return new_chances
+    end
+end
+
+function update_options(player, option, id)
+    local symbol_tokens = {table.unpack(SYMBOL_TOKENS)}
+    local token=nil
+    local type=nil
+    table.insert(symbol_tokens, "elder_sign")
+    for v in id:gmatch("[^-]+") do
+        if contains(symbol_tokens, v) then
+            token = v
+        elseif contains({'effect','draw_again','auto_fail'},v) then
+            type = v
+        end
+    end
+    if option == "True" then
+        option = true
+    elseif option == "False" then
+        option = false
+    end
+        token_config[token][type] = option
+end
+
+function orderd_keys(unsorted_table)
+    local tkeys = {}
+    for k, v in pairs(unsorted_table) do
+        table.insert(tkeys, k)
+    end
+    return table.sort(tkeys, function(a, b) return a > b end)
+end
+
+function get_token_value(token)
+    local symbol_tokens = {table.unpack(SYMBOL_TOKENS)}
+    local effect = nil
+    table.insert(symbol_tokens, "elder_sign")
+    table.insert(symbol_tokens, "auto-fail")
+    if contains(symbol_tokens, token) then
+        if token == "auto-fail" or token_config[token]['auto_fail'] then
+            effect = -999
+        else
+            effect = token_config[token]['effect']
+        end
+    elseif token == 'bless' then
+        effect = 2
+    elseif token == 'curse' then
+        effect = -2
+    else
+        effect = token
+    end
+    return tonumber(effect)
+end
+
+function contains(table, val)
+    for i = 1, #table do
+        if table[i] == val then
+            return true
+        end
+    end
+    return false
+end
+
+function get_tokens()
+    local token_table = {}
+    chaos_bag = getObjectFromGUID(CHAOS_BAD_GUID) tokens = chaos_bag.getObjects()
+    for i, item in pairs(tokens)
+    do
+        if item['name'] == nil
+        then
+            print(item['guid'])
+        else
+            token_name = string.gsub(item['name']:lower(), " ", "_")
+            if token_table[token_name] == nil
+            then
+                token_table[token_name] = 1
+            else
+                token_table[token_name] = token_table[token_name] + 1
+            end
+        end
+    end
+    return token_table
+end
+
+function get_redraw_tokens()
+    local redraws = {'curse', 'bless'}
+    for _, k in ipairs(SYMBOL_TOKENS) do
+        if token_config[k]['draw_again'] then
+            table.insert(redraws, k)
+        end
+    end
+    return redraws
+end
+
+function get_redraw_tokens_values(token_table, redraws)
+    local tokens_values = {}
+    for token, count in pairs(token_table)
+    do
+        if contains(redraws, token) and count ~= 0 then
+            local token_value = get_token_value(token)
+            if tokens_values[token_value] == nil then
+                tokens_values[token_value] = count
+            else
+                tokens_values[token_value] = tokens_values[token_value] + count
+            end
+        end
+    end
+    return tokens_values
+end
+
+function get_none_redraw_tokens(token_table)
+    redraws = get_redraw_tokens()
+    none_redraw_tokens = {}
+    for k, v in pairs(token_table)
+    do
+        if not contains(redraws, k) then
+            none_redraw_tokens[k] = v
+        end
+    end
+    return none_redraw_tokens
+end
+
+function print_values(effects_percentage)
+    current_percentage = 0
+    calculate_percentages = {}
+    for _, k in pairs(orderd_keys(effects_percentage))
+    do
+        current_percentage = current_percentage + effects_percentage[k]
+        if k >= 2 then
+            calculate_percentages[2] = current_percentage
+        else
+            calculate_percentages[k] = current_percentage
+        end
+    end
+    current_percentage = 0
+    for i = 2, (-8), - 1
+    do
+        if calculate_percentages[i] ~= nil then
+            current_percentage = calculate_percentages[i]
+        end
+        text = string.format("%.0f", current_percentage * 100).." %"
+        self.UI.setAttribute("effect_"..tostring(i), "text", text)
+    end
+end
+
+function calculate()
+    calculated_chances = {}
+    local token_table = get_tokens()
+    calculated_chances['none'] = calculate_none_redraws(token_table)
+    print_values(calculate_all(token_table))
+
+
+end
