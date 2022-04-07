@@ -13,18 +13,6 @@ DISCARD_BUTTON_OFFSETS = {
   {0.39, 0.2, -0.945},
   {0.84, 0.2, -0.945},
 }
--- draw deck and discard zone
-DECK_POSITION = { x=-1.4, y=0, z=0.3 }
-DECK_ZONE_SCALE = { x=3, y=5, z=8 }
-DRAW_DECK_POSITION = { x=-55, y=2.5, z=-22.7 }
-
--- play zone
-PLAYER_COLOR = "Orange"
-PLAY_ZONE_POSITION = { x=-54.53, y=4.10, z=-20.94}
-PLAY_ZONE_ROTATION = { x=0, y=270, z=0 }
-PLAY_ZONE_SCALE = { x=36.96, y=5.10, z=14.70}
-
-RESOURCE_COUNTER_GUID = "816d84"
 
 -- the position of the global discard pile
 -- TODO: delegate to global for any auto discard actions
@@ -65,7 +53,7 @@ function makeDiscardButton(position, searchPosition, discardPosition, number)
   })
 end
 
-function onload(save_state)
+function onload()
   self.interactable = DEBUG
   DATA_HELPER = getObjectFromGUID('708279')
   PLAYER_CARDS = DATA_HELPER.getTable('PLAYER_CARD_DATA')
@@ -108,238 +96,7 @@ function onload(save_state)
     font_size = 50
   })
 
-  self.createButton({
-    label="Upkeep",
-    click_function = "doUpkeep",
-    function_owner = self,
-    position = {1.48,0.1,-0.44},
-    scale = {0.12, 0.12, 0.12},
-    width = 800,
-    height = 280,
-    font_size = 180
-  })
-
-  self.createButton({
-    label="Draw 1",
-    click_function = "doDrawOne",
-    function_owner = self,
-    position = {1.48,0.1,-0.36},
-    scale = {0.12, 0.12, 0.12},
-    width = 800,
-    height = 280,
-    font_size = 180
-  })
-
-  local state = JSON.decode(save_state)
-  if state ~= nil then
-    if state.playerColor ~= nil then
-        PLAYER_COLOR = state.playerColor
-    end
-    if state.zoneID ~= nil then
-        zoneID = state.zoneID
-        Wait.time(checkDeckZoneExists, 30)
-    else
-        spawnDeckZone()
-    end
-  else
-    spawnDeckZone()
-  end
-
   COLLISION_ENABLED = true
-end
-
-function onSave()
-    return JSON.encode({ zoneID=zoneID, playerColor=PLAYER_COLOR })
-end
-
-function setMessageColor(color)
-    -- send messages to player who clicked button if no seated player found
-    messageColor = Player[PLAYER_COLOR].seated and PLAYER_COLOR or color
-end
-
-function getDrawDiscardDecks(zone)
-    -- get the draw deck and discard pile objects
-    drawDeck = nil
-    discardPile = nil
-    for i,object in ipairs(zone.getObjects()) do
-        if object.tag == "Deck" or object.tag == "Card" then
-            if object.is_face_down then
-                drawDeck = object
-            else
-                discardPile = object
-            end
-        end
-    end
-end
-
-function checkDeckThenDrawOne()
-    -- draw 1 card, shuffling the discard pile if necessary
-    if drawDeck == nil then
-        if discardPile ~= nil then
-            shuffleDiscardIntoDeck()
-            Wait.time(|| drawCards(1), 1)
-        end
-        printToColor("Take 1 horror (drawing card from empty deck)", messageColor)
-    else
-        drawCards(1)
-    end
-end
-
-function doUpkeep(obj, color, alt_click)
-    -- right-click binds to new player color
-    if alt_click then
-        PLAYER_COLOR = color
-        printToColor("Upkeep button bound to " .. color, color)
-        return
-    end
-
-    setMessageColor(color)
-
-    -- unexhaust cards in play zone
-    local objs = Physics.cast({
-        origin = PLAY_ZONE_POSITION,
-        direction = { x=0, y=1, z=0 },
-        type = 3,
-        size = PLAY_ZONE_SCALE,
-        orientation = PLAY_ZONE_ROTATION
-    })
-
-    local y = PLAY_ZONE_ROTATION.y
-
-    local investigator = nil
-    for i,v in ipairs(objs) do
-        local obj = v.hit_object
-        local props = obj.getCustomObject()
-        if obj.tag == "Card" and not obj.is_face_down and not doNotReady(obj) then
-            if props ~= nil and props.unique_back then
-                local name = obj.getName()
-                if string.match(name, "Jenny Barnes") ~= nil then
-                    investigator = "Jenny Barnes"
-                elseif name == "Patrice Hathaway" then
-                    investigator = name
-                end
-            else
-                local r = obj.getRotation()
-                if (r.y - y > 10) or (y - r.y > 10) then
-                    obj.setRotation(PLAY_ZONE_ROTATION)
-                end
-            end
-        elseif obj.tag == "Board" and obj.getDescription() == "Action token" then
-            if obj.is_face_down then obj.flip() end
-        end
-    end
-
-    -- gain resource
-    getObjectFromGUID(RESOURCE_COUNTER_GUID).call("add_subtract")
-    if investigator == "Jenny Barnes" then
-        getObjectFromGUID(RESOURCE_COUNTER_GUID).call("add_subtract")
-        printToColor("Taking 2 resources (Jenny)", messageColor)
-    end
-
-    -- get the draw deck and discard pile objects
-    local zone = getObjectFromGUID(zoneID)
-    if zone == nil then return end
-
-    getDrawDiscardDecks(zone)
-
-    -- special draw for Patrice Hathaway (shuffle discards if necessary)
-    if investigator == "Patrice Hathaway" then
-        patriceDraw()
-        return
-    end
-
-    -- draw 1 card (shuffle discards if necessary)
-    checkDeckThenDrawOne()
-end
-
-function doDrawOne(obj, color, alt_click)
-    -- right-click binds to new player color
-    if alt_click then
-        PLAYER_COLOR = color
-        printToColor("Draw 1 button bound to " .. color, color)
-        return
-    end
-
-    setMessageColor(color)
-
-    -- get the draw deck and discard pile objects
-    local zone = getObjectFromGUID(zoneID)
-    if zone == nil then return end
-
-    getDrawDiscardDecks(zone)
-
-    -- draw 1 card (shuffle discards if necessary)
-    checkDeckThenDrawOne()
-end
-
-function doNotReady(card)
-    if card.getVar("do_not_ready") == true then
-        return true
-    else
-        return false
-    end
-end
-
-function drawCards(numCards)
-    if drawDeck == nil then return end
-    drawDeck.deal(numCards, PLAYER_COLOR)
-end
-
-function shuffleDiscardIntoDeck()
-    discardPile.flip()
-    discardPile.shuffle()
-    discardPile.setPositionSmooth(DRAW_DECK_POSITION, false, false)
-    drawDeck = discardPile
-    discardPile = nil
-end
-
-function patriceDraw()
-    local handSize = #Player[PLAYER_COLOR].getHandObjects()
-    if handSize >= 5 then return end
-    local cardsToDraw = 5 - handSize
-    local deckSize
-    printToColor("Drawing " .. cardsToDraw .. " cards (Patrice)", messageColor)
-    if drawDeck == nil then
-        deckSize = 0
-    elseif drawDeck.tag == "Deck" then
-        deckSize = #drawDeck.getObjects()
-    else
-        deckSize = 1
-    end
-
-    if deckSize >= cardsToDraw then
-        drawCards(cardsToDraw)
-        return
-    end
-
-    drawCards(deckSize)
-    if discardPile ~= nil then
-        shuffleDiscardIntoDeck()
-        Wait.time(|| drawCards(cardsToDraw - deckSize), 1)
-    end
-    printToColor("Take 1 horror (drawing card from empty deck)", messageColor)
-end
-
-function checkDeckZoneExists()
-    if getObjectFromGUID(zoneID) ~= nil then return end
-    spawnDeckZone()
-end
-
-function spawnDeckZone()
-    local pos = self.positionToWorld(DECK_POSITION)
-    local zoneProps = {
-      position = pos,
-      scale = DECK_ZONE_SCALE,
-      type = 'ScriptingTrigger',
-      callback = 'zoneCallback',
-      callback_owner = self,
-      rotation = self.getRotation()
-    }
-    spawnObject(zoneProps)
-end
-
-function zoneCallback(zone)
-    zoneID = zone.getGUID()
 end
 
 function findObjectsAtPosition(localPos)
@@ -413,43 +170,27 @@ function spawnTokensFor(object)
   markSpawned(object)
 end
 
-function resetSpawnState()
-    local zone = getObjectFromGUID(zoneID)
-    if zone == nil then return end
-
-    for i,object in ipairs(zone.getObjects()) do
-        if object.tag == "Card" then
-            local guid = object.getGUID()
-            if guid ~= nil then unmarkSpawned(guid, true) end
-        elseif object.tag == "Deck" then
-            local cards = object.getObjects()
-            if (cards ~= nil) then
-                for i,v in ipairs(cards) do
-                    if v.guid ~= nil then unmarkSpawned(v.guid) end
-                end
-            end
-        end
-    end
-end
-
-function unmarkSpawned(guid, force)
-  if not force and getObjectFromGUID(guid) ~= nil then return end
-  DATA_HELPER.call('setSpawnedPlayerCardGuid', {guid, false})
-end
-
 function onCollisionEnter(collision_info)
   if not COLLISION_ENABLED then
     return
   end
 
   local object = collision_info.collision_object
-  Wait.time(resetSpawnState, 1)
   -- anything to the left of this is legal to spawn
   local discardSpawnBoundary = self.positionToWorld({-1.2, 0, 0})
   local boundaryLocalToCard = object.positionToLocal(discardSpawnBoundary)
   if boundaryLocalToCard.x > 0 then
     log('not checking for token spawn, boundary relative is ' .. boundaryLocalToCard.x)
-    return
+    if object ~= nil and object.guid ~= nil then
+      if object.tag == 'Deck' then
+        for i,v in ipairs(object.getObjects()) do
+          if v.guid ~= nil then DATA_HELPER.call('setSpawnedPlayerCardGuid', {v.guid, false}) end
+        end
+      else
+        if object.tag == 'Card' then DATA_HELPER.call('setSpawnedPlayerCardGuid', {object.getGUID(), false}) end
+      end
+      return
+    end
   end
   if not object.is_face_down and shouldSpawnTokens(object) then
     spawnTokensFor(object)
@@ -463,18 +204,18 @@ function drawChaostokenButton(object, player, isRightClick)
 end
 
 function drawEncountercard(object, player, isRightClick)
-local toPosition = self.positionToWorld(DRAWN_ENCOUNTER_CARD_OFFSET)
-Global.call("drawEncountercard", {toPosition, self.getRotation(), isRightClick})
+  local toPosition = self.positionToWorld(DRAWN_ENCOUNTER_CARD_OFFSET)
+  Global.call("drawEncountercard", {toPosition, self.getRotation(), isRightClick, "Orange"})
 end
 
 function spawnToken(position, tokenType)
-  Global.call('spawnToken', {position, tokenType})
+  Global.call('spawnToken', {position, tokenType, self.getRotation()})
 end
 
 function updatePlayerCards(args)
-    local custom_data_helper = getObjectFromGUID(args[1])
-    data_player_cards = custom_data_helper.getTable("PLAYER_CARD_DATA")
-    for k, v in pairs(data_player_cards) do
-        PLAYER_CARDS[k] = v
-    end
+  local custom_data_helper = getObjectFromGUID(args[1])
+  data_player_cards = custom_data_helper.getTable("PLAYER_CARD_DATA")
+  for k, v in pairs(data_player_cards) do
+    PLAYER_CARDS[k] = v
+  end
 end

@@ -578,7 +578,7 @@ local function onDeckResult(deck, playerColor, configuration)
     return
   end
 
-  loadCards(slots, playerColor, commandManager, configuration, results.configuration)
+  loadCards(slots, deck.investigator_code, playerColor, commandManager, configuration, results.configuration)
 end
 
 -- Checks to see if the slot list includes the random weakness ID.  If it does,
@@ -616,12 +616,19 @@ function maybeAddInvestigatorCards(deck, slots)
   if (getUiState().investigators) then
     local investigatorId = deck.investigator_code
     slots[investigatorId.."-m"] = 1
-    local parallelFront = deck.meta ~= nil and deck.meta.alternate_front ~= nil and deck.meta.alternate_front ~= ""
-    local parallelBack = deck.meta ~= nil and deck.meta.alternate_back ~= nil  and deck.meta.alternate_back ~= ""
+    local deckMeta = JSON.decode(deck.meta)
+    local parallelFront = deckMeta ~= nil and deckMeta.alternate_front ~= nil and deckMeta.alternate_front ~= ""
+    local parallelBack = deckMeta ~= nil and deckMeta.alternate_back ~= nil  and deckMeta.alternate_back ~= ""
     if (parallelFront and parallelBack) then
       investigatorId = investigatorId.."-p"
     elseif (parallelFront) then
-      investigatorId = investigatorId.."-pf"
+	
+	  local alternateNum = tonumber(deckMeta.alternate_front)
+	  if (alternateNum >= 01501 and alternateNum <= 01506) then
+	    investigatorId = investigatorId.."-r"
+	  else
+	    investigatorId = investigatorId.."-pf"
+      end
     elseif (parallelBack) then
       investigatorId = investigatorId.."-pb"
     end
@@ -689,12 +696,16 @@ end
 --
 -- Param slots: Key-Value table of cardId:count.  cardId is the ArkhamDB ID of
 --     the card to spawn, and count is the number which should be spawned
+-- Param investigatorId: String ArkhamDB ID (code) for this deck's investigator.
+--     Investigator cards should already be added to the slots list if they
+--     should be spawned, but this value is separate to check for special
+--     handling for certain investigators
 -- Param playerColor String Color name of the player mat to place this deck
 --     on (e.g. "Red")
 -- Param commandManager
 -- Param configuration: Loader configuration object
 -- Param command_config:
-function loadCards(slots, playerColor, commandManager, configuration, command_config)
+function loadCards(slots, investigatorId, playerColor, commandManager, configuration, command_config)
   function coinside()
     local allCardsBag = getObjectFromGUID(configuration.card_bag_guid)
     local yPos = { }
@@ -720,6 +731,7 @@ function loadCards(slots, playerColor, commandManager, configuration, command_co
     -- These should probably be commands, once the command handler is updated
     handleStartsInPlay(cardsToSpawn)
     handleAncestralKnowledge(cardsToSpawn)
+	handleHunchDeck(investigatorId, cardsToSpawn, playerColor)
 
     -- Count the number of cards in each zone so we know if it's a deck or card.
     -- TTS's Card vs. Deck distinction requires this since we can't spawn a deck
@@ -952,6 +964,43 @@ function handleAncestralKnowledge(cardList)
       local skillListIndex = math.random(#skillList)
       cardList[skillList[skillListIndex]].zone = "UnderSetAside3"
       table.remove(skillList, skillListIndex)
+    end
+  end
+end
+
+-- If the investigator is Joe Diamond, extract all Insight events to SetAside5
+-- to build the Hunch Deck.
+-- Param investigatorId: ID for the deck's investigator card.  Passed separately
+--     because the investigator may not be included in the cardList
+-- Param cardList: Deck list being created
+-- Param playerColor: Color this deck is being loaded for
+function handleHunchDeck(investigatorId, cardList, playerColor)
+  if (investigatorId == "05002") then -- Joe Diamond
+    local insightList = { }
+    for i, card in ipairs(cardList) do
+      if (card.metadata.type == "Event"
+          and string.match(card.metadata.traits, "Insight")
+          and card.metadata.bonded_to == nil) then
+        table.insert(insightList, i)
+      end
+    end
+    -- Process insights to move them to the hunch deck.  This is done in reverse
+    -- order because the sorting needs to be reversed (deck sorts for face down)
+    -- Performance here may be an issue, as table.remove() is an O(n) operation
+    -- which makes the full shift O(n^2).  But keep it simple unless it becomes
+    -- a problem
+    for i = #insightList, 1, -1 do
+      local moving = cardList[insightList[i]]
+      moving.zone = "SetAside5"
+      table.remove(cardList, insightList[i])
+      table.insert(cardList, moving)
+    end
+    if (#insightList < 11) then
+      debugPrint("Joe's hunch deck must have 11 cards but the deck only has "..#insightList.." Insight events", Priority.INFO, playerColor)
+    elseif (#insightList > 11) then
+      debugPrint("Moved all "..#insightList.." Insight events to the hunch deck, reduce it to 11", Priority.INFO, playerColor)
+    else
+      debugPrint("Built Joe's hunch deck", Priority.INFO, playerColor)
     end
   end
 end
