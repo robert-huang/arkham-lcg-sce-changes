@@ -684,11 +684,88 @@ LOCATIONS_DATA_JSON = [[
   "Zihao's House of Fighting Arts": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Daiyu's Tea Garden": {"type": "perPlayer", "value": 2, "clueSide": "back"},
 
+  "EotE": {},
   "Senator Nathaniel Rhodes": {"type": "perPlayer", "value": 1, "clueSide": "front"},
   "Wine Cellar": {"type": "perPlayer", "value": 1, "clueSide": "back"},
   "Wine Cellar_9d0410": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Wine Cellar_b882f3": {"type": "perPlayer", "value": 2, "clueSide": "back"},
   "Hidden Passageway": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+
+  "Frozen Shores": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Treacherous Path": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Precarious Ice Sheet": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Broad Snowdrifts": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Icy Wastes": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Rocky Crags": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Snow Graves": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Icebreaker Landing": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Frigid Cave": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Barrier Camp": {"type": "perPlayer", "value": 3, "clueSide": "back"},
+  "Remnants of Lake's Camp": {"type": "perPlayer", "value": 3, "clueSide": "back"},
+  "Crystalline Cavern": {"type": "perPlayer", "value": 3, "clueSide": "back"},
+
+  "Prison of Memories": {"type": "perPlayer", "value": 3, "clueSide": "front"},
+  "Base Camp": {"type": "perPlayer", "value": 3, "clueSide": "front"},
+  "Deck of the Theodosia": {"type": "perPlayer", "value": 3, "clueSide": "front"},
+  "University Halls": {"type": "perPlayer", "value": 3, "clueSide": "front"},
+  "Hedge Maze": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Deserted Station": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Hedge Maze": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Coastal Waters": {"type": "perPlayer", "value": 4, "clueSide": "front"},
+  "Elder Chamber": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Riverview Theatre": {"type": "perPlayer", "value": 4, "clueSide": "front"},
+  "Standing Stones": {"type": "perPlayer", "value": 4, "clueSide": "front"},
+  "Airfield": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Alaskan Wilds": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Cluttered Dormitory": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Dyer's Classroom": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Infirmary_80c56d": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Dr. Kensler's Office": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Moʻai Statues": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "Ottoman Front": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+  "The Black Stone": {"type": "perPlayer", "value": 2, "clueSide": "front"},
+
+  "The Summit": {"type": "perPlayer", "value": 3, "clueSide": "back"},
+  "Mountainside": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Mountainside_0dd2ac": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+  "Mountainside_62fb7b": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Mountainside_0a512e": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Mountainside_163ba8": {"type": "perPlayer", "value": 3, "clueSide": "back"},
+
+  "Hidden Tunnel": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "City Landscape": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "City Landscape_ec2d80": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "City Landscape_d84841": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+
+
+  "Ancient Facility": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Ancient Facility_97d88d": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+  "Ancient Facility_0ff8d1": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+  "Ancient Facility_42f1ad": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+  "Ancient Facility_710850": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+  "Ancient Facility_27771a": {"type": "perPlayer", "value": 0, "clueSide": "back"},
+  "Ancient Facility_f9fc4d": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Ancient Facility_baf524": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Ancient Facility_c70271": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "The Gate of Y'quaa": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Mist-Pylon": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Mist-Pylon_9ca053": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Mist-Pylon_c320b1": {"type": "perPlayer", "value": 3, "clueSide": "back"},
+  "Mist-Pylon_cc2b13": {"type": "perPlayer", "value": 4, "clueSide": "back"},
+
+  "River Docks": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Miskatonic University_cf8d9e": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Miskatonic University_b6c3a5": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Miskatonic University_fb6a7c": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Arkham Gazette": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Arkham Advertiser": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "O'Malley's Watch Shop": {"type": "perPlayer", "value": 3, "clueSide": "back"},
+  "Tick-Tock Club_e1116a": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Tick-Tock Club": {"type": "perPlayer", "value": 3, "clueSide": "back"},
+
+  "Childhood Home": {"type": "perPlayer", "value": 2, "clueSide": "back"},
+  "Ye Olde Magick Shoppe": {"type": "perPlayer", "value": 1, "clueSide": "back"},
+  "Corrigan Industries": {"type": "perPlayer", "value": 1, "clueSide": "back"},
 
   "XXXX": {"type": "fixed", "value": 2, "clueSide": "back"},
   "xxx": {"type": "perPlayer", "value": 2, "clueSide": "back"}
@@ -1344,6 +1421,98 @@ PLAYER_CARD_DATA_JSON = [[
   "tokenType": "clue",
   "tokenCount": 4
   },
+  "Edge of the Earth Campaign (eoec)":{
+    "tokenType": "doom",
+    "tokenCount": 0
+  },
+  "Professor William Dyer:Professor of Geology": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "Professor William Dyer:Resolute": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "Danforth:Brilliant Student": {
+  "tokenType": "resource",
+  "tokenCount": 5
+  },
+  "Danforth:Resolute": {
+  "tokenType": "resource",
+  "tokenCount": 5
+  },
+  "Eliyah Ashevak:Dog Handler": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "Eliyah Ashevak:Resolute": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "Dr. Mala Sinha:Daring Physician": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "Dr. Mala Sinha:Resolute": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "Avery Claypool:Antarctic Guide": {
+  "tokenType": "resource",
+  "tokenCount": 5
+  },
+  "Avery Claypool:Resolute": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "James \"Cookie\" Fredericks:Dubious Choice": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "James \"Cookie\" Fredericks:Resolute": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "Dr. Amy Kensler:Professor of Biology": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "Dr. Amy Kensler:Resolute": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "Roald Ellsworth:Intrepid Explorer": {
+  "tokenType": "resource",
+  "tokenCount": 5
+  },
+  "Roald Ellsworth:Resolute": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "Takada Hiroko:Aeroplane Mechanic": {
+  "tokenType": "resource",
+  "tokenCount": 9
+  },
+  "Takada Hiroko:Resolute": {
+  "tokenType": "resource",
+  "tokenCount": 9
+  },
+  "Kensler's Log": {
+  "tokenType": "resource",
+  "tokenCount": 2
+  },
+  "Collected Works of Poe": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "Sinha's Medical Kit": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "Cookie's Custom .32": {
+  "tokenType": "resource",
+  "tokenCount": 2
+  },
   "Investigator Starter Decks":{
     "tokenType": "doom",
     "tokenCount": 0
@@ -1475,6 +1644,10 @@ PLAYER_CARD_DATA_JSON = [[
   "Mi-Go Weapon": {
     "tokenType": "resource",
     "tokenCount": 3
+  },
+  "Dimensional Beam Machine": {
+  "tokenType": "resource",
+  "tokenCount": 2
   },
   "Promo Investigators":{
     "tokenType": "doom",
