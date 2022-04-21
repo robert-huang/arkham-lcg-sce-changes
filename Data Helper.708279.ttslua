@@ -1513,6 +1513,30 @@ PLAYER_CARD_DATA_JSON = [[
   "tokenType": "resource",
   "tokenCount": 2
   },
+  "Green Soapstone": {
+  "tokenType": "resource",
+  "tokenCount": 4
+  },
+  "Dynamite": {
+  "tokenType": "resource",
+  "tokenCount": 2
+  },
+  "Miasmic Crystal": {
+  "tokenType": "resource",
+  "tokenCount": 2
+  },
+  "Mineral Specimen": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "Small Radio": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
+  "Spare Parts": {
+  "tokenType": "resource",
+  "tokenCount": 3
+  },
   "Investigator Starter Decks":{
     "tokenType": "doom",
     "tokenCount": 0
@@ -1966,6 +1990,20 @@ modeData = {
     standalone = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'tablet', 'elder', 'elder', 'red', 'blue' } }
   },
 
+  -----------------Edge of the Earth
+  ['Edge of the Earth'] = {
+  easy = { token = { 'p1', 'p1', 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'tablet', 'red', 'blue' } },
+  normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'frost', 'skull', 'skull', 'cultist', 'tablet', 'red', 'blue' } },
+  hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm4', 'm5', 'frost', 'frost', 'skull', 'skull', 'cultist', 'tablet', 'red', 'blue' } },
+  expert = { token = { '0', 'm1', 'm2', 'm2', 'm3', 'm4', 'm4', 'm5', 'm7', 'frost', 'frost', 'frost', 'skull', 'skull', 'cultist', 'tablet', 'red', 'blue' } }
+  },
+  ['City of the Elder Things'] = {
+  easy  = { token = { 'p1', 'p1', 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+  normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'frost', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+  hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm4', 'm5', 'frost', 'frost', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+  expert = { token = { '0', 'm1', 'm2', 'm2', 'm3', 'm4', 'm4', 'm5', 'm7', 'frost', 'frost', 'frost', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
+  },
+
   -----------------The Side Missions
   --official
   ['Curse of the Rougarou'] = {
@@ -2017,6 +2055,18 @@ modeData = {
     normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'skull', 'red', 'blue' } },
     hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'skull', 'skull', 'skull', 'red', 'blue' } },
     expert = { token = { '0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'skull', 'skull', 'skull', 'red', 'blue' } }
+  },
+  ['Machinations'] = {
+    easy = { token = { 'p1', 'p1', 'p1', '0', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+    normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+    hard = { token = { '0', '0', 'm1', 'm1', 'm1', 'm2', 'm3', 'm4', 'm6', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'elder', 'red', 'blue' } },
+    expert = { token = { '0', 'm1', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm8', 'skull', 'skull', 'cultist', 'tablet', 'elder', 'elder', 'red', 'blue' } }
+  },
+  ['Red Tide'] = {
+    easy = { token = { 'p1', 'p1', '0', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+    normal = { token = { 'p1', '0', '0', 'm1', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+    hard = { token = { '0', '0', 'm1', 'm1', 'm2', 'm2', 'm3', 'm4', 'm5', 'm6', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'elder', 'red', 'blue' } },
+    expert = { token = { '0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'skull', 'skull', 'cultist', 'cultist', 'tablet', 'elder', 'red', 'blue' } }
   },
 
   --fan-made
