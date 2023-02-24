@@ -1,1 +1,1 @@
-require("playermat/GenericCounter")
+require("core/GenericCounter")
